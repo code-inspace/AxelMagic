@@ -10,7 +10,7 @@ export interface CardData {
   content: ReactNode;
 }
 
-function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
+export function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };

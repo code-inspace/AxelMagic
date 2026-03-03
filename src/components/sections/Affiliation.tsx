@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Gift, Share2, Percent, ArrowRight, Users } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import { NumberTicker } from "@/components/magicui/number-ticker";
 
 const steps = [
   {
@@ -81,31 +80,6 @@ export function Affiliation() {
                 </BlurFade>
 
                 <BlurFade inView delay={0.4}>
-                  <div className="flex items-center gap-6 mb-8">
-                    <div className="text-center">
-                      <div className="text-4xl font-black aurora-text">
-                        <NumberTicker value={10} suffix="%" delay={0.4} className="aurora-text" />
-                      </div>
-                      <p className="text-xs text-white/40 mt-1">commission</p>
-                    </div>
-                    <div className="w-px h-12 bg-white/10" />
-                    <div className="text-center">
-                      <div className="text-4xl font-black aurora-text">
-                        <NumberTicker value={1500} suffix="€+" delay={0.5} className="aurora-text" />
-                      </div>
-                      <p className="text-xs text-white/40 mt-1">gain potentiel</p>
-                    </div>
-                    <div className="w-px h-12 bg-white/10" />
-                    <div className="text-center">
-                      <div className="text-4xl font-black aurora-text">
-                        0
-                      </div>
-                      <p className="text-xs text-white/40 mt-1">engagement</p>
-                    </div>
-                  </div>
-                </BlurFade>
-
-                <BlurFade inView delay={0.5}>
                   <a
                     href="https://wa.me/33600000000"
                     target="_blank"
