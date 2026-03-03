@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, Linkedin, Instagram } from "lucide-react";
+import { MessageCircle, Phone, Mail, Linkedin } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -19,7 +19,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5 mb-4">
               <img
                 src="/images/logo-axelcoudair.png"
-                alt="Axel Magic"
+                alt="Axel Coudair"
                 className="h-9 w-auto"
               />
             </div>
@@ -69,21 +69,21 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="tel:+33600000000"
+                href="tel:+33648180606"
                 className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
-                +33 6 00 00 00 00
+                +33 6 48 18 06 06
               </a>
               <a
-                href="mailto:hello@axelmagic.fr"
+                href="mailto:hello@axelcoudair.com"
                 className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
               >
                 <Mail className="w-4 h-4" />
-                hello@axelmagic.fr
+                hello@axelcoudair.com
               </a>
               <a
-                href="https://wa.me/33600000000"
+                href="https://wa.me/33648180606"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[#25D366] hover:text-[#1db954] text-sm transition-colors duration-200"
@@ -99,12 +99,6 @@ export function Footer() {
                 className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-purple-500/30 transition-all duration-200"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-purple-500/30 transition-all duration-200"
-              >
-                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>

@@ -81,7 +81,7 @@ export function Affiliation() {
 
                 <BlurFade inView delay={0.4}>
                   <a
-                    href="https://wa.me/33600000000"
+                    href="https://wa.me/33648180606"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-300"

@@ -10,7 +10,6 @@ export function FloatingBar() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Show bar when hero is NOT intersecting (user scrolled past it)
         setVisible(!entry.isIntersecting);
       },
       { threshold: 0.1 }
@@ -29,7 +28,7 @@ export function FloatingBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 inset-x-0 flex justify-center -translate-x-1/2 z-50"
+          className="fixed bottom-6 inset-x-0 flex justify-center z-50"
         >
           <div className="flex items-center gap-4 px-5 py-3.5 rounded-2xl glass border border-white/10 shadow-2xl"
             style={{ boxShadow: "0 8px 40px rgba(39, 8, 160, 0.3), 0 2px 8px rgba(0,0,0,0.5)" }}>
@@ -38,11 +37,10 @@ export function FloatingBar() {
               <div className="w-10 h-10 rounded-full border-2 border-purple-500/40 overflow-hidden">
                 <img
                   src="/images/photo-pro 3.jpg"
-                  alt="Axel Magic"
+                  alt="Axel Coudair"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Online dot */}
               <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-[#0E0F11]">
                 <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-60" />
               </span>
@@ -62,7 +60,7 @@ export function FloatingBar() {
             {/* CTA buttons */}
             <div className="flex items-center gap-2">
               <a
-                href="tel:+33600000000"
+                href="tel:+33648180606"
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 title="Appeler"
@@ -72,7 +70,7 @@ export function FloatingBar() {
               </a>
 
               <a
-                href="https://wa.me/33600000000"
+                href="https://wa.me/33648180606"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-xl text-sm font-semibold text-white bg-[#25D366] hover:bg-[#1db954] transition-colors duration-300"

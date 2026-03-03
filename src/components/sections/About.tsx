@@ -135,14 +135,14 @@ export function About() {
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-purple-500/40">
                     <img
                       src="/images/photo-pro 3.jpg"
-                      alt="Axel Magic"
+                      alt="Axel Coudair"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0E0F11]" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Axel Magic</p>
+                  <p className="font-semibold text-white">Axel Coudair</p>
                   <p className="text-xs text-white/50">Expert Web & Stratégie Digitale</p>
                 </div>
                 <div className="ml-auto">

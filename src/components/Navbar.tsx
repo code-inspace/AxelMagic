@@ -34,7 +34,7 @@ export function Navbar() {
         <a href="#hero" className="flex items-center gap-2.5">
           <img
             src="/images/logo-axelcoudair.png"
-            alt="Axel Magic"
+            alt="Axel Coudair"
             className="h-9 w-auto"
           />
         </a>
