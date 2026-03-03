@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, ArrowRight, Clock, AlertCircle } from "lucide-react";
+import { Phone, MessageCircle, ArrowRight, Clock } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 
@@ -261,44 +261,7 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Social proof / stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="flex items-center justify-center gap-6 text-sm text-white/40"
-        >
-          <span>✦ SNCF</span>
-          <span>✦ DGAC</span>
-          <span>✦ Osmos Group</span>
-          <span>✦ Cinqmars</span>
-        </motion.div>
       </div>
-
-      {/* Floating bubble "places disponibles" */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: 20 }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ delay: 1.2, duration: 0.5, type: "spring", bounce: 0.4 }}
-        className="absolute bottom-32 right-8 sm:right-16 z-20"
-      >
-        <div className="relative">
-          <div className="absolute inset-0 rounded-2xl bg-purple-500/20 blur-xl animate-pulse-slow" />
-          <div className="relative glass-card border border-purple-500/30 px-4 py-3 max-w-[180px]">
-            <div className="flex items-center gap-2 mb-1">
-              <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-              <span className="text-xs font-bold text-amber-300">Disponibilités</span>
-            </div>
-            <p className="text-xs text-white/70 leading-tight">
-              Plus que{" "}
-              <span className="font-bold text-white">2 places</span>{" "}
-              disponibles ce mois-ci
-            </p>
-          </div>
-          {/* Bubble tail */}
-          <div className="absolute -bottom-2 left-6 w-4 h-4 glass-card border-l border-b border-purple-500/30 rotate-45" />
-        </div>
-      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
