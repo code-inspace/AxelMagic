@@ -7,6 +7,7 @@ export interface CardData {
   category: string;
   title: string;
   background: string;
+  image?: string;
   content: ReactNode;
 }
 

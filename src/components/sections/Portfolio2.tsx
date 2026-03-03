@@ -101,6 +101,13 @@ function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
             className="h-64 relative overflow-hidden rounded-t-3xl flex-shrink-0"
             style={{ background: card.background }}
           >
+            {card.image && (
+              <img
+                src={card.image}
+                alt={card.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
             <div className="absolute bottom-6 left-7">
               <p className="text-[10px] text-white/60 uppercase tracking-widest mb-2">
@@ -126,6 +133,7 @@ const cards: CardData[] = [
     category: "Site vitrine · Coaching",
     title: "Lucafit",
     background: "linear-gradient(135deg, #f97316 0%, #ef4444 40%, #7c3aed 100%)",
+    image: "/images/Lucassanchez/Preview/lucas fit preview.jpeg",
     content: (
       <ProjectContent
         description="Site vitrine et plateforme de coaching pour un coach sportif parisien. Refonte complète de l'identité visuelle, parcours utilisateur pensé pour convertir, intégration Calendly et tunnel de réservation."
@@ -142,6 +150,7 @@ const cards: CardData[] = [
     category: "Site vitrine · Immobilier",
     title: "ADN Paris",
     background: "linear-gradient(135deg, #6366f1 0%, #4338ca 50%, #1e1b4b 100%)",
+    image: "/images/ADN/Preview/adn-preview.jpg",
     content: (
       <ProjectContent
         description="Site vitrine haut de gamme pour une agence immobilière parisienne spécialisée dans le prestige. Design épuré et luxueux, système de filtres avancés pour les biens, intégration CRM et lead generation optimisée."
@@ -212,7 +221,14 @@ export function Portfolio2() {
                   pointerEvents: activeCard?.id === card.id ? "none" : "auto",
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
+                {card.image && (
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/75" />
                 <div className="absolute bottom-7 left-7 right-7">
                   <p className="text-[10px] text-white/60 uppercase tracking-widest mb-2">
                     {card.category}
