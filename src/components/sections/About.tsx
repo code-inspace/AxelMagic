@@ -26,11 +26,12 @@ export function About() {
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-10 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #653ad2, transparent 70%)" }}
+        style={{
+          background: "radial-gradient(ellipse, #653ad2, transparent 70%)",
+        }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        
         <BlurFade inView delay={0}>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-purple-500/40" />
@@ -46,57 +47,48 @@ export function About() {
           <div>
             <BlurFade inView delay={0.1}>
               <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-8">
-                Derrière chaque bon site,{" "}
-                <AuroraText
-                  colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}
-                >
-                  il y a quelqu'un qui comprend
-                </AuroraText>{" "}
-                vraiment votre métier.
+                Derrière chaque bon site, <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>il y a quelqu'un qui comprend vraiment votre métier.</AuroraText>
               </h2>
             </BlurFade>
 
             <div className="space-y-6 text-white/65 leading-relaxed">
               <BlurFade inView delay={0.2}>
-                <TextReveal
-                  text="J'ai passé des années à travailler sur des projets digitaux pour de grands groupes : la SNCF, la DGAC, Osmos Group, et en agence de communication chez Cinqmars, dans des secteurs très variés. J'ai été développeur, chef de projets, UX designer. J'ai vu ce qui fonctionne, et ce qui coûte cher sans rapporter grand-chose."
-                  className="text-base sm:text-lg"
-                />
+                <p className="text-base sm:text-lg text-white/75">
+                  J'ai passé des années à travailler sur des projets digitaux
+                  pour de grands groupes : la SNCF, la DGAC, Osmos Group, et en
+                  agence de communication chez Cinqmars, dans des secteurs très
+                  variés. J'ai été développeur, chef de projets, UX designer.
+                  J'ai vu ce qui fonctionne, et ce qui coûte cher sans rapporter
+                  grand-chose.
+                </p>
+                <TextReveal text="" className="text-base sm:text-lg" />
               </BlurFade>
 
               <BlurFade inView delay={0.3}>
                 <p className="text-base sm:text-lg text-white/75">
                   Aujourd'hui, je mets cette expérience au service des{" "}
-                  <span className="text-white font-semibold">entrepreneurs, PME et indépendants</span>{" "}
-                  qui veulent un site à leur image : efficace, moderne, et pensé pour convertir.
+                  <span className="text-white font-semibold">
+                    entrepreneurs, PME et indépendants
+                  </span>{" "}
+                  qui veulent un site à leur image : efficace, moderne, et pensé
+                  pour convertir.
                 </p>
               </BlurFade>
 
               <BlurFade inView delay={0.4}>
                 <div className="glass-card border border-purple-500/20 p-5 rounded-2xl">
                   <p className="text-white/80 italic">
-                    "Pas de grande agence impersonnelle, pas de freelance qui disparaît après la livraison.{" "}
+                    "Pas de grande agence impersonnelle, pas de freelance qui
+                    disparaît après la livraison.{" "}
                     <span className="text-purple-300 font-semibold not-italic">
-                      Un vrai partenaire qui s'implique dans votre projet comme si c'était le sien.
-                    </span>"
+                      Un vrai partenaire qui s'implique dans votre projet comme
+                      si c'était le sien.
+                    </span>
+                    "
                   </p>
                 </div>
               </BlurFade>
             </div>
-
-            {/* Experience logos */}
-            <BlurFade inView delay={0.5}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {["SNCF", "DGAC", "Osmos Group", "Cinqmars"].map((name) => (
-                  <span
-                    key={name}
-                    className="px-4 py-1.5 rounded-full glass border border-white/10 text-sm text-white/60 font-medium"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
-            </BlurFade>
           </div>
 
           {/* Right — stats */}
@@ -143,7 +135,9 @@ export function About() {
                 </div>
                 <div>
                   <p className="font-semibold text-white">Axel Coudair</p>
-                  <p className="text-xs text-white/50">Expert Web & Stratégie Digitale</p>
+                  <p className="text-xs text-white/50">
+                    Expert Web & Stratégie Digitale
+                  </p>
                 </div>
                 <div className="ml-auto">
                   <span className="text-xs text-green-400 flex items-center gap-1">

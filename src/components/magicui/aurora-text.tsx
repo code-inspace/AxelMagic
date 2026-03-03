@@ -13,7 +13,7 @@ export function AuroraText({ children, className, colors }: AuroraTextProps) {
 
   return (
     <span
-      className={cn("inline-block", className)}
+      className={cn("inline", className)}
       style={{
         background: `linear-gradient(135deg, ${gradient})`,
         backgroundSize: "300% 300%",
