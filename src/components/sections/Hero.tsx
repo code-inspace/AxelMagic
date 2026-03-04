@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, Clock } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { WordRotate } from "@/components/magicui/word-rotate";
 
 interface Orb {
   x: number;
@@ -203,18 +202,7 @@ export function Hero() {
           transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
         >
-          <span className="text-white block">Votre site web qui</span>
-          <span className="block mt-2">
-            <AuroraText
-              colors={["#ffffff", "#a78bfa", "#8b5cf6", "#653ad2", "#c4b5fd", "#ffffff"]}
-              className="font-poppins font-light"
-            >
-              <WordRotate
-                words={["convertit.", "performe.", "attire.", "convainc.", "vend."]}
-                duration={2200}
-              />
-            </AuroraText>
-          </span>
+          <span className="text-white">Imaginez </span><AuroraText colors={["#ffffff", "#a78bfa", "#8b5cf6", "#653ad2", "#c4b5fd", "#ffffff"]} className="font-poppins font-light">un site web</AuroraText><span className="text-white"> qui vous amène </span><AuroraText colors={["#ffffff", "#a78bfa", "#8b5cf6", "#653ad2", "#c4b5fd", "#ffffff"]} className="font-poppins font-light">des clients</AuroraText><span className="text-white"> pendant que vous dormez.</span>
         </motion.h1>
 
         {/* Subtitle */}
