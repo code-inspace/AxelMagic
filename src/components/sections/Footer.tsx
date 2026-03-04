@@ -37,9 +37,9 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
               Navigation
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {[
                 { label: "À propos", href: "#apropos" },
@@ -64,9 +64,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
               Contact
-            </h4>
+            </h3>
             <div className="space-y-3">
               <a
                 href="tel:+33648180606"
@@ -93,21 +93,24 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="flex items-center gap-3 mt-6">
+            <div className="mt-6">
+              <div className="h-px bg-white/[0.06] mb-4" />
+              <p className="text-xs text-white/40 uppercase tracking-widest font-medium mb-3">Suivez moi</p>
               <a
                 href="https://www.linkedin.com/in/axel-coudair/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-purple-500/30 transition-all duration-200"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/[0.06] pt-8 flex items-center justify-center">
-          <p className="text-white/25 text-xs">
+          <p className="text-white/50 text-xs">
             © {year} Axel Coudair · Tous droits réservés
           </p>
         </div>
