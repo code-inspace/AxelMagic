@@ -20,7 +20,7 @@ const steps = [
     icon: Paintbrush,
     title: "Maquette",
     description:
-      "Je vous soumets un design complet sur Figma. On affine ensemble jusqu'à ce que ce soit parfait. Vous validez avant le moindre ligne de code.",
+      "Je vous soumets un design complet sur Figma. On affine ensemble jusqu'à ce que ce soit parfait. Vous validez avant le démarrage du développement.",
     duration: "Semaine 1-2",
     color: "#a78bfa",
   },
@@ -29,7 +29,7 @@ const steps = [
     icon: Code,
     title: "Développement",
     description:
-      "Je code votre site avec les meilleures technologies du marché : Next.js, React, Tailwind. Rapide, solide, optimisé.",
+      "Chaque projet est différent ma stack aussi. Je code votre site avec les technologies adaptées à ses spécificités.\nFront : Next.js, React, Vite, Tailwind, Webflow\nBack : Prisma, Neon, Supabase, Payload CMS\nToujours dans un seul objectif : un site rapide, optimisé et évolutif.",
     duration: "Semaine 2-3",
     color: "#7c3aed",
   },
@@ -122,12 +122,12 @@ export function Process() {
         </BlurFade>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
           {steps.map((step, i) => (
-            <BlurFade key={step.number} inView delay={0.1 + i * 0.08}>
+            <BlurFade key={step.number} inView delay={0.1 + i * 0.08} className="h-full">
               <motion.div
                 whileHover={{ y: -4 }}
-                className="group relative glass-card border border-white/[0.07] hover:border-purple-500/25 transition-all duration-400 p-6 rounded-2xl overflow-hidden"
+                className="group relative glass-card border border-white/[0.07] hover:border-purple-500/25 transition-all duration-400 p-6 rounded-2xl overflow-hidden h-full"
               >
                 {/* Step number background */}
                 <div
@@ -156,7 +156,7 @@ export function Process() {
                     ÉTAPE {step.number}
                   </span>
                   <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed">{step.description}</p>
+                  <p className="text-white/55 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
                 </div>
 
                 {/* Bottom gradient line */}
