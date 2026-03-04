@@ -295,7 +295,13 @@ export function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white/60">
             <span className="text-amber-400">⚡</span>
-            Plus que <span className="text-amber-300 font-semibold">2 places disponibles</span> ce mois-ci
+            <span className="text-sm text-white/60">
+              Plus que{" "}
+              <span className="text-amber-300 font-bold">
+                2 places disponibles
+              </span>{" "}
+              ce mois-ci
+            </span>
           </div>
         </motion.div>
       </div>
