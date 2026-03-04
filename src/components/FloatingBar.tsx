@@ -12,7 +12,7 @@ export function FloatingBar() {
       ([entry]) => {
         setVisible(!entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (hero) observer.observe(hero);
@@ -30,8 +30,7 @@ export function FloatingBar() {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="fixed bottom-6 inset-x-0 flex justify-center z-50"
         >
-          <div className="flex items-center gap-4 px-5 py-3.5 rounded-2xl glass border border-white/10 shadow-2xl"
-            style={{ boxShadow: "0 8px 40px rgba(39, 8, 160, 0.3), 0 2px 8px rgba(0,0,0,0.5)" }}>
+          <div className="flex items-center gap-4 px-5 py-3.5 rounded-2xl glass border border-white/10 shadow-2xl">
             {/* Avatar */}
             <div className="relative shrink-0">
               <div className="w-10 h-10 rounded-full border-2 border-purple-500/40 overflow-hidden">
@@ -48,7 +47,9 @@ export function FloatingBar() {
 
             {/* Name & status */}
             <div className="hidden sm:block">
-              <p className="text-sm font-semibold text-white leading-tight">Axel Coudair</p>
+              <p className="text-sm font-semibold text-white leading-tight">
+                Axel Coudair
+              </p>
               <p className="text-xs text-green-400 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
                 En ligne · Réponse sous 24h
@@ -62,7 +63,9 @@ export function FloatingBar() {
               <a
                 href="tel:+33648180606"
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+                style={{
+                  background: "linear-gradient(135deg, #2708a0, #653ad2)",
+                }}
                 title="Appeler"
               >
                 <Phone className="w-4 h-4" />
