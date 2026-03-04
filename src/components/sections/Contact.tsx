@@ -32,7 +32,7 @@ export function Contact() {
               </AuroraText>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Pas de commercial, pas de devis impersonnel. On parle directement.
+              Décrivez-moi votre projet en quelques mots. Je vous réponds personnellement avec une analyse honnête et des pistes concrètes, sans engagement.
             </p>
             <div className="flex items-center justify-center gap-2 mt-4">
               <Clock className="w-4 h-4 text-purple-400" />
@@ -60,6 +60,20 @@ export function Contact() {
               <MessageCircle className="w-5 h-5" />
               WhatsApp
             </a>
+          </div>
+        </BlurFade>
+
+        {/* Urgency note */}
+        <BlurFade inView delay={0.5}>
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass border border-amber-500/20">
+              <span className="text-amber-400 text-sm">⚡</span>
+              <span className="text-sm text-white/60">
+                Plus que{" "}
+                <span className="text-amber-300 font-bold">2 places disponibles</span>{" "}
+                ce mois-ci, les projets sérieux passent vite.
+              </span>
+            </div>
           </div>
         </BlurFade>
       </div>

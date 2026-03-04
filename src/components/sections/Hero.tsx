@@ -103,8 +103,12 @@ export function Hero() {
 
         // Draw
         const grad = ctx.createRadialGradient(
-          orb.x, orb.y, 0,
-          orb.x, orb.y, orb.size
+          orb.x,
+          orb.y,
+          0,
+          orb.x,
+          orb.y,
+          orb.size,
         );
         const pulsingOpacity = orb.opacity + Math.sin(t * 1.5 + i) * 0.04;
         grad.addColorStop(0, `${orb.color}${pulsingOpacity})`);
@@ -202,7 +206,35 @@ export function Hero() {
           transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
         >
-          <span className="text-white">Imaginez </span><AuroraText colors={["#ffffff", "#a78bfa", "#8b5cf6", "#653ad2", "#c4b5fd", "#ffffff"]} className="font-poppins font-light">un site web</AuroraText><span className="text-white"> qui vous amène </span><AuroraText colors={["#ffffff", "#a78bfa", "#8b5cf6", "#653ad2", "#c4b5fd", "#ffffff"]} className="font-poppins font-light">des clients</AuroraText><span className="text-white"> pendant que vous dormez.</span>
+          <span className="text-white">Imaginez </span>
+          <AuroraText
+            colors={[
+              "#ffffff",
+              "#a78bfa",
+              "#8b5cf6",
+              "#653ad2",
+              "#c4b5fd",
+              "#ffffff",
+            ]}
+            className="font-poppins font-light"
+          >
+            un site web
+          </AuroraText>
+          <span className="text-white"> qui vous amène </span>
+          <AuroraText
+            colors={[
+              "#ffffff",
+              "#a78bfa",
+              "#8b5cf6",
+              "#653ad2",
+              "#c4b5fd",
+              "#ffffff",
+            ]}
+            className="font-poppins font-light"
+          >
+            des clients
+          </AuroraText>
+          <span className="text-white"> pendant que vous dormez.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -213,9 +245,12 @@ export function Hero() {
           className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Expert web indépendant, je conçois des sites{" "}
-          <span className="text-purple-300 font-medium">stratégiques</span>, modernes et optimisés SEO
-          pour les PME qui veulent{" "}
-          <span className="text-purple-300 font-medium">transformer leurs visiteurs en clients</span>.
+          <span className="text-purple-300 font-medium">stratégiques</span>,
+          modernes et optimisés SEO pour les PME qui veulent{" "}
+          <span className="text-purple-300 font-medium">
+            transformer leurs visiteurs en clients
+          </span>
+          .
         </motion.p>
 
         {/* CTAs */}
@@ -251,6 +286,18 @@ export function Hero() {
           </a>
         </motion.div>
 
+        {/* Urgency bubble */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          className="flex justify-center"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white/60">
+            <span className="text-amber-400">⚡</span>
+            Plus que <span className="text-amber-300 font-semibold">2 places disponibles</span> ce mois-ci
+          </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -260,7 +307,9 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-white/30 tracking-widest uppercase">Scroll</span>
+        <span className="text-xs text-white/30 tracking-widest uppercase">
+          Scroll
+        </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
