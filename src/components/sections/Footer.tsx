@@ -95,7 +95,9 @@ export function Footer() {
 
             <div className="flex items-center gap-3 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/axel-coudair/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-purple-500/30 transition-all duration-200"
               >
                 <Linkedin className="w-4 h-4" />

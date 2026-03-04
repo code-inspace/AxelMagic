@@ -176,8 +176,10 @@ export function Process() {
               Prêt à lancer votre projet ?
             </p>
             <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white transition-all duration-300"
+              href="https://app.lemcal.com/@axelcoudair/30-minutes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
               style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
             >
               Réserver mon appel découverte →
