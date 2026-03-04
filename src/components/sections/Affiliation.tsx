@@ -84,7 +84,7 @@ export function Affiliation() {
                     href="https://wa.me/33648180606"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300"
                     style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                   >
                     Je connais quelqu'un

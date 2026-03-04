@@ -61,7 +61,7 @@ export function FloatingBar() {
             <div className="flex items-center gap-2">
               <a
                 href="tel:+33648180606"
-                className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
+                className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 title="Appeler"
               >
@@ -73,7 +73,7 @@ export function FloatingBar() {
                 href="https://wa.me/33648180606"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-xl text-sm font-semibold text-white bg-[#25D366] hover:bg-[#1db954] transition-colors duration-300"
+                className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
                 title="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />

@@ -56,7 +56,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#contact"
-            className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
             Audit gratuit
@@ -94,7 +94,7 @@ export function Navbar() {
               ))}
               <a
                 href="#contact"
-                className="block mt-3 px-5 py-3 rounded-xl text-sm font-semibold text-white text-center"
+                className="block mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 onClick={() => setMobileOpen(false)}
               >

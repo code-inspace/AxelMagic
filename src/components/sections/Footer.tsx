@@ -86,7 +86,7 @@ export function Footer() {
                 href="https://wa.me/33648180606"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#25D366] hover:text-[#1db954] text-sm transition-colors duration-200"
+                className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp

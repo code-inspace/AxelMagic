@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, ArrowRight, Clock } from "lucide-react";
+import { MessageCircle, ArrowRight, Clock } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { WordRotate } from "@/components/magicui/word-rotate";
 
@@ -239,7 +239,7 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white transition-all duration-300 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 overflow-hidden"
             style={{
               background: "linear-gradient(135deg, #2708a0, #653ad2)",
             }}
@@ -247,16 +247,16 @@ export function Hero() {
             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative">Audit gratuit</span>
             <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            <span className="absolute inset-0 rounded-2xl glow-primary-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="absolute inset-0 rounded-full glow-primary-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
 
           <a
             href="https://wa.me/33648180606"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white glass border border-white/10 hover:border-purple-500/40 transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
           >
-            <MessageCircle className="w-4 h-4 text-green-400" />
+            <MessageCircle className="w-4 h-4" />
             Me contacter
           </a>
         </motion.div>

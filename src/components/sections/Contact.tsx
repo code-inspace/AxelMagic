@@ -45,7 +45,7 @@ export function Contact() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:+33648180606"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
               style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
             >
               <Phone className="w-5 h-5" />
@@ -55,7 +55,7 @@ export function Contact() {
               href="https://wa.me/33648180606"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold text-white bg-[#25D366] hover:bg-[#1db954] transition-colors duration-300"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
             >
               <MessageCircle className="w-5 h-5" />
               WhatsApp
