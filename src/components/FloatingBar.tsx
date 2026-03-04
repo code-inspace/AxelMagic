@@ -46,7 +46,7 @@ export function FloatingBar() {
             </div>
 
             {/* Name & status */}
-            <div className="hidden sm:block">
+            <div>
               <p className="text-sm font-semibold text-white leading-tight">
                 Axel Coudair
               </p>
