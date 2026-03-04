@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(open:*)",
+      "WebFetch(domain:ui.aceternity.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

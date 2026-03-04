@@ -10,14 +10,12 @@ function ProjectContent({
   context,
   result,
   tags,
-  accent,
   link,
 }: {
   description: string;
   context?: string;
   result?: string;
   tags: string[];
-  accent: string;
   link?: string;
 }) {
   return (
@@ -39,8 +37,7 @@ function ProjectContent({
                 Résultat
               </h4>
               <div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold"
-                style={{ background: `${accent}20`, color: accent }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold bg-white/10 text-white"
               >
                 <span>📈</span>
                 {result}
@@ -106,8 +103,7 @@ function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
             <X className="w-4 h-4" />
           </button>
           <div
-            className="h-64 relative overflow-hidden rounded-t-3xl flex-shrink-0"
-            style={{ background: card.background }}
+            className="h-64 relative overflow-hidden rounded-t-3xl flex-shrink-0 bg-[#141416]"
           >
             {card.image && (
               <img
@@ -157,7 +153,6 @@ const cards: CardData[] = [
     id: "lucafit",
     category: "Figma · Webflow · SEO",
     title: "LucasFit",
-    background: "linear-gradient(135deg, #f97316 0%, #ef4444 40%, #7c3aed 100%)",
     image: "/images/Lucassanchez/Preview/lucas fit preview.jpeg",
     gallery: [
       "/images/Lucassanchez/lucafit1.png",
@@ -169,7 +164,6 @@ const cards: CardData[] = [
       <ProjectContent
         description={"LucasFit est un projet fictif conçu comme une étude de cas autour de la mise en valeur d'un coach sportif personnel. L'objectif était de construire un site qui transmette de l'énergie et donne envie de passer à l'action.\n\nLe site a été développé sur Webflow avec un parti pris graphique assumé : sections en biais, éléments légèrement inclinés, mise en page qui sort de la grille. Rien n'est parfaitement droit, et c'est voulu — cette tension visuelle invite au mouvement plutôt qu'à la lecture passive.\n\nLe choix du noir, blanc et rouge vif repose sur une logique de contraste fort. Le noir et blanc posent une base sérieuse et percutante. Le rouge vient cibler l'attention sur les éléments clés : appels à l'action, chiffres, titres. C'est une combinaison qui marque et qui reste en tête.\n\nLe SEO a été intégré avec une structure sémantique soignée, des balises title et meta optimisées, et une hiérarchie de contenus orientée vers les recherches liées au coaching sportif."}
         tags={["Figma", "Webflow", "SEO"]}
-        accent="#f97316"
       />
     ),
   },
@@ -177,7 +171,6 @@ const cards: CardData[] = [
     id: "adn-paris",
     category: "WordPress · Figma · UI Design · SEO",
     title: "ADN Paris",
-    background: "linear-gradient(135deg, #6366f1 0%, #4338ca 50%, #1e1b4b 100%)",
     image: "/images/ADN/Preview/adn-preview.jpg",
     gallery: [
       "/images/ADN/hero.png",
@@ -189,7 +182,6 @@ const cards: CardData[] = [
       <ProjectContent
         description={"ADN Paris est une association parisienne qui accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires.\n\nJ'ai pris en charge le projet de A à Z : conception de la maquette sur Figma, puis développement sous WordPress. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard — en accord avec les valeurs de l'association.\n\nJ'ai également travaillé le SEO : structure des pages, balises title et meta, hiérarchie des contenus. L'objectif était de rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris."}
         tags={["WordPress", "Figma", "UI Design", "SEO"]}
-        accent="#6366f1"
       />
     ),
   },
@@ -247,7 +239,6 @@ export function Portfolio2() {
                 transition={{ duration: 0.25 }}
                 className="relative w-full h-[420px] rounded-3xl overflow-hidden cursor-pointer select-none"
                 style={{
-                  background: card.background,
                   opacity: activeCard?.id === card.id ? 0 : 1,
                   pointerEvents: activeCard?.id === card.id ? "none" : "auto",
                 }}
