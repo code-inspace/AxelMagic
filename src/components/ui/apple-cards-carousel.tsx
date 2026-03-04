@@ -8,6 +8,7 @@ export interface CardData {
   title: string;
   background: string;
   image?: string;
+  gallery?: string[];
   content: ReactNode;
 }
 

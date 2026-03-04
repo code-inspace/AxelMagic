@@ -14,35 +14,41 @@ function ProjectContent({
   link,
 }: {
   description: string;
-  context: string;
-  result: string;
+  context?: string;
+  result?: string;
   tags: string[];
   accent: string;
-  link: string;
+  link?: string;
 }) {
   return (
     <div className="space-y-6">
-      <p className="text-white/70 text-sm leading-relaxed">{description}</p>
-      <div className="grid sm:grid-cols-2 gap-5">
-        <div>
-          <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
-            Contexte
-          </h4>
-          <p className="text-white/65 text-sm leading-relaxed">{context}</p>
+      <p className="text-white/70 text-sm leading-relaxed whitespace-pre-line">{description}</p>
+      {(context || result) && (
+        <div className="grid sm:grid-cols-2 gap-5">
+          {context && (
+            <div>
+              <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
+                Contexte
+              </h4>
+              <p className="text-white/65 text-sm leading-relaxed">{context}</p>
+            </div>
+          )}
+          {result && (
+            <div>
+              <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
+                Résultat
+              </h4>
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold"
+                style={{ background: `${accent}20`, color: accent }}
+              >
+                <span>📈</span>
+                {result}
+              </div>
+            </div>
+          )}
         </div>
-        <div>
-          <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
-            Résultat
-          </h4>
-          <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold"
-            style={{ background: `${accent}20`, color: accent }}
-          >
-            <span>📈</span>
-            {result}
-          </div>
-        </div>
-      </div>
+      )}
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
           <span
@@ -53,14 +59,16 @@ function ProjectContent({
           </span>
         ))}
       </div>
-      <a
-        href={link}
-        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
-        style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
-      >
-        Voir le projet
-        <ExternalLink className="w-3.5 h-3.5" />
-      </a>
+      {link && (
+        <a
+          href={link}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
+          style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+        >
+          Voir le projet
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      )}
     </div>
   );
 }
@@ -120,6 +128,23 @@ function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
           </div>
           <div className="bg-[#0E0F11] rounded-b-3xl border border-white/[0.07] border-t-0 p-7">
             {card.content}
+            {card.gallery && card.gallery.length > 0 && (
+              <div className="mt-8">
+                <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-4">
+                  Aperçu
+                </h4>
+                <div className="space-y-3">
+                  {card.gallery.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`${card.title} screenshot ${i + 1}`}
+                      className="w-full rounded-xl border border-white/[0.07] object-cover"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>
@@ -147,18 +172,20 @@ const cards: CardData[] = [
   },
   {
     id: "adn-paris",
-    category: "Site vitrine · Immobilier",
+    category: "Site vitrine · Association",
     title: "ADN Paris",
     background: "linear-gradient(135deg, #6366f1 0%, #4338ca 50%, #1e1b4b 100%)",
-    image: "/images/ADN/Preview/adn-preview.jpg",
+    image: "/images/ADN/hero.png",
+    gallery: [
+      "/images/ADN/content 1.png",
+      "/images/ADN/content 2.png",
+      "/images/ADN/content3 & footer.png",
+    ],
     content: (
       <ProjectContent
-        description="Site vitrine haut de gamme pour une agence immobilière parisienne spécialisée dans le prestige. Design épuré et luxueux, système de filtres avancés pour les biens, intégration CRM et lead generation optimisée."
-        context="ADN Paris souhaitait se différencier des grands portails immobiliers avec une identité forte et un site qui reflète le caractère exclusif de leurs biens."
-        result="+240% de leads qualifiés"
-        tags={["Développement web", "UI Design", "UX Design", "Stratégie digitale"]}
+        description={"ADN Paris est une association parisienne qui accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires.\n\nJ'ai pris en charge le projet de A à Z : conception de la maquette sur Figma, puis développement sous WordPress. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard — en accord avec les valeurs de l'association.\n\nJ'ai également travaillé le SEO : structure des pages, balises title et meta, hiérarchie des contenus. L'objectif était de rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris."}
+        tags={["WordPress", "Figma", "UI Design", "SEO"]}
         accent="#6366f1"
-        link="#"
       />
     ),
   },
