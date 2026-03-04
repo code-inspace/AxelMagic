@@ -17,7 +17,7 @@ const services = [
     title: "E-Commerce",
     description: "Une boutique en ligne performante et intuitive. Tunnel d'achat optimisé, intégration paiement, gestion des stocks.",
     gradient: "from-violet-500/20 to-purple-500/10",
-    tags: ["Stripe", "WooCommerce", "Analytics"],
+    tags: ["Stripe", "Analytics"],
   },
   {
     icon: Database,
