@@ -5,12 +5,10 @@ import { TextReveal } from "@/components/magicui/text-reveal";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { DotPattern } from "@/components/magicui/dot-pattern";
-import { Briefcase, Award, Users, Zap } from "lucide-react";
+import { Briefcase, Zap } from "lucide-react";
 
 const stats = [
   { value: 8, suffix: "+", label: "années d'expérience", icon: Briefcase },
-  { value: 40, suffix: "+", label: "projets livrés", icon: Award },
-  { value: 100, suffix: "%", label: "clients satisfaits", icon: Users },
   { value: 30, suffix: "j", label: "délai de livraison", icon: Zap },
 ];
 
@@ -119,7 +117,6 @@ export function About() {
                 </BlurFade>
               ))}
             </div>
-
             {/* Photo placeholder */}
             <BlurFade inView delay={0.6}>
               <div className="mt-6 glass-card border border-white/[0.07] p-4 rounded-2xl flex items-center gap-4">
@@ -147,6 +144,7 @@ export function About() {
                 </div>
               </div>
             </BlurFade>
+
           </div>
         </div>
       </div>
