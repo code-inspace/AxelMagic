@@ -73,7 +73,7 @@ export function Footer() {
                 className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
-                +33 6 48 18 06 06
+                +33 7 60 96 64 96
               </a>
               <a
                 href="mailto:hello@axelcoudair.com"
