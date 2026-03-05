@@ -216,17 +216,17 @@ export function Process() {
         <BlurFade inView delay={0.6}>
           <div className="mt-12 text-center">
             <p className="text-white/50 mb-6">Prêt à lancer votre projet ?</p>
-            <a
-              href="https://app.lemcal.com/@axelcoudair/30-minutes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
+            <button
+              data-cal-namespace="30min"
+              data-cal-link="axel-coudair-hhelf2/30min"
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 cursor-pointer"
               style={{
                 background: "linear-gradient(135deg, #2708a0, #653ad2)",
               }}
             >
               Réserver mon appel découverte →
-            </a>
+            </button>
           </div>
         </BlurFade>
       </div>

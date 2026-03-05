@@ -55,13 +55,11 @@ export function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://app.lemcal.com/@axelcoudair/30-minutes"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
-            Audit gratuit
+            Me contacter
           </a>
         </div>
 
@@ -95,14 +93,12 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="https://app.lemcal.com/@axelcoudair/30-minutes"
-            target="_blank"
-            rel="noopener noreferrer"
+                href="#contact"
                 className="block mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 onClick={() => setMobileOpen(false)}
               >
-                Audit gratuit
+                Me contacter
               </a>
             </div>
           </motion.div>

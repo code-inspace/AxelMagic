@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Calendar, ArrowRight, Clock } from "lucide-react";
+import {
+  Phone,
+  MessageCircle,
+  Calendar,
+  ArrowRight,
+  Clock,
+} from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
 
@@ -49,7 +55,8 @@ export function Contact() {
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 50% 60%, #653ad2, transparent 60%)",
+          background:
+            "radial-gradient(ellipse at 50% 60%, #653ad2, transparent 60%)",
         }}
       />
 
@@ -68,16 +75,21 @@ export function Contact() {
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-4">
               Prêt à lancer votre{" "}
-              <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>
+              <AuroraText
+                colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}
+              >
                 projet web ?
               </AuroraText>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Choisissez la façon dont vous souhaitez commencer. Pas de commercial, pas de devis impersonnel, on parle directement.
+              Choisissez la façon dont vous souhaitez commencer. Pas de
+              commercial, pas de devis impersonnel, on parle directement.
             </p>
             <div className="flex items-center justify-center gap-2 mt-4">
               <Clock className="w-4 h-4 text-purple-400" />
-              <span className="text-purple-300 text-sm font-medium">Réponse garantie sous 24h</span>
+              <span className="text-purple-300 text-sm font-medium">
+                Réponse garantie sous 24h
+              </span>
             </div>
           </div>
         </BlurFade>
@@ -113,23 +125,38 @@ export function Contact() {
                     <action.icon className="w-6 h-6 text-purple-400" />
                   </div>
 
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border mb-3 w-fit ${action.badgeColor}`}>
+                  <span
+                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border mb-3 w-fit ${action.badgeColor}`}
+                  >
                     {action.badge}
                   </span>
 
-                  <h3 className="text-lg font-bold text-white mb-3">{action.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed flex-1">{action.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">
+                    {action.title}
+                  </h3>
+                  <p className="text-white/55 text-sm leading-relaxed flex-1">
+                    {action.description}
+                  </p>
 
                   <a
                     href={action.href}
-                    target={action.href.startsWith("http") ? "_blank" : undefined}
+                    target={
+                      action.href.startsWith("http") ? "_blank" : undefined
+                    }
                     rel="noopener noreferrer"
                     className={`mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                       action.primary
                         ? "text-white glow-primary-sm"
                         : "glass border border-white/10 text-white hover:border-purple-500/30"
                     }`}
-                    style={action.primary ? { background: "linear-gradient(135deg, #2708a0, #653ad2)" } : {}}
+                    style={
+                      action.primary
+                        ? {
+                            background:
+                              "linear-gradient(135deg, #2708a0, #653ad2)",
+                          }
+                        : {}
+                    }
                   >
                     {action.cta}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -147,7 +174,9 @@ export function Contact() {
               <span className="text-amber-400 text-sm">⚡</span>
               <span className="text-sm text-white/60">
                 Plus que{" "}
-                <span className="text-amber-300 font-bold">2 places disponibles</span>{" "}
+                <span className="text-amber-300 font-bold">
+                  2 places disponibles
+                </span>{" "}
                 ce mois-ci, les projets sérieux passent vite.
               </span>
             </div>

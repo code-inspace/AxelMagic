@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
@@ -12,6 +14,16 @@ import { Footer } from "@/components/sections/Footer";
 import { FloatingBar } from "@/components/FloatingBar";
 
 function App() {
+  useEffect(() => {
+    (async () => {
+      const cal30 = await getCalApi({ namespace: "30min" });
+      cal30("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+
+      const calAudit = await getCalApi({ namespace: "audit-gratuit" });
+      calAudit("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0E0F11] text-white overflow-x-hidden">
       <ScrollProgress />

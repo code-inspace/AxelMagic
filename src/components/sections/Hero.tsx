@@ -260,28 +260,25 @@ export function Hero() {
           transition={{ delay: 0.65, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
-          <a
-            href="https://app.lemcal.com/@axelcoudair/30-minutes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 overflow-hidden"
+          <button
+            data-cal-namespace="30min"
+            data-cal-link="axel-coudair-hhelf2/30min"
+            data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 overflow-hidden cursor-pointer"
             style={{
               background: "linear-gradient(135deg, #2708a0, #653ad2)",
             }}
           >
             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative">Audit gratuit</span>
+            <span className="relative">Planifier un rendez-vous</span>
             <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
             <span className="absolute inset-0 rounded-full glow-primary-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          </button>
 
           <a
-            href="https://wa.me/message/NUKO2RPNV3BUF1"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
           >
-            <MessageCircle className="w-4 h-4" />
             Me contacter
           </a>
         </motion.div>
