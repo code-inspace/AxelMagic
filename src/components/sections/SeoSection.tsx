@@ -46,7 +46,10 @@ export function SeoSection() {
       {/* Decorative elements */}
       <div
         className="absolute top-1/2 right-0 w-[400px] h-[600px] -translate-y-1/2 opacity-[0.07] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at right, #653ad2, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse at right, #653ad2, transparent 70%)",
+        }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -65,25 +68,39 @@ export function SeoSection() {
             <div>
               <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-6">
                 Je ne fais pas que des sites{" "}
-                <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>
+                <AuroraText
+                  colors={[
+                    "#ffffff",
+                    "#a78bfa",
+                    "#653ad2",
+                    "#8b5cf6",
+                    "#ffffff",
+                  ]}
+                >
                   beaux.
                 </AuroraText>
               </h2>
 
               <div className="space-y-4 text-white/65 text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Un site invisible, c'est un site inutile.</span>
+                  <span className="text-white font-semibold">
+                    Un site invisible, c'est un site inutile.
+                  </span>
                 </p>
                 <p>
-                  Un design soigné, c'est le minimum. Ce qui fait vraiment la différence, c'est un site que{" "}
-                  <span className="text-purple-300">Google trouve</span>, que vos visiteurs comprennent, et qui les{" "}
+                  Un design soigné, c'est le minimum. Ce qui fait vraiment la
+                  différence, c'est un site que{" "}
+                  <span className="text-purple-300">Google trouve</span>, que
+                  vos visiteurs comprennent, et qui les{" "}
                   <span className="text-purple-300">pousse à agir</span>.
                 </p>
               </div>
 
               {/* Morphing text */}
               <div className="mt-8 p-5 glass-card border border-purple-500/20 rounded-2xl">
-                <p className="text-xs text-white/40 mb-2 uppercase tracking-wider">Ce que je fais concrètement</p>
+                <p className="text-xs text-white/40 mb-2 uppercase tracking-wider">
+                  Ce que je fais concrètement
+                </p>
                 <div className="text-xl font-bold text-white">
                   <MorphingText
                     texts={[
@@ -120,19 +137,32 @@ export function SeoSection() {
                   { label: "Performance", score: 98, color: "#22c55e" },
                   { label: "SEO", score: 100, color: "#a78bfa" },
                   { label: "Accessibilité", score: 95, color: "#60a5fa" },
-                  { label: "Meilleures pratiques", score: 100, color: "#f59e0b" },
+                  {
+                    label: "Meilleures pratiques",
+                    score: 100,
+                    color: "#f59e0b",
+                  },
                 ].map(({ label, score, color }) => (
-                  <div key={label} className="glass p-3 rounded-xl border border-white/[0.06]">
+                  <div
+                    key={label}
+                    className="glass p-3 rounded-xl border border-white/[0.06]"
+                  >
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-xs text-white/50">{label}</span>
-                      <span className="text-sm font-bold" style={{ color }}>{score}</span>
+                      <span className="text-sm font-bold" style={{ color }}>
+                        {score}
+                      </span>
                     </div>
                     <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${score}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+                        transition={{
+                          duration: 1.2,
+                          delay: 0.3,
+                          ease: "easeOut",
+                        }}
                         className="h-full rounded-full"
                         style={{ background: color }}
                       />
@@ -144,15 +174,17 @@ export function SeoSection() {
               {/* Load time */}
               <div
                 className="flex items-center justify-between p-4 rounded-xl"
-                style={{ background: "linear-gradient(135deg, #22c55e10, #22c55e05)" }}
+                style={{
+                  background: "linear-gradient(135deg, #22c55e10, #22c55e05)",
+                }}
               >
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-green-400" />
-                  <span className="text-sm text-white/70">Temps de chargement</span>
+                  <span className="text-sm text-white/70">
+                    Temps de chargement
+                  </span>
                 </div>
-                <span className="font-bold text-green-400">
-                  &lt; 1.2s
-                </span>
+                <span className="font-bold text-green-400">&lt; 1.2s</span>
               </div>
             </div>
           </BlurFade>
@@ -171,12 +203,12 @@ export function SeoSection() {
                     <pillar.icon className="w-5 h-5 text-purple-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-white mb-2">{pillar.title}</h3>
-                    <p className="text-white/55 text-sm leading-relaxed">{pillar.description}</p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <div className="text-xl font-black aurora-text">{pillar.metric}</div>
-                    <div className="text-xs text-white/30 mt-0.5 max-w-[80px] text-right">{pillar.metricLabel}</div>
+                    <h3 className="font-bold text-white mb-2">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-white/55 text-sm leading-relaxed">
+                      {pillar.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
