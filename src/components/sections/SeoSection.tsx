@@ -34,7 +34,7 @@ const pillars = [
     icon: TrendingUp,
     title: "Évolutif & Maintenable",
     description:
-      "Votre site grandit avec vous. Technologies modernes, code propre, documentation. Vous restez maître de votre outil.",
+      "Votre site grandit avec vous. Technologies modernes, code propre. Vous restez maître de votre outil.",
     metric: "∞",
     metricLabel: "évolutivité",
   },
