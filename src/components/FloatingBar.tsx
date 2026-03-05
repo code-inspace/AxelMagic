@@ -61,7 +61,7 @@ export function FloatingBar() {
             {/* CTA buttons */}
             <div className="flex items-center gap-2">
               <a
-                href="tel:+33648180606"
+                href="tel:+33760966496"
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #2708a0, #653ad2)",
@@ -73,7 +73,7 @@ export function FloatingBar() {
               </a>
 
               <a
-                href="https://wa.me/33648180606"
+                href="https://wa.me/message/NUKO2RPNV3BUF1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"

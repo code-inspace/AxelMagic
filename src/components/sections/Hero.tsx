@@ -276,7 +276,7 @@ export function Hero() {
           </a>
 
           <a
-            href="https://wa.me/33648180606"
+            href="https://wa.me/message/NUKO2RPNV3BUF1"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"

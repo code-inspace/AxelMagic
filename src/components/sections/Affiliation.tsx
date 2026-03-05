@@ -7,19 +7,22 @@ const steps = [
   {
     icon: Share2,
     title: "Partagez mon contact",
-    description: "Présentez-moi à un entrepreneur, une PME ou un indépendant qui cherche un site web.",
+    description:
+      "Présentez-moi à un entrepreneur, une PME ou un indépendant qui cherche un site web.",
     step: "01",
   },
   {
     icon: Users,
     title: "Il devient client",
-    description: "On échange, on s'entend, on lance le projet. Votre recommandation est notée.",
+    description:
+      "On échange, on s'entend, on lance le projet. Votre recommandation est notée.",
     step: "02",
   },
   {
     icon: Gift,
     title: "Vous recevez 10%",
-    description: "Dès la signature du bon de commande, vous touchez 10% du montant du projet.",
+    description:
+      "Dès la signature du bon de commande, vous touchez 10% du montant du projet.",
     step: "03",
   },
 ];
@@ -31,7 +34,8 @@ export function Affiliation() {
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 60% 50%, #653ad2, transparent 60%)",
+          background:
+            "radial-gradient(ellipse at 60% 50%, #653ad2, transparent 60%)",
         }}
       />
 
@@ -57,14 +61,24 @@ export function Affiliation() {
                 <BlurFade inView delay={0.1}>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/10 mb-6">
                     <Percent className="w-4 h-4 text-amber-400" />
-                    <span className="text-sm font-semibold text-amber-300">Programme d'affiliation</span>
+                    <span className="text-sm font-semibold text-amber-300">
+                      Programme d'affiliation
+                    </span>
                   </div>
                 </BlurFade>
 
                 <BlurFade inView delay={0.2}>
                   <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-6">
                     Présentez-moi des clients,{" "}
-                    <AuroraText colors={["#ffffff", "#fbbf24", "#f59e0b", "#fcd34d", "#ffffff"]}>
+                    <AuroraText
+                      colors={[
+                        "#ffffff",
+                        "#fbbf24",
+                        "#f59e0b",
+                        "#fcd34d",
+                        "#ffffff",
+                      ]}
+                    >
                       recevez 10%.
                     </AuroraText>
                   </h2>
@@ -72,20 +86,25 @@ export function Affiliation() {
 
                 <BlurFade inView delay={0.3}>
                   <p className="text-white/60 text-lg leading-relaxed mb-8">
-                    Vous connaissez un entrepreneur, une PME ou un indépendant qui a besoin d'un site ?
-                    Mettez-nous en contact. Si le projet aboutit, je vous reverse{" "}
-                    <span className="text-white font-semibold">10% du montant total</span>.
-                    Simple, transparent, sans conditions.
+                    Vous connaissez un entrepreneur, une PME ou un indépendant
+                    qui a besoin d'un site ? Mettez-nous en contact. Si le
+                    projet aboutit, je vous reverse{" "}
+                    <span className="text-white font-semibold">
+                      10% du montant total
+                    </span>
+                    . Simple, transparent, sans conditions.
                   </p>
                 </BlurFade>
 
                 <BlurFade inView delay={0.4}>
                   <a
-                    href="https://wa.me/33648180606"
+                    href="https://wa.me/message/NUKO2RPNV3BUF1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300"
-                    style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+                    style={{
+                      background: "linear-gradient(135deg, #2708a0, #653ad2)",
+                    }}
                   >
                     Je connais quelqu'un
                     <ArrowRight className="w-4 h-4" />
@@ -108,8 +127,12 @@ export function Affiliation() {
                         <span className="text-xs text-purple-400 font-bold tracking-wider">
                           ÉTAPE {step.step}
                         </span>
-                        <h3 className="text-white font-bold mt-0.5 mb-1">{step.title}</h3>
-                        <p className="text-white/55 text-sm leading-relaxed">{step.description}</p>
+                        <h3 className="text-white font-bold mt-0.5 mb-1">
+                          {step.title}
+                        </h3>
+                        <p className="text-white/55 text-sm leading-relaxed">
+                          {step.description}
+                        </p>
                       </div>
                     </motion.div>
                   </BlurFade>

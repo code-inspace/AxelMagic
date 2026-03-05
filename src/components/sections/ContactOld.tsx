@@ -34,7 +34,7 @@ const actions = [
     description:
       "Une question rapide ? Un projet à me décrire ? Écrivez-moi directement sur WhatsApp. Je réponds dans la journée.",
     cta: "Écrire sur WhatsApp",
-    href: "https://wa.me/33600000000",
+    href: "https://wa.me/message/NUKO2RPNV3BUF1",
     badge: "Réponse rapide",
     badgeColor: "bg-green-500/20 text-green-300 border-green-500/30",
     gradient: "from-green-500/10 to-teal-500/5",

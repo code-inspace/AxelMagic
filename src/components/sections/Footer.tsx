@@ -69,7 +69,7 @@ export function Footer() {
             </h3>
             <div className="space-y-3">
               <a
-                href="tel:+33648180606"
+                href="tel:+33760966496"
                 className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
@@ -83,7 +83,7 @@ export function Footer() {
                 hello@axelcoudair.com
               </a>
               <a
-                href="https://wa.me/33648180606"
+                href="https://wa.me/message/NUKO2RPNV3BUF1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
@@ -95,7 +95,9 @@ export function Footer() {
 
             <div className="mt-6">
               <div className="h-px bg-white/[0.06] mb-4" />
-              <p className="text-xs text-white/40 uppercase tracking-widest font-medium mb-3">Suivez moi</p>
+              <p className="text-xs text-white/40 uppercase tracking-widest font-medium mb-3">
+                Suivez moi
+              </p>
               <a
                 href="https://www.linkedin.com/in/axel-coudair/"
                 target="_blank"

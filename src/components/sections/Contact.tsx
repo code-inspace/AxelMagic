@@ -8,7 +8,8 @@ export function Contact() {
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 50% 60%, #653ad2, transparent 60%)",
+          background:
+            "radial-gradient(ellipse at 50% 60%, #653ad2, transparent 60%)",
         }}
       />
 
@@ -27,16 +28,22 @@ export function Contact() {
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-4">
               Prêt à lancer votre{" "}
-              <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>
+              <AuroraText
+                colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}
+              >
                 projet web ?
               </AuroraText>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Décrivez-moi votre projet en quelques mots. Je vous réponds personnellement avec une analyse honnête et des pistes concrètes, sans engagement.
+              Décrivez-moi votre projet en quelques mots. Je vous réponds
+              personnellement avec une analyse honnête et des pistes concrètes,
+              sans engagement.
             </p>
             <div className="flex items-center justify-center gap-2 mt-4">
               <Clock className="w-4 h-4 text-purple-400" />
-              <span className="text-purple-300 text-sm font-medium">Réponse garantie sous 24h</span>
+              <span className="text-purple-300 text-sm font-medium">
+                Réponse garantie sous 24h
+              </span>
             </div>
           </div>
         </BlurFade>
@@ -44,15 +51,17 @@ export function Contact() {
         <BlurFade inView delay={0.2}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:+33648180606"
+              href="tel:+33760966496"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+              style={{
+                background: "linear-gradient(135deg, #2708a0, #653ad2)",
+              }}
             >
               <Phone className="w-5 h-5" />
               Appeler
             </a>
             <a
-              href="https://wa.me/33648180606"
+              href="https://wa.me/message/NUKO2RPNV3BUF1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
@@ -70,7 +79,9 @@ export function Contact() {
               <span className="text-amber-400 text-sm">⚡</span>
               <span className="text-sm text-white/60">
                 Plus que{" "}
-                <span className="text-amber-300 font-bold">2 places disponibles</span>{" "}
+                <span className="text-amber-300 font-bold">
+                  2 places disponibles
+                </span>{" "}
                 ce mois-ci, les projets sérieux passent vite.
               </span>
             </div>
