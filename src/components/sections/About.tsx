@@ -91,10 +91,10 @@ export function About() {
 
           {/* Right — stats */}
           <div ref={ref}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4" style={{ gridAutoRows: "1fr" }}>
               {stats.map(({ value, suffix, label, icon: Icon }, i) => (
-                <BlurFade key={label} inView delay={0.2 + i * 0.1}>
-                  <div className="glass-card border border-white/[0.07] hover:border-purple-500/30 transition-all duration-300 p-6 rounded-2xl group">
+                <BlurFade key={label} inView delay={0.2 + i * 0.1} className="h-full">
+                  <div className="glass-card border border-white/[0.07] hover:border-purple-500/30 transition-all duration-300 p-6 rounded-2xl group h-full">
                     <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors duration-300">
                       <Icon className="w-5 h-5 text-purple-400" />
                     </div>
@@ -136,8 +136,8 @@ export function About() {
                     Expert Web & Stratégie Digitale
                   </p>
                 </div>
-                <div className="ml-auto">
-                  <span className="text-xs text-green-400 flex items-center gap-1">
+                <div className="ml-auto shrink-0">
+                  <span className="text-xs text-green-400 flex items-center gap-1 whitespace-nowrap">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                     En ligne
                   </span>

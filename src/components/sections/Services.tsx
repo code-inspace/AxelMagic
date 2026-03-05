@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Monitor, ShoppingCart, Database, Layers, Zap, Search, Smartphone, TrendingUp } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import { Marquee } from "@/components/magicui/marquee";
 
 const services = [
   {
@@ -35,10 +34,6 @@ const services = [
   },
 ];
 
-const techStack = [
-  "Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL",
-  "Figma", "Vercel", "Stripe", "Prisma", "Framer Motion", "SEO", "Core Web Vitals",
-];
 
 export function Services() {
   return (
@@ -115,32 +110,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* Tech stack marquee */}
-        <BlurFade inView delay={0.4}>
-          <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0E0F11] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0E0F11] to-transparent z-10 pointer-events-none" />
-            <Marquee
-              gap="1.5rem"
-              duration="30s"
-              pauseOnHover
-              className="py-3"
-            >
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 text-sm text-white/60 font-medium shrink-0 whitespace-nowrap"
-                >
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
-                  />
-                  {tech}
-                </span>
-              ))}
-            </Marquee>
-          </div>
-        </BlurFade>
       </div>
     </section>
   );
