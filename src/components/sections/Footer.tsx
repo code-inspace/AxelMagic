@@ -27,12 +27,6 @@ export function Footer() {
               Expert web indépendant. Je conçois des sites stratégiques pour les
               PME qui veulent convertir leurs visiteurs en clients.
             </p>
-            <div className="flex items-center gap-2 mt-4">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs text-green-400">
-                Disponible · Réponse sous 24h
-              </span>
-            </div>
           </div>
 
           {/* Navigation */}

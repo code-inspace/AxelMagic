@@ -51,10 +51,6 @@ export function FloatingBar() {
               <p className="text-sm font-semibold text-white leading-tight">
                 Axel Coudair
               </p>
-              <p className="text-xs text-green-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                En ligne · Réponse sous 24h
-              </p>
             </div>
 
             <div className="w-px h-8 bg-white/10 mx-1 hidden sm:block" />
