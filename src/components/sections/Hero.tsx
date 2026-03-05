@@ -204,7 +204,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
+          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
         >
           <span className="text-white">Imaginez </span>
           <AuroraText
