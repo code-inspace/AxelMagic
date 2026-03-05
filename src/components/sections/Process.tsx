@@ -1,6 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MessageSquare, Paintbrush, Code, FileText, CheckCircle, HeartHandshake } from "lucide-react";
+import {
+  MessageSquare,
+  Paintbrush,
+  Code,
+  FileText,
+  CheckCircle,
+  HeartHandshake,
+} from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -11,7 +18,7 @@ const steps = [
     icon: MessageSquare,
     title: "Découverte",
     description:
-      "On commence par un échange approfondi pour comprendre votre activité, vos objectifs et vos clients. Pas de template générique : votre projet part de zéro.",
+      "On commence par un échange approfondi pour comprendre votre activité, vos objectifs et vos clients. ",
     duration: "Semaine 1",
     color: "#8b5cf6",
   },
@@ -71,7 +78,9 @@ export function Process() {
       {/* Decorative glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] opacity-[0.06] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #653ad2, transparent 70%)" }}
+        style={{
+          background: "radial-gradient(ellipse, #653ad2, transparent 70%)",
+        }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -89,12 +98,15 @@ export function Process() {
           <div className="text-center mb-4">
             <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-4">
               Votre site en ligne en{" "}
-              <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>
+              <AuroraText
+                colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}
+              >
                 30 jours.
               </AuroraText>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Un processus éprouvé, une méthode claire. Vous savez où en est votre projet à chaque étape.
+              Un processus éprouvé, une méthode claire. Vous savez où en est
+              votre projet à chaque étape.
             </p>
           </div>
         </BlurFade>
@@ -108,14 +120,26 @@ export function Process() {
             >
               <div className="text-center">
                 <div className="text-3xl font-black aurora-text">
-                  {isInView ? <NumberTicker value={30} delay={0} className="aurora-text" /> : "0"}
+                  {isInView ? (
+                    <NumberTicker
+                      value={30}
+                      delay={0}
+                      className="aurora-text"
+                    />
+                  ) : (
+                    "0"
+                  )}
                 </div>
                 <div className="text-xs text-white/40">jours</div>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div>
-                <p className="text-sm font-semibold text-white">Site clé en main</p>
-                <p className="text-xs text-white/40">Design · Dev · SEO · Livraison</p>
+                <p className="text-sm font-semibold text-white">
+                  Site clé en main
+                </p>
+                <p className="text-xs text-white/40">
+                  Design · Dev · SEO · Livraison
+                </p>
               </div>
             </div>
           </div>
@@ -124,7 +148,12 @@ export function Process() {
         {/* Steps */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
           {steps.map((step, i) => (
-            <BlurFade key={step.number} inView delay={0.1 + i * 0.08} className="h-full">
+            <BlurFade
+              key={step.number}
+              inView
+              delay={0.1 + i * 0.08}
+              className="h-full"
+            >
               <motion.div
                 whileHover={{ y: -4 }}
                 className="group relative glass-card border border-white/[0.07] hover:border-purple-500/25 transition-all duration-400 p-6 rounded-2xl overflow-hidden h-full"
@@ -142,11 +171,19 @@ export function Process() {
                   <div className="flex items-center justify-between mb-5">
                     <div
                       className="w-11 h-11 rounded-xl flex items-center justify-center"
-                      style={{ background: `${step.color}20`, border: `1px solid ${step.color}30` }}
+                      style={{
+                        background: `${step.color}20`,
+                        border: `1px solid ${step.color}30`,
+                      }}
                     >
-                      <step.icon className="w-5 h-5" style={{ color: step.color }} />
+                      <step.icon
+                        className="w-5 h-5"
+                        style={{ color: step.color }}
+                      />
                     </div>
-                    <span className="text-xs text-white/30 font-medium">{step.duration}</span>
+                    <span className="text-xs text-white/30 font-medium">
+                      {step.duration}
+                    </span>
                   </div>
 
                   <span
@@ -155,14 +192,20 @@ export function Process() {
                   >
                     ÉTAPE {step.number}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed whitespace-pre-line">{step.description}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/55 text-sm leading-relaxed whitespace-pre-line">
+                    {step.description}
+                  </p>
                 </div>
 
                 {/* Bottom gradient line */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `linear-gradient(to right, ${step.color}, transparent)` }}
+                  style={{
+                    background: `linear-gradient(to right, ${step.color}, transparent)`,
+                  }}
                 />
               </motion.div>
             </BlurFade>
@@ -172,15 +215,15 @@ export function Process() {
         {/* CTA */}
         <BlurFade inView delay={0.6}>
           <div className="mt-12 text-center">
-            <p className="text-white/50 mb-6">
-              Prêt à lancer votre projet ?
-            </p>
+            <p className="text-white/50 mb-6">Prêt à lancer votre projet ?</p>
             <a
               href="https://app.lemcal.com/@axelcoudair/30-minutes"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300"
-              style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+              style={{
+                background: "linear-gradient(135deg, #2708a0, #653ad2)",
+              }}
             >
               Réserver mon appel découverte →
             </a>
