@@ -38,6 +38,7 @@ export function FloatingBar() {
                   src="/images/photo-pro 3.jpg"
                   alt="Axel Coudair"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-400 border-2 border-[#0E0F11]">

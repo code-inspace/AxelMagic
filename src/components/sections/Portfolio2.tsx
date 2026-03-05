@@ -110,6 +110,7 @@ function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
                 src={card.image}
                 alt={card.title}
                 className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
@@ -136,6 +137,7 @@ function CardModal({ card, onClose }: { card: CardData; onClose: () => void }) {
                       src={src}
                       alt={`${card.title} screenshot ${i + 1}`}
                       className="w-full rounded-xl border border-white/[0.07] object-cover"
+                      loading="lazy"
                     />
                   ))}
                 </div>
@@ -248,6 +250,7 @@ export function Portfolio2() {
                     src={card.image}
                     alt={card.title}
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/75" />

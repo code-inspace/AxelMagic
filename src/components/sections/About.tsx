@@ -126,6 +126,7 @@ export function About() {
                       src="/images/photo-pro 3.jpg"
                       alt="Axel Coudair"
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0E0F11]" />
