@@ -291,7 +291,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="flex justify-center"
+          className="md:flex justify-center hidden"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white/60">
             <span className="text-amber-400">⚡</span>
