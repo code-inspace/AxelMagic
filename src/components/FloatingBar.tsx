@@ -28,9 +28,9 @@ export function FloatingBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 inset-x-0 flex justify-center z-50"
+          className="fixed bottom-6 inset-x-0 flex justify-center z-50 pointer-events-none"
         >
-          <div className="flex items-center gap-4 px-5 py-3.5 rounded-2xl glass border border-white/10 shadow-2xl">
+          <div className="pointer-events-auto flex items-center gap-4 px-5 py-3.5 rounded-2xl glass border border-white/10 shadow-2xl">
             {/* Avatar */}
             <div className="relative shrink-0">
               <div className="w-10 h-10 rounded-full border-2 border-purple-500/40 overflow-hidden">

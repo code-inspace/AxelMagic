@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#apropos", label: "À propos" },
-  { href: "#services", label: "Services" },
-  { href: "#realisations", label: "Réalisations" },
-  { href: "#process", label: "Méthode" },
-  { href: "#seo", label: "Performance" },
+  { href: "/#apropos", label: "À propos" },
+  { href: "/#services", label: "Services" },
+  { href: "/#realisations", label: "Réalisations" },
+  { href: "/#process", label: "Méthode" },
+  { href: "/#seo", label: "Performance" },
 ];
 
 export function Navbar() {
@@ -31,7 +31,7 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <img
             src="/images/logo-axelcoudair.png"
             alt="Axel Coudair"
@@ -55,7 +55,7 @@ export function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
@@ -93,7 +93,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 className="block mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 onClick={() => setMobileOpen(false)}

@@ -36,13 +36,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { label: "À propos", href: "#apropos" },
-                { label: "Services", href: "#services" },
-                { label: "Réalisations", href: "#realisations" },
-                { label: "Méthode", href: "#process" },
-                { label: "Performance", href: "#seo" },
-                { label: "Affiliation", href: "#affiliation" },
-                { label: "Contact", href: "#contact" },
+                { label: "À propos", href: "/#apropos" },
+                { label: "Services", href: "/#services" },
+                { label: "Réalisations", href: "/#realisations" },
+                { label: "Méthode", href: "/#process" },
+                { label: "Performance", href: "/#seo" },
+                { label: "Affiliation", href: "/#affiliation" },
+                { label: "Contact", href: "/#contact" },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <a
@@ -105,10 +105,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] pt-8 flex items-center justify-center">
+        <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between">
           <p className="text-white/50 text-xs">
             © {year} Axel Coudair · Tous droits réservés
           </p>
+          <a
+            href="/mentions-legales"
+            className="text-white/35 hover:text-white/60 text-xs transition-colors duration-200"
+          >
+            Mentions légales
+          </a>
         </div>
       </div>
     </footer>
