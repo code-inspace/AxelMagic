@@ -206,7 +206,7 @@ export function Hero() {
           transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
         >
-          <span className="text-white">Imaginez </span>
+          <span className="text-white">Des sites </span>
           <AuroraText
             colors={[
               "#ffffff",
@@ -218,9 +218,9 @@ export function Hero() {
             ]}
             className="font-poppins font-light"
           >
-            un site web
+            premium,
           </AuroraText>
-          <span className="text-white"> qui vous amène </span>
+          <span className="text-white"> pensés pour convertir vos visiteurs en </span>
           <AuroraText
             colors={[
               "#ffffff",
@@ -232,9 +232,8 @@ export function Hero() {
             ]}
             className="font-poppins font-light"
           >
-            des clients
+            clients.
           </AuroraText>
-          <span className="text-white"> pendant que vous dormez.</span>
         </motion.h1>
 
         {/* Subtitle */}
