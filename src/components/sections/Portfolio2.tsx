@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, X } from "lucide-react";
+import posthog from "posthog-js";
 import { motion, AnimatePresence } from "framer-motion";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -11,12 +12,14 @@ function ProjectContent({
   result,
   tags,
   link,
+  title,
 }: {
   description: string;
   context?: string;
   result?: string;
   tags: string[];
   link?: string;
+  title?: string;
 }) {
   return (
     <div className="space-y-6">
@@ -61,6 +64,7 @@ function ProjectContent({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => posthog.capture("project_link_click", { project: title, url: link })}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
           style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
         >
@@ -169,6 +173,7 @@ const cards: CardData[] = [
         description={"LucasFit est un projet fictif conçu comme une étude de cas autour de la mise en valeur d'un coach sportif personnel. L'objectif était de construire un site qui transmette de l'énergie et donne envie de passer à l'action.\n\nLe site a été développé sur Webflow avec un parti pris graphique assumé : sections en biais, éléments légèrement inclinés, mise en page qui sort de la grille. Rien n'est parfaitement droit, et c'est voulu — cette tension visuelle invite au mouvement plutôt qu'à la lecture passive.\n\nLe choix du noir, blanc et rouge vif repose sur une logique de contraste fort. Le noir et blanc posent une base sérieuse et percutante. Le rouge vient cibler l'attention sur les éléments clés : appels à l'action, chiffres, titres. C'est une combinaison qui marque et qui reste en tête.\n\nLe SEO a été intégré avec une structure sémantique soignée, des balises title et meta optimisées, et une hiérarchie de contenus orientée vers les recherches liées au coaching sportif."}
         tags={["Figma", "Webflow", "SEO"]}
         link="https://lucasfit.webflow.io/"
+        title="LucasFit"
       />
     ),
   },
@@ -239,7 +244,7 @@ export function Portfolio2() {
             <BlurFade key={card.id} inView delay={0.15 + i * 0.1}>
               <motion.div
                 layoutId={`portfolio-card-${card.id}`}
-                onClick={() => setActiveCard(card)}
+                onClick={() => { setActiveCard(card); posthog.capture("project_open", { project: card.title }); }}
                 whileHover={{ scale: activeCard?.id === card.id ? 1 : 1.02, y: activeCard?.id === card.id ? 0 : -4 }}
                 transition={{ duration: 0.25 }}
                 className="relative w-full h-[420px] rounded-3xl overflow-hidden cursor-pointer select-none"

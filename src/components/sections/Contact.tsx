@@ -8,6 +8,7 @@ import {
 import { motion } from "framer-motion";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import posthog from "posthog-js";
 
 const actions = [
   {
@@ -16,6 +17,7 @@ const actions = [
     description:
       "Je passe votre site au crible : UX, SEO, performance, conversion. Vous recevez un rapport complet et des recommandations actionnables, gratuitement.",
     cta: "Demander mon audit",
+    trackEvent: "demander_audit",
     calNamespace: "audit-gratuit",
     calLink: "axel-coudair-hhelf2/audit-gratuit",
     badge: "Gratuit",
@@ -29,6 +31,7 @@ const actions = [
     description:
       "30 minutes pour parler de votre projet. On cadre ensemble vos besoins, vos objectifs, votre budget. Sans engagement.",
     cta: "Réserver un call",
+    trackEvent: "reserver_call",
     calNamespace: "30min",
     calLink: "axel-coudair-hhelf2/30min",
     badge: "30 min",
@@ -42,6 +45,7 @@ const actions = [
     description:
       "Une question rapide ? Un projet à me décrire ? Écrivez-moi directement sur WhatsApp. Je réponds dans la journée.",
     cta: "Écrire sur WhatsApp",
+    trackEvent: "whatsapp",
     href: "https://wa.me/message/NUKO2RPNV3BUF1",
     badge: "Réponse rapide",
     badgeColor: "bg-green-500/20 text-green-300 border-green-500/30",
@@ -144,6 +148,7 @@ export function Contact() {
                       data-cal-namespace={action.calNamespace}
                       data-cal-link={action.calLink}
                       data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
+                      onClick={() => posthog.capture("cta_click", { label: action.trackEvent, location: "contact" })}
                       className={`mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
                         action.primary
                           ? "text-white glow-primary-sm"
@@ -163,6 +168,7 @@ export function Contact() {
                       href={action.href}
                       target={action.href?.startsWith("http") ? "_blank" : undefined}
                       rel="noopener noreferrer"
+                      onClick={() => posthog.capture("cta_click", { label: action.trackEvent, location: "contact" })}
                       className={`mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                         action.primary
                           ? "text-white glow-primary-sm"

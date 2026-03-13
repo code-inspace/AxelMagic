@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import posthog from "posthog-js";
 
 const links = [
   { href: "/#apropos", label: "À propos" },
@@ -56,6 +57,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="/#contact"
+            onClick={() => posthog.capture("cta_click", { label: "me_contacter", location: "navbar_desktop" })}
             className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
@@ -96,7 +98,7 @@ export function Navbar() {
                 href="/#contact"
                 className="block mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => { setMobileOpen(false); posthog.capture("cta_click", { label: "me_contacter", location: "navbar_mobile" }); }}
               >
                 Me contacter
               </a>

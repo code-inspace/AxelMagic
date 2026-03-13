@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, Clock } from "lucide-react";
+import posthog from "posthog-js";
 import { AuroraText } from "@/components/magicui/aurora-text";
 
 interface Orb {
@@ -263,6 +264,7 @@ export function Hero() {
             data-cal-namespace="30min"
             data-cal-link="axel-coudair-hhelf2/30min"
             data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+            onClick={() => posthog.capture("cta_click", { label: "planifier_rdv", location: "hero" })}
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 overflow-hidden cursor-pointer"
             style={{
               background: "linear-gradient(135deg, #2708a0, #653ad2)",
@@ -276,6 +278,7 @@ export function Hero() {
 
           <a
             href="#contact"
+            onClick={() => posthog.capture("cta_click", { label: "me_contacter", location: "hero" })}
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
           >
             Me contacter

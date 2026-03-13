@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
+import posthog from "posthog-js";
 
 export function FloatingBar() {
   const [visible, setVisible] = useState(false);
@@ -59,6 +60,7 @@ export function FloatingBar() {
             <div className="flex items-center gap-2">
               <a
                 href="tel:+33760966496"
+                onClick={() => posthog.capture("cta_click", { label: "appeler", location: "floating_bar" })}
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #2708a0, #653ad2)",
@@ -73,6 +75,7 @@ export function FloatingBar() {
                 href="https://wa.me/message/NUKO2RPNV3BUF1"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("cta_click", { label: "whatsapp", location: "floating_bar" })}
                 className="flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
                 title="WhatsApp"
               >
