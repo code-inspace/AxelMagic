@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { getCalApi } from "@calcom/embed-react";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Navbar } from "@/components/Navbar";
@@ -25,6 +25,16 @@ function Landing() {
     }
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      const cal30 = await getCalApi({ namespace: "30min" });
+      cal30("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+
+      const calAudit = await getCalApi({ namespace: "audit-gratuit" });
+      calAudit("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0E0F11] text-white overflow-x-hidden">
       <ScrollProgress />
@@ -46,23 +56,11 @@ function Landing() {
 }
 
 function App() {
-  useEffect(() => {
-    (async () => {
-      const cal30 = await getCalApi({ namespace: "30min" });
-      cal30("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
-
-      const calAudit = await getCalApi({ namespace: "audit-gratuit" });
-      calAudit("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view" });
-    })();
-  }, []);
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/mentions-legales" element={<MentionsLegales />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/mentions-legales" element={<MentionsLegales />} />
+    </Routes>
   );
 }
 
