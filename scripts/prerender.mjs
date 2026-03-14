@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 
-const routes = ["/", "/mentions-legales"];
+const routes = ["/", "/mentions-legales", "/politique-de-confidentialite"];
 
 // Build the SSR bundle
 await build({

@@ -14,6 +14,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingBar } from "@/components/FloatingBar";
 import { MentionsLegales } from "@/pages/MentionsLegales";
+import { PolitiqueConfidentialite } from "@/pages/PolitiqueConfidentialite";
 
 function Landing() {
   useEffect(() => {
@@ -60,6 +61,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/mentions-legales" element={<MentionsLegales />} />
+      <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
     </Routes>
   );
 }
