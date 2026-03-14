@@ -9,6 +9,7 @@ if (import.meta.env.VITE_PUBLIC_POSTHOG_KEY) {
   posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
     api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
     capture_pageview: true,
+    cookieless_mode: "always",
     defaults: "2026-01-30",
   });
 }

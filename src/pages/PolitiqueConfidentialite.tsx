@@ -28,7 +28,7 @@ export function PolitiqueConfidentialite() {
               1. Qui est responsable du traitement ?
             </h2>
             <div className="space-y-2 text-white/60 text-sm leading-relaxed">
-              <p>Axel Coudair, freelance — développeur web & designer UX/UI</p>
+              <p>Axel Coudair, freelance, développeur web & designer UX/UI</p>
               <p>
                 Contact :{" "}
                 <a
@@ -47,20 +47,20 @@ export function PolitiqueConfidentialite() {
             </h2>
             <div className="space-y-3 text-white/60 text-sm leading-relaxed">
               <p>
-                Ce site ne collecte aucune donnée personnelle identifiante (pas de
+                Ce site ne collecte aucune donnée personnelle identifiante : pas de
                 formulaire, pas de compte, pas de nom, pas d'email sans action
-                explicite de votre part).
+                explicite de votre part.
               </p>
-              <p>
-                Dans le cadre de l'analyse d'audience, les données suivantes sont
-                traitées de manière anonyme :
-              </p>
-              <ul className="list-disc list-inside space-y-1 pl-2">
-                <li>Adresse IP (pseudonymisée)</li>
-                <li>Type de navigateur et système d'exploitation</li>
-                <li>Pages visitées et durée de visite</li>
-                <li>Localisation approximative (pays / région, déduite de l'IP)</li>
-              </ul>
+              <p>L'analyse d'audience est réalisée de manière entièrement anonyme :</p>
+              <div className="space-y-1 pl-2">
+                <p>Aucun cookie n'est déposé sur votre navigateur</p>
+                <p>Aucun identifiant persistant n'est stocké sur votre appareil</p>
+                <p>
+                  Les données suivantes sont traitées de façon agrégée : type de
+                  navigateur et système d'exploitation, pages visitées, durée de
+                  visite, localisation approximative (pays / région)
+                </p>
+              </div>
             </div>
           </section>
 
@@ -87,10 +87,17 @@ export function PolitiqueConfidentialite() {
             </h2>
             <div className="space-y-3 text-white/60 text-sm leading-relaxed">
               <p>
-                L'outil PostHog est utilisé pour l'analyse d'audience. Les données
-                sont hébergées sur des serveurs situés dans l'Union européenne
-                (région EU de PostHog Cloud).
+                L'outil PostHog est utilisé pour l'analyse d'audience, configuré en
+                mode cookieless : aucun cookie ni donnée de session n'est stocké dans
+                votre navigateur. L'identification des visiteurs est réalisée via un
+                hash anonyme calculé côté serveur à partir de données non
+                personnelles, rendu impossible à relier à une personne réelle.
               </p>
+              <p>
+                Les données sont hébergées sur des serveurs situés dans l'Union
+                européenne (PostHog Cloud EU).
+              </p>
+              <p>Durée de conservation : 12 mois.</p>
               <p>
                 Pour en savoir plus :{" "}
                 <a
@@ -102,10 +109,6 @@ export function PolitiqueConfidentialite() {
                   posthog.com/privacy
                 </a>
               </p>
-              <p>
-                Les données collectées via PostHog sont conservées 12 mois, après
-                quoi elles sont supprimées automatiquement.
-              </p>
             </div>
           </section>
 
@@ -113,48 +116,38 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               5. Base légale du traitement
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="text-white/60 text-sm leading-relaxed">
               <p>
-                Le traitement repose sur votre consentement (article 6.1.a du RGPD),
-                recueilli via la bannière de cookies affichée lors de votre première
-                visite.
-              </p>
-              <p>
-                Vous pouvez retirer ce consentement à tout moment en cliquant sur le
-                lien "Gérer mes cookies" en bas de page.
+                Le traitement repose sur l'intérêt légitime (article 6.1.f du RGPD).
+                Aucun consentement préalable n'est requis car aucun cookie ni
+                identifiant personnel n'est collecté.
               </p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
-              6. Cookies utilisés
+              6. Prise de rendez-vous (Cal.com)
             </h2>
-            <div className="space-y-4 text-white/60 text-sm leading-relaxed">
-              <div className="border border-white/[0.07] rounded-xl overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-white/[0.07]">
-                      <th className="text-left px-4 py-3 text-white/40 font-medium">Cookie</th>
-                      <th className="text-left px-4 py-3 text-white/40 font-medium">Finalité</th>
-                      <th className="text-left px-4 py-3 text-white/40 font-medium">Durée</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-white/[0.07]">
-                      <td className="px-4 py-3 font-mono text-purple-400 text-xs">ph_* (PostHog)</td>
-                      <td className="px-4 py-3">Analyse d'audience anonyme</td>
-                      <td className="px-4 py-3">12 mois</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-mono text-purple-400 text-xs">Préférence cookies</td>
-                      <td className="px-4 py-3">Mémorisation de votre choix</td>
-                      <td className="px-4 py-3">12 mois</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p>Aucun cookie publicitaire ou de tracking tiers n'est utilisé.</p>
+            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+              <p>
+                Le formulaire de réservation est fourni par Cal.com. Lors de la prise
+                de rendez-vous, Cal.com peut déposer des cookies fonctionnels
+                nécessaires au bon fonctionnement du formulaire. Ces cookies sont
+                strictement liés à votre action et ne sont pas utilisés à des fins de
+                tracking.
+              </p>
+              <p>
+                Pour en savoir plus :{" "}
+                <a
+                  href="https://cal.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  cal.com/privacy
+                </a>
+              </p>
             </div>
           </section>
 
@@ -164,12 +157,22 @@ export function PolitiqueConfidentialite() {
             </h2>
             <div className="space-y-3 text-white/60 text-sm leading-relaxed">
               <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-              <ul className="list-disc list-inside space-y-1 pl-2">
-                <li><span className="text-white/80">Accès</span> : obtenir une copie des données vous concernant</li>
-                <li><span className="text-white/80">Suppression</span> : demander l'effacement de vos données</li>
-                <li><span className="text-white/80">Retrait du consentement</span> : à tout moment, sans effet rétroactif</li>
-                <li>
-                  <span className="text-white/80">Réclamation</span> : auprès de la CNIL (
+              <div className="space-y-1 pl-2">
+                <p>
+                  <span className="text-white/80">Accès</span> : obtenir une copie
+                  des données vous concernant
+                </p>
+                <p>
+                  <span className="text-white/80">Suppression</span> : demander
+                  l'effacement de vos données
+                </p>
+                <p>
+                  <span className="text-white/80">Opposition</span> : vous opposer au
+                  traitement basé sur l'intérêt légitime
+                </p>
+                <p>
+                  <span className="text-white/80">Réclamation</span> : auprès de la
+                  CNIL (
                   <a
                     href="https://www.cnil.fr"
                     target="_blank"
@@ -179,8 +182,8 @@ export function PolitiqueConfidentialite() {
                     cnil.fr
                   </a>
                   )
-                </li>
-              </ul>
+                </p>
+              </div>
               <p>
                 Pour exercer vos droits :{" "}
                 <a
