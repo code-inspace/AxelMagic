@@ -4,7 +4,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/[0.06] pt-16 pb-10 overflow-hidden">
+    <footer className="relative border-t border-white/[0.06] pt-16 pb-24 sm:pb-10 overflow-hidden">
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] opacity-[0.05] pointer-events-none"
         style={{
@@ -105,7 +105,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] pt-8 flex items-center justify-between">
+        <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-white/50 text-xs">
             © {year} Axel Coudair · Tous droits réservés
           </p>
