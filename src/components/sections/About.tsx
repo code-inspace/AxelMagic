@@ -1,11 +1,18 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { TextReveal } from "@/components/magicui/text-reveal";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { DotPattern } from "@/components/magicui/dot-pattern";
+import { Marquee } from "@/components/magicui/marquee";
 import { Briefcase, Zap } from "lucide-react";
+
+const logos = [
+  { src: "/images/logo_previous_companies/logo-previous-company1.svg.png", alt: "SNCF Connect" },
+  { src: "/images/logo_previous_companies/logo-previous-company4.png", alt: "DGAC" },
+  { src: "/images/logo_previous_companies/logo-previous-company5.png", alt: "TotalEnergies" },
+  { src: "/images/logo_previous_companies/logo-previous-company2.png", alt: "Osmos" },
+];
 
 const stats = [
   { value: 8, suffix: "+", label: "années d'expérience", icon: Briefcase },
@@ -45,42 +52,59 @@ export function About() {
           <div>
             <BlurFade inView delay={0.1}>
               <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-8">
-                Derrière chaque bon site, <AuroraText colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}>il y a quelqu'un qui comprend vraiment votre métier.</AuroraText>
+                J'ai été chef de projet, UX designer et développeur.{" "}
+                <AuroraText
+                  colors={[
+                    "#ffffff",
+                    "#a78bfa",
+                    "#653ad2",
+                    "#8b5cf6",
+                    "#ffffff",
+                  ]}
+                >
+                  Maintenant je suis les trois à la fois, pour vous.
+                </AuroraText>
               </h2>
             </BlurFade>
 
             <div className="space-y-6 text-white/65 leading-relaxed">
               <BlurFade inView delay={0.2}>
                 <p className="text-base sm:text-lg text-white/75">
-                  J'ai passé des années à travailler sur des projets digitaux
-                  pour de grands groupes : la SNCF, la DGAC, Osmos Group, et en
-                  agence de communication chez Cinqmars, dans des secteurs très
-                  variés. J'ai été développeur, chef de projets, UX designer.
-                  J'ai vu ce qui fonctionne, et ce qui coûte cher sans rapporter
-                  grand-chose.
+                  <span className="text-white font-semibold">
+                    SNCF. DGAC. TotalEnergies. Osmos Group.
+                  </span>{" "}
+                  Des projets exigeants, des budgets serrés, des livraisons
+                  non-négociables.
                 </p>
-                <TextReveal text="" className="text-base sm:text-lg" />
+                <p className="text-base sm:text-lg text-white/75 mt-4">
+                  J'y ai occupé trois rôles au fil du temps : développeur,
+                  chef de projet, UX designer. Ce parcours n'est pas un hasard,
+                  c'est ce qui me permet aujourd'hui de comprendre l'ensemble de
+                  la chaîne, du brief au déploiement, là où la plupart des
+                  freelances n'en voient qu'une partie
+                </p>
               </BlurFade>
 
               <BlurFade inView delay={0.3}>
                 <p className="text-base sm:text-lg text-white/75">
-                  Aujourd'hui, je mets cette expérience au service des{" "}
+                  Aujourd'hui, cette lecture complète est ce que j'apporte à
+                  chaque projet. Vous ne gérez pas une équipe de prestataires.
+                  Vous avez un{" "}
                   <span className="text-white font-semibold">
-                    entrepreneurs, PME et indépendants
+                    interlocuteur unique
                   </span>{" "}
-                  qui veulent un site à leur image : efficace, moderne, et pensé
-                  pour convertir.
+                  qui voit votre site comme un outil business, pas comme une
+                  livrable.
                 </p>
               </BlurFade>
 
               <BlurFade inView delay={0.4}>
                 <div className="glass-card border border-purple-500/20 p-5 rounded-2xl">
                   <p className="text-white/80 italic">
-                    "Pas de grande agence impersonnelle, pas de freelance qui
-                    disparaît après la livraison.{" "}
+                    "Un site mal pensé en amont coûte trois fois plus cher à
+                    corriger.{" "}
                     <span className="text-purple-300 font-semibold not-italic">
-                      Un vrai partenaire qui s'implique dans votre projet comme
-                      si c'était le sien.
+                      Je le sais parce que j'ai été des deux côtés de la table.
                     </span>
                     "
                   </p>
@@ -91,9 +115,17 @@ export function About() {
 
           {/* Right — stats */}
           <div ref={ref}>
-            <div className="grid grid-cols-2 gap-4" style={{ gridAutoRows: "1fr" }}>
+            <div
+              className="grid grid-cols-2 gap-4"
+              style={{ gridAutoRows: "1fr" }}
+            >
               {stats.map(({ value, suffix, label, icon: Icon }, i) => (
-                <BlurFade key={label} inView delay={0.2 + i * 0.1} className="h-full">
+                <BlurFade
+                  key={label}
+                  inView
+                  delay={0.2 + i * 0.1}
+                  className="h-full"
+                >
                   <div className="glass-card border border-white/[0.07] hover:border-purple-500/30 transition-all duration-300 p-6 rounded-2xl group h-full">
                     <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors duration-300">
                       <Icon className="w-5 h-5 text-purple-400" />
@@ -117,35 +149,45 @@ export function About() {
                 </BlurFade>
               ))}
             </div>
-            {/* Photo placeholder */}
+            {/* Photo card */}
             <BlurFade inView delay={0.6}>
-              <div className="mt-6 glass-card border border-white/[0.07] p-4 rounded-2xl flex items-center gap-4">
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-purple-500/40">
-                    <img
-                      src="/images/photo-pro 3.jpg"
-                      alt="Axel Coudair"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-400 border-2 border-[#0E0F11]" />
+              <div className="mt-6 glass-card border border-white/[0.07] rounded-2xl overflow-hidden">
+                <div className="aspect-square w-full overflow-hidden">
+                  <img
+                    src="/images/photo-pro 3.jpg"
+                    alt="Axel Coudair"
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
                 </div>
-                <div>
+                <div className="px-5 py-4">
                   <p className="font-semibold text-white">Axel Coudair</p>
-                  <p className="text-xs text-white/50">
-                    Expert Web & Stratégie Digitale
-                  </p>
-                </div>
-                <div className="ml-auto shrink-0">
-                  <span className="text-xs text-green-400 flex items-center gap-1 whitespace-nowrap">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    En ligne
-                  </span>
+                  <p className="text-xs text-white/50 mt-0.5">Développeur & Stratège Web</p>
+                  <p className="text-xs text-white/35">Basé à Paris, disponible partout en France</p>
                 </div>
               </div>
             </BlurFade>
-
+            <BlurFade inView delay={0.7}>
+              <div
+                className="mt-8 overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+                }}
+              >
+                <Marquee duration="20s" gap="0px">
+                  {logos.map(({ src, alt }) => (
+                    <div key={alt} className="px-8">
+                      <img
+                        src={src}
+                        alt={alt}
+                        className="h-10 w-auto object-contain opacity-30 grayscale invert"
+                      />
+                    </div>
+                  ))}
+                </Marquee>
+              </div>
+            </BlurFade>
           </div>
         </div>
       </div>
