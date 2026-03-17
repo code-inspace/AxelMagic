@@ -43,12 +43,12 @@ function Landing() {
       <main>
         <Hero />
         <About />
-        <Services />
         <Portfolio2 />
-        <SeoSection />
+        <Services />
         <Process />
-        <Affiliation />
+        <SeoSection />
         <Contact />
+        <Affiliation />
       </main>
       <Footer />
       <FloatingBar />

@@ -170,7 +170,7 @@ const cards: CardData[] = [
     ],
     content: (
       <ProjectContent
-        description={"LucasFit est un projet fictif conçu comme une étude de cas autour de la mise en valeur d'un coach sportif personnel. L'objectif était de construire un site qui transmette de l'énergie et donne envie de passer à l'action.\n\nLe site a été développé sur Webflow avec un parti pris graphique assumé : sections en biais, éléments légèrement inclinés, mise en page qui sort de la grille. Rien n'est parfaitement droit, et c'est voulu : cette tension visuelle invite au mouvement plutôt qu'à la lecture passive.\n\nLe choix du noir, blanc et rouge vif repose sur une logique de contraste fort. Le noir et blanc posent une base sérieuse et percutante. Le rouge vient cibler l'attention sur les éléments clés : appels à l'action, chiffres, titres. C'est une combinaison qui marque et qui reste en tête.\n\nLe SEO a été intégré avec une structure sémantique soignée, des balises title et meta optimisées, et une hiérarchie de contenus orientée vers les recherches liées au coaching sportif."}
+        description={"LucasFit est une étude de cas autour d'un brief simple : construire un site qui transmet de l'énergie et pousse à l'action sans passer par une longue lecture.\n\nLe site a été développé sur Webflow avec un parti pris graphique assumé : sections en biais, mise en page qui sort de la grille, contraste noir, blanc et rouge vif. La tension visuelle est voulue : elle invite au mouvement plutôt qu'à la lecture passive.\n\nSEO intégré dès la conception : structure sémantique, balises title et meta optimisées, hiérarchie de contenus orientée coaching sportif."}
         tags={["Figma", "Webflow", "SEO"]}
         link="https://lucasfit.webflow.io/"
         title="LucasFit"
@@ -190,7 +190,7 @@ const cards: CardData[] = [
     ],
     content: (
       <ProjectContent
-        description={"ADN Paris est une association parisienne qui accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires.\n\nJ'ai pris en charge le projet de A à Z : conception de la maquette sur Figma, puis développement sous WordPress. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard, en accord avec les valeurs de l'association.\n\nJ'ai également travaillé le SEO : structure des pages, balises title et meta, hiérarchie des contenus. L'objectif était de rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris."}
+        description={"ADN Paris accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires à Paris.\n\nProjet pris en charge de A à Z : maquette sur Figma, développement WordPress sur-mesure, SEO on-page. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard, en cohérence avec les valeurs de l'association.\n\nConçu pour rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris, dès la mise en ligne."}
         tags={["WordPress", "Figma", "UI Design", "SEO"]}
       />
     ),

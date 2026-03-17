@@ -5,8 +5,8 @@ import posthog from "posthog-js";
 
 const links = [
   { href: "/#apropos", label: "À propos" },
-  { href: "/#services", label: "Services" },
   { href: "/#realisations", label: "Réalisations" },
+  { href: "/#services", label: "Services" },
   { href: "/#process", label: "Méthode" },
   { href: "/#seo", label: "Performance" },
 ];
