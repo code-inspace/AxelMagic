@@ -24,7 +24,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="apropos" className="relative py-32 overflow-hidden">
+    <section id="apropos" className="relative py-16 lg:py-32 overflow-hidden">
       <DotPattern className="opacity-30" cr={0.8} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0E0F11] via-transparent to-[#0E0F11] pointer-events-none" />
 
@@ -47,9 +47,9 @@ export function About() {
           </div>
         </BlurFade>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
           {/* Left — text */}
-          <div>
+          <div className="min-w-0">
             <BlurFade inView delay={0.1}>
               <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-8">
                 J'ai été chef de projet, UX designer et développeur.{" "}
@@ -114,7 +114,7 @@ export function About() {
           </div>
 
           {/* Right — stats */}
-          <div ref={ref}>
+          <div ref={ref} className="min-w-0 overflow-hidden">
             <div
               className="grid grid-cols-2 gap-4"
               style={{ gridAutoRows: "1fr" }}
@@ -126,7 +126,7 @@ export function About() {
                   delay={0.2 + i * 0.1}
                   className="h-full"
                 >
-                  <div className="glass-card border border-white/[0.07] hover:border-purple-500/30 transition-all duration-300 p-6 rounded-2xl group h-full">
+                  <div className="glass-card border border-white/[0.07] hover:border-purple-500/30 transition-all duration-300 p-4 lg:p-6 rounded-2xl group h-full">
                     <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors duration-300">
                       <Icon className="w-5 h-5 text-purple-400" />
                     </div>
@@ -151,8 +151,8 @@ export function About() {
             </div>
             {/* Photo card */}
             <BlurFade inView delay={0.6}>
-              <div className="mt-6 glass-card border border-white/[0.07] rounded-2xl overflow-hidden">
-                <div className="aspect-square w-full overflow-hidden">
+              <div className="mt-4 glass-card border border-white/[0.07] rounded-2xl overflow-hidden flex lg:flex-col">
+                <div className="w-24 lg:w-full flex-shrink-0 lg:aspect-square overflow-hidden self-stretch">
                   <img
                     src="/images/photo-pro 3.jpg"
                     alt="Axel Coudair"
@@ -160,16 +160,16 @@ export function About() {
                     loading="lazy"
                   />
                 </div>
-                <div className="px-5 py-4">
-                  <p className="font-semibold text-white">Axel Coudair</p>
+                <div className="px-4 py-4 flex flex-col justify-center min-w-0">
+                  <p className="font-semibold text-white text-sm lg:text-base">Axel Coudair</p>
                   <p className="text-xs text-white/50 mt-0.5">Développeur & Stratège Web</p>
-                  <p className="text-xs text-white/35">Basé à Paris, disponible partout en France</p>
+                  <p className="text-xs text-white/35 leading-relaxed">Basé à Paris, disponible partout en France</p>
                 </div>
               </div>
             </BlurFade>
             <BlurFade inView delay={0.7}>
               <div
-                className="mt-8 overflow-hidden"
+                className="mt-4 overflow-hidden"
                 style={{
                   maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
                   WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
