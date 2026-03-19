@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Gift, Share2, Percent, ArrowRight, Users } from "lucide-react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { RollButton } from "@/components/ui/RollButton";
 
 const steps = [
   {
@@ -97,18 +98,15 @@ export function Affiliation() {
                 </BlurFade>
 
                 <BlurFade inView delay={0.4}>
-                  <a
+                  <RollButton
                     href="https://wa.me/message/NUKO2RPNV3BUF1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300"
-                    style={{
-                      background: "linear-gradient(135deg, #2708a0, #653ad2)",
-                    }}
+                    className="inline-flex items-center px-7 py-3.5 rounded-full font-semibold text-white transition-all duration-300"
+                    style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                   >
-                    Je connais quelqu'un
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                    Je connais quelqu'un <ArrowRight className="w-4 h-4" />
+                  </RollButton>
                 </BlurFade>
               </div>
 

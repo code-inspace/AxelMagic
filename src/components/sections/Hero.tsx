@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, Clock } from "lucide-react";
 import posthog from "posthog-js";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { RollButton } from "@/components/ui/RollButton";
 
 interface Orb {
   x: number;
@@ -260,29 +261,24 @@ export function Hero() {
           transition={{ delay: 0.65, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
-          <button
+          <RollButton
             data-cal-namespace="30min"
             data-cal-link="axel-coudair-hhelf2/30min"
             data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
             onClick={() => posthog.capture("cta_click", { label: "planifier_rdv", location: "hero" })}
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 overflow-hidden cursor-pointer"
-            style={{
-              background: "linear-gradient(135deg, #2708a0, #653ad2)",
-            }}
+            className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 cursor-pointer"
+            style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
-            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative">Planifier un rendez-vous</span>
-            <ArrowRight className="relative w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            <span className="absolute inset-0 rounded-full glow-primary-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </button>
+            Planifier un rendez-vous <ArrowRight className="w-4 h-4" />
+          </RollButton>
 
-          <a
+          <RollButton
             href="#contact"
             onClick={() => posthog.capture("cta_click", { label: "me_contacter", location: "hero" })}
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
           >
             Me contacter
-          </a>
+          </RollButton>
         </motion.div>
 
         {/* Urgency bubble */}

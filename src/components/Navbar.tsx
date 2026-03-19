@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import posthog from "posthog-js";
+import { RollButton } from "./ui/RollButton";
 
 const links = [
   { href: "/#apropos", label: "À propos" },
@@ -46,23 +47,24 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-white/55 hover:text-white transition-colors duration-200 font-medium"
+              className="group relative text-sm text-white/55 hover:text-white transition-colors duration-200 font-medium"
             >
               {link.label}
+              <span className="absolute -bottom-0.5 left-0 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
             </a>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a
+          <RollButton
             href="/#contact"
             onClick={() => posthog.capture("cta_click", { label: "me_contacter", location: "navbar_desktop" })}
-            className="px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
+            className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
             Me contacter
-          </a>
+          </RollButton>
         </div>
 
         {/* Mobile toggle */}
@@ -94,14 +96,14 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
+              <RollButton
                 href="/#contact"
-                className="block mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white text-center"
+                className="flex mt-3 px-5 py-3 rounded-full text-sm font-semibold text-white justify-center"
                 style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
                 onClick={() => { setMobileOpen(false); posthog.capture("cta_click", { label: "me_contacter", location: "navbar_mobile" }); }}
               >
                 Me contacter
-              </a>
+              </RollButton>
             </div>
           </motion.div>
         )}

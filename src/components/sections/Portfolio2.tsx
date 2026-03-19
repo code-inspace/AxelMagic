@@ -6,6 +6,7 @@ import {
   AppleCardsCarousel,
   CardData,
 } from "@/components/ui/apple-cards-carousel";
+import { RollButton } from "@/components/ui/RollButton";
 
 function ProjectContent({
   description,
@@ -61,19 +62,18 @@ function ProjectContent({
         ))}
       </div>
       {link && (
-        <a
+        <RollButton
           href={link}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() =>
             posthog.capture("project_link_click", { project: title, url: link })
           }
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
+          className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300"
           style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
         >
-          Consulter le site live
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+          Consulter le site live <ExternalLink className="w-3.5 h-3.5" />
+        </RollButton>
       )}
     </div>
   );
