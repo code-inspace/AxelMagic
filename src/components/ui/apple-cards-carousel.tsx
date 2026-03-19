@@ -6,7 +6,9 @@ const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
 function MediaPreview({ src, alt, className }: { src: string; alt: string; className?: string }) {
   return isVideoSrc(src) ? (
-    <video src={src} autoPlay muted loop playsInline className={className} />
+    <video src={src} autoPlay muted loop playsInline className={className}>
+      <track kind="captions" />
+    </video>
   ) : (
     <img src={src} alt={alt} className={className} loading="lazy" />
   );
@@ -206,16 +208,18 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
           <button
             onClick={() => scroll("left")}
             disabled={!canLeft}
+            aria-label="Précédent"
             className="w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center text-white disabled:opacity-20 hover:border-purple-500/40 transition-all duration-200"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5" aria-hidden="true" />
           </button>
           <button
             onClick={() => scroll("right")}
             disabled={!canRight}
+            aria-label="Suivant"
             className="w-10 h-10 rounded-full glass border border-white/10 flex items-center justify-center text-white disabled:opacity-20 hover:border-purple-500/40 transition-all duration-200"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
       </div>

@@ -112,13 +112,13 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <a
               href="/mentions-legales"
-              className="text-white/35 hover:text-white/60 text-xs transition-colors duration-200"
+              className="text-white/50 hover:text-white/60 text-xs transition-colors duration-200"
             >
               Mentions légales
             </a>
             <a
               href="/politique-de-confidentialite"
-              className="text-white/35 hover:text-white/60 text-xs transition-colors duration-200"
+              className="text-white/50 hover:text-white/60 text-xs transition-colors duration-200"
             >
               Politique de confidentialité
             </a>
