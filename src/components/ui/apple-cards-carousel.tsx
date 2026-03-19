@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, useCallback, ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
@@ -177,11 +178,14 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
 
   return (
     <>
-      <AnimatePresence>
-        {activeCard && (
-          <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
-        )}
-      </AnimatePresence>
+      {createPortal(
+        <AnimatePresence>
+          {activeCard && (
+            <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
 
       <div className="relative">
         {/* Gradient masks */}
