@@ -47,9 +47,10 @@ export function Footer() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-white/45 hover:text-white text-sm transition-colors duration-200"
+                    className="group relative text-white/45 hover:text-white text-sm transition-colors duration-200 w-fit"
                   >
                     {label}
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                   </a>
                 </li>
               ))}
