@@ -49,7 +49,7 @@ const actions = [
     href: "https://wa.me/message/NUKO2RPNV3BUF1",
     badge: "Réponse rapide",
     badgeColor: "bg-green-500/20 text-green-300 border-green-500/30",
-    gradient: "from-green-500/10 to-teal-500/5",
+    gradient: "from-purple-500/15 to-blue-500/5",
     primary: false,
   },
 ];
