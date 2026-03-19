@@ -156,9 +156,12 @@ function CardItem({
 
 export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
   const [activeCard, setActiveCard] = useState<CardData | null>(null);
+  const [mounted, setMounted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(true);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -178,7 +181,7 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
 
   return (
     <>
-      {createPortal(
+      {mounted && createPortal(
         <AnimatePresence>
           {activeCard && (
             <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
