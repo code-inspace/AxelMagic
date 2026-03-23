@@ -12,6 +12,13 @@ export default function useTextRoll<T extends HTMLElement = HTMLElement>() {
     const bottom = el.querySelector('.roll-bottom');
     if (!top || !bottom) return;
 
+    // Désactiver l'effet sur mobile (pas de hover)
+    const hasHover = window.matchMedia('(hover: hover)').matches;
+    if (!hasHover) {
+      gsap.set(bottom, { display: 'none' });
+      return;
+    }
+
     const h = el.offsetHeight;
 
     // roll-bottom part du bas (hors champ) via GSAP, pas via CSS top-full
