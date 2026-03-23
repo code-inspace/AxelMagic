@@ -123,7 +123,7 @@ function CardItem({
       onClick={onClick}
       whileHover={{ scale: active ? 1 : 1.03, y: active ? 0 : -4 }}
       transition={{ duration: 0.25 }}
-      className="relative flex-shrink-0 w-[calc(50%-0.5rem)] h-80 rounded-3xl cursor-pointer select-none"
+      className="relative flex-shrink-0 w-full sm:w-[calc(50%-0.5rem)] h-80 rounded-3xl cursor-pointer select-none snap-start sm:snap-align-none"
       style={{
         opacity: active ? 0 : 1,
         pointerEvents: active ? "none" : "auto",
@@ -176,8 +176,12 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
     return () => window.removeEventListener("resize", checkScroll);
   }, [checkScroll]);
 
-  const scroll = (dir: "left" | "right") =>
-    scrollRef.current?.scrollBy({ left: dir === "left" ? -290 : 290, behavior: "smooth" });
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = window.innerWidth < 640 ? el.clientWidth : 290;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -191,14 +195,14 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
       )}
 
       <div className="relative">
-        {/* Gradient masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-14 bg-gradient-to-r from-[#0E0F11] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-[#0E0F11] to-transparent z-10 pointer-events-none" />
+        {/* Gradient masks — desktop only */}
+        <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-14 bg-gradient-to-r from-[#0E0F11] to-transparent z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-[#0E0F11] to-transparent z-10 pointer-events-none" />
 
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-6 px-6"
+          className="flex gap-0 sm:gap-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-6 sm:px-6 snap-x snap-mandatory sm:snap-none"
         >
           {cards.map((card) => (
             <CardItem
