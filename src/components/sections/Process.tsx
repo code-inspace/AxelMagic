@@ -154,6 +154,17 @@ export function Process() {
             "-=0.4"
           );
         }
+
+        // Mobile card slides in from right
+        const mobileCard = el.querySelector(".step-card-mobile");
+        if (mobileCard) {
+          tl.fromTo(
+            mobileCard,
+            { x: 40, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.55, ease: "power3.out" },
+            "-=0.3"
+          );
+        }
       });
 
       // Coverflow: scale up the row closest to viewport center
@@ -384,7 +395,7 @@ export function Process() {
                     </div>
 
                     {/* Card */}
-                    <div className="flex-1">
+                    <div className="step-card-mobile flex-1">
                       <StepCard step={step} />
                     </div>
                   </div>
@@ -417,7 +428,6 @@ export function Process() {
 /* ─── Sub-components ─────────────────────────────── */
 
 function StepCard({ step }: { step: (typeof steps)[number] }) {
-  const Icon = step.icon;
   return (
     <div
       className="step-card glass-card border border-white/[0.07] hover:border-purple-500/25 transition-all duration-400 p-6 rounded-2xl w-full max-w-sm relative overflow-hidden group"
@@ -431,26 +441,18 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
       </div>
 
       <div className="relative z-10">
-        <div className="flex items-center justify-between mb-4">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center"
-            style={{
-              background: `${step.color}20`,
-              border: `1px solid ${step.color}30`,
-            }}
-          >
-            <Icon className="w-4 h-4" style={{ color: step.color }} />
+        <div className="flex items-start justify-between gap-2 mb-3">
+          <div>
+            <span
+              className="text-xs font-bold tracking-widest uppercase block mb-0.5"
+              style={{ color: step.color }}
+            >
+              Étape {step.number}
+            </span>
+            <h3 className="text-lg font-bold text-white leading-tight">{step.title}</h3>
           </div>
-          <span className="text-xs text-white/30 font-medium">{step.duration}</span>
+          <span className="text-xs text-white/30 font-medium shrink-0 mt-0.5">{step.duration}</span>
         </div>
-
-        <span
-          className="text-[10px] font-bold tracking-widest mb-1 block uppercase"
-          style={{ color: step.color }}
-        >
-          Étape {step.number}
-        </span>
-        <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
         <p className="text-white/50 text-sm leading-relaxed whitespace-pre-line">
           {step.description}
         </p>
