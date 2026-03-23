@@ -56,7 +56,7 @@ const actions = [
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 lg:py-32 overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{

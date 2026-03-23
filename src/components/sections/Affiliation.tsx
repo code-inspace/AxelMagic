@@ -30,7 +30,7 @@ const steps = [
 
 export function Affiliation() {
   return (
-    <section id="affiliation" className="relative py-32 overflow-hidden">
+    <section id="affiliation" className="relative py-16 lg:py-32 overflow-hidden">
       {/* Ambient */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

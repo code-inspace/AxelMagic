@@ -42,7 +42,7 @@ const pillars = [
 
 export function SeoSection() {
   return (
-    <section id="seo" className="relative py-32 overflow-hidden">
+    <section id="seo" className="relative py-16 lg:py-32 overflow-hidden">
       {/* Decorative elements */}
       <div
         className="absolute top-1/2 right-0 w-[400px] h-[600px] -translate-y-1/2 opacity-[0.07] pointer-events-none"

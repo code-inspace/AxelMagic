@@ -37,7 +37,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
+    <section id="services" className="relative py-16 lg:py-32 overflow-hidden">
       {/* Ambient glow */}
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06] pointer-events-none"

@@ -154,7 +154,7 @@ const cards: CardData[] = [
 
 export function Portfolio2() {
   return (
-    <section id="realisations" className="relative py-32 overflow-hidden">
+    <section id="realisations" className="relative py-16 lg:py-32 overflow-hidden">
       <div
         className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full opacity-[0.06] pointer-events-none"
         style={{

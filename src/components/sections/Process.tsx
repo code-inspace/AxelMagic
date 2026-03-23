@@ -240,7 +240,7 @@ export function Process() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="process" className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} id="process" className="relative py-16 lg:py-32 overflow-hidden">
       {/* Decorative glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] opacity-[0.06] pointer-events-none"
