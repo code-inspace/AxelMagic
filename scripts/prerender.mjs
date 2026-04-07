@@ -6,7 +6,14 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 
-const routes = ["/", "/mentions-legales", "/politique-de-confidentialite"];
+const routes = [
+  "/",
+  "/mentions-legales",
+  "/politique-de-confidentialite",
+  "/realisation/calea",
+  "/realisation/lucafit",
+  "/realisation/adn-paris"
+];
 
 // Build the SSR bundle
 await build({
@@ -27,11 +34,24 @@ const { render } = await import(path.resolve(rootDir, "dist-server/entry-server.
 
 // Pre-render each route
 for (const route of routes) {
-  const appHtml = render(route);
-  const html = template.replace(
+  const { html: appHtml, helmet } = render(route);
+  
+  let html = template.replace(
     '<div id="root"></div>',
     `<div id="root">${appHtml}</div>`
   );
+
+  if (helmet) {
+    const titleRegex = /<title>(.*?)<\/title>/i;
+    const descRegex = /<meta name="description" content="(.*?)"\s*\/?>/i;
+
+    if (helmet.title && helmet.title.toString() !== "") {
+      html = html.replace(titleRegex, helmet.title.toString());
+    }
+    if (helmet.meta && helmet.meta.toString() !== "") {
+      html = html.replace(descRegex, helmet.meta.toString());
+    }
+  }
 
   const outPath =
     route === "/"

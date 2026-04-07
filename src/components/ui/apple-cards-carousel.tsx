@@ -1,7 +1,10 @@
 import { useRef, useState, useEffect, useCallback, ReactNode } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ReferenceGallery } from "./ReferenceGallery";
 
 const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
@@ -36,8 +39,23 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
     };
   }, [onClose]);
 
+  // Extract a clean SEO description
+  let rawDesc = card.title;
+  if (card.content && typeof card.content === "object" && "props" in card.content) {
+    if ((card.content.props as any).description) {
+      rawDesc = (card.content.props as any).description;
+    }
+  }
+  const seoDesc = typeof rawDesc === "string" 
+    ? rawDesc.split("\n")[0].substring(0, 160) 
+    : `Découvrez le projet ${card.title}`;
+
   return (
     <>
+      <Helmet>
+        <title>{card.title} | Axel Coudair - Étude de cas</title>
+        <meta name="description" content={seoDesc} />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -48,8 +66,9 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
       />
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 pointer-events-none">
         <motion.div
+          id="modal-scroll-container"
           layoutId={`apple-card-${card.id}`}
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl pointer-events-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl pointer-events-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           <button
             onClick={onClose}
@@ -85,20 +104,8 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
           <div className="bg-[#0E0F11] rounded-b-3xl border border-white/[0.07] border-t-0 p-7">
             {card.content}
             {card.gallery && card.gallery.length > 0 && (
-              <div className="mt-8">
-                <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-4">
-                  Aperçu
-                </h4>
-                <div className="space-y-3">
-                  {card.gallery.map((src, i) => (
-                    <MediaPreview
-                      key={i}
-                      src={src}
-                      alt={`${card.title} screenshot ${i + 1}`}
-                      className="w-full rounded-xl border border-white/[0.07] object-cover"
-                    />
-                  ))}
-                </div>
+              <div className="mt-16 w-full -mx-7 px-7">
+                <ReferenceGallery images={card.gallery} />
               </div>
             )}
           </div>
@@ -155,6 +162,8 @@ function CardItem({
 }
 
 export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<CardData | null>(null);
   const [mounted, setMounted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -162,6 +171,28 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
   const [canRight, setCanRight] = useState(true);
 
   useEffect(() => { setMounted(true); }, []);
+
+  // Sync state with URL parameter
+  useEffect(() => {
+    if (id) {
+      const cardFromUrl = cards.find(c => c.id === id);
+      if (cardFromUrl) {
+        setActiveCard(cardFromUrl);
+      } else {
+        setActiveCard(null);
+      }
+    } else {
+      setActiveCard(null);
+    }
+  }, [id, cards]);
+
+  const handleClose = () => {
+    navigate("/", { replace: false, preventScrollReset: true });
+  };
+
+  const handleCardClick = (card: CardData) => {
+    navigate(`/realisation/${card.id}`, { preventScrollReset: true });
+  };
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -188,7 +219,7 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
       {mounted && createPortal(
         <AnimatePresence>
           {activeCard && (
-            <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
+            <CardModal card={activeCard} onClose={handleClose} />
           )}
         </AnimatePresence>,
         document.body
@@ -209,7 +240,7 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
               key={card.id}
               card={card}
               active={activeCard?.id === card.id}
-              onClick={() => setActiveCard(card)}
+              onClick={() => handleCardClick(card)}
             />
           ))}
         </div>

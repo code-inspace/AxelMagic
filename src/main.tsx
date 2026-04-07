@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import posthog from "posthog-js";
 import "./index.css";
 import App from "./App.tsx";
+import { HelmetProvider } from "react-helmet-async";
 
 if (import.meta.env.VITE_PUBLIC_POSTHOG_KEY) {
   posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
@@ -17,8 +18,10 @@ if (import.meta.env.VITE_PUBLIC_POSTHOG_KEY) {
 hydrateRoot(
   document.getElementById("root")!,
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );

@@ -62,6 +62,7 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/mentions-legales" element={<MentionsLegales />} />
       <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+      <Route path="/realisation/:id" element={<Landing />} />
     </Routes>
   );
 }
