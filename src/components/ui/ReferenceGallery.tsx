@@ -30,19 +30,21 @@ export function ReferenceGallery({ images }: { images: string[] }) {
         
         if (!wrapper || !container || !scroller) return;
 
-        const getScrollAmount = () => -(wrapper.scrollWidth - container.clientWidth);
+        const distance = wrapper.scrollWidth - container.clientWidth;
+        
+        // Dynamically set outer container height to completely fit the horizontal scroll distance
+        container.style.height = `calc(${distance}px + 100vh)`;
 
         gsap.to(wrapper, {
-          x: getScrollAmount,
+          x: () => -distance,
           ease: "none",
           scrollTrigger: {
             trigger: container,
             scroller: scroller,
-            pin: true,
+            // We use standard start and end values that map 1:1 to horizontal scroll amount
+            start: "top 15%",
+            end: () => `+=${distance}`,
             scrub: 1,
-            // To prevent layout jumps inside a transform modal
-            pinType: "transform",
-            end: () => `+=${wrapper.scrollWidth - container.clientWidth}`,
             invalidateOnRefresh: true,
           }
         });
@@ -59,12 +61,19 @@ export function ReferenceGallery({ images }: { images: string[] }) {
   return (
     <section 
       ref={containerRef} 
-      className="w-full h-[50vh] sm:h-[60vh] overflow-hidden flex flex-col justify-center relative my-12"
+      className="w-full relative my-12"
+      // Height is set dynamically by GSAP to match the exact scroll width needed
+      style={{ minHeight: "100vh" }}
     >
-      <div 
-        ref={wrapperRef} 
-        className="flex items-center h-[90%] gap-6 sm:gap-10 w-max"
-      >
+      {/* 
+        Instead of letting GSAP pin the element (which conflicts with Framer Motion transforms), 
+        we use native CSS position: sticky. 
+      */}
+      <div className="sticky top-[15vh] w-full h-[50vh] sm:h-[60vh] overflow-hidden flex flex-col justify-center">
+        <div 
+          ref={wrapperRef} 
+          className="flex items-center h-[90%] gap-6 sm:gap-10 w-max"
+        >
         {images.map((src, i) => (
           <div 
             key={i} 
@@ -79,6 +88,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

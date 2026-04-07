@@ -5922,6 +5922,54 @@ function ProjectContent({
 }
 const projects = [
   {
+    id: "withstellie",
+    category: "React · TypeScript · GSAP · Sanity · i18n · SEO",
+    title: "WithStellie.co, Chrystel Bruce",
+    image: "/images/withstellie/cover.png",
+    gallery: [
+      "/images/withstellie/ws.mov",
+      "/images/withstellie/cover.png"
+    ],
+    content: /* @__PURE__ */ jsx(
+      ProjectContent,
+      {
+        description: `Chrystel accompagne des femmes et des personnes queer à se réinventer en profondeur. Son ancienne présence en ligne ne rendait pas justice à la puissance de sa méthode. Le site existait, mais il ne convertissait pas, ne rassurait pas, et n'inspirait pas confiance au premier regard.
+L'objectif était clair : construire une expérience digitale à la hauteur de la transformation qu'elle propose. Plus premium, plus crédible, plus mémorable, et visible sur Google dans les deux langues.
+Nouveau design immersif et cinématique, refonte complète du copywriting FR/EN, intégration d'un CMS pour une autonomie totale, SEO structuré dès le code, booking en ligne sans friction, et une direction artistique cohérente du loader à la dernière section. Chaque décision a été prise avec un seul critère : est-ce que ça donne envie de travailler avec elle ?
+Le résultat est un site qui capte, qui rassure et qui convertit.
+
+SEO & Visibilité
+Chaque page est construite pour être comprise par Google dès le premier crawl. Balises title et meta descriptions personnalisées par page, données structurées JSON-LD pour renforcer la crédibilité du site auprès des moteurs de recherche, URLs propres et cohérentes en français et en anglais, structure sémantique HTML irréprochable. Le site est indexable dans les deux langues sans duplication de contenu, ce qui multiplie la surface de visibilité organique.
+
+Design & Expérience Visuelle
+Le site s'ouvre sur un loader animé qui installe l'ambiance avant même que le contenu apparaisse. Palette organique terracotta, crème et rouille, typographie à fort contraste, sections plein écran immersives. Chaque transition au scroll est orchestrée avec GSAP, la librairie d'animation de référence utilisée par les plus grands studios créatifs. Le résultat : une navigation qui ressemble à un voyage, pas à une consultation de catalogue.
+
+Headless CMS, Sanity
+Stellie gère 100% de son contenu seule, sans toucher à une ligne de code. Textes, images, offres, témoignages : tout se modifie depuis une interface simple et intuitive, comme un Google Docs pensé pour un site web. Le site est bilingue FR/EN, et chaque modification se répercute instantanément dans les deux langues. Plus besoin de passer par un développeur pour mettre à jour une phrase ou changer une photo.
+
+Performances Techniques
+Les images sont optimisées et chargées à la demande, les animations sont nettoyées proprement en mémoire, et le code est découpé par page pour ne charger que ce dont l'utilisateur a besoin. Le tout est déployé sur une infrastructure mondiale qui garantit un temps de chargement rapide depuis n'importe où. Un site lent perd ses visiteurs en moins de 3 secondes, celui-ci ne se permet pas cette erreur.
+
+Internationalisation
+Le site est entièrement bilingue FR/EN, avec une bascule fluide entre les deux langues sans rechargement de page. Chaque URL, chaque balise SEO, chaque bloc de contenu existe dans sa version française et anglaise. Une nécessité pour un coaching qui s'adresse aussi bien à une clientèle francophone qu'anglophone, sans jamais donner l'impression d'une traduction approximative.
+
+Booking & Conversion
+La prise de rendez-vous est intégrée directement dans le site via Cal.com, sans redirection vers une page externe. Le calendrier s'affiche dans l'univers visuel du site, sans rupture d'expérience. Résultat : le passage de "je suis intéressée" à "j'ai un créneau réservé" se fait en quelques secondes, sans friction.`,
+        tags: [
+          "React",
+          "TypeScript",
+          "GSAP",
+          "Sanity CMS",
+          "Vite",
+          "i18n",
+          "Tailwind CSS"
+        ],
+        link: "https://withstellie-co.vercel.app/",
+        title: "WithStellie.co, Chrystel Bruce"
+      }
+    )
+  },
+  {
     id: "calea",
     category: "React · Tailwind · GSAP · SEO",
     title: "Caléa, Resort Provençal",
@@ -8217,18 +8265,18 @@ function ReferenceGallery({ images }) {
         const container = containerRef.current;
         const scroller = document.querySelector("#modal-scroll-container");
         if (!wrapper || !container || !scroller) return;
-        const getScrollAmount = () => -(wrapper.scrollWidth - container.clientWidth);
+        const distance = wrapper.scrollWidth - container.clientWidth;
+        container.style.height = `calc(${distance}px + 100vh)`;
         gsapWithCSS.to(wrapper, {
-          x: getScrollAmount,
+          x: () => -distance,
           ease: "none",
           scrollTrigger: {
             trigger: container,
             scroller,
-            pin: true,
+            // We use standard start and end values that map 1:1 to horizontal scroll amount
+            start: "top 15%",
+            end: () => `+=${distance}`,
             scrub: 1,
-            // To prevent layout jumps inside a transform modal
-            pinType: "transform",
-            end: () => `+=${wrapper.scrollWidth - container.clientWidth}`,
             invalidateOnRefresh: true
           }
         });
@@ -8242,8 +8290,9 @@ function ReferenceGallery({ images }) {
     "section",
     {
       ref: containerRef,
-      className: "w-full h-[50vh] sm:h-[60vh] overflow-hidden flex flex-col justify-center relative my-12",
-      children: /* @__PURE__ */ jsx(
+      className: "w-full relative my-12",
+      style: { minHeight: "100vh" },
+      children: /* @__PURE__ */ jsx("div", { className: "sticky top-[15vh] w-full h-[50vh] sm:h-[60vh] overflow-hidden flex flex-col justify-center", children: /* @__PURE__ */ jsx(
         "div",
         {
           ref: wrapperRef,
@@ -8267,7 +8316,7 @@ function ReferenceGallery({ images }) {
             i
           ))
         }
-      )
+      ) })
     }
   );
 }

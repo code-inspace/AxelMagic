@@ -10,6 +10,7 @@ const routes = [
   "/",
   "/mentions-legales",
   "/politique-de-confidentialite",
+  "/realisation/withstellie",
   "/realisation/calea",
   "/realisation/lucafit",
   "/realisation/adn-paris"
