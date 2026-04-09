@@ -31,20 +31,56 @@ function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: 
 function Lightbox({ images, index, onClose }: { images: string[]; index: number; onClose: () => void }) {
   const [current, setCurrent] = useState(index);
   const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const isPanning = useRef(false);
+  const panStart = useRef({ mx: 0, my: 0, px: 0, py: 0 });
 
-  const prev = useCallback(() => { setCurrent(i => (i - 1 + images.length) % images.length); setZoom(1); }, [images.length]);
-  const next = useCallback(() => { setCurrent(i => (i + 1) % images.length); setZoom(1); }, [images.length]);
-  const toggleZoom = () => setZoom(z => z === 1 ? 2.2 : 1);
+  const resetView = useCallback(() => { setZoom(1); setPan({ x: 0, y: 0 }); }, []);
+  const prev = useCallback(() => { setCurrent(i => (i - 1 + images.length) % images.length); resetView(); }, [images.length, resetView]);
+  const next = useCallback(() => { setCurrent(i => (i + 1) % images.length); resetView(); }, [images.length, resetView]);
+  const toggleZoom = useCallback(() => { setZoom(z => { if (z > 1) { setPan({ x: 0, y: 0 }); return 1; } return 2.5; }); }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft" && zoom === 1) prev();
+      if (e.key === "ArrowRight" && zoom === 1) next();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, prev, next]);
+  }, [onClose, prev, next, zoom]);
+
+  // Mouse pan handlers
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    if (zoom <= 1) return;
+    isPanning.current = true;
+    panStart.current = { mx: e.clientX, my: e.clientY, px: pan.x, py: pan.y };
+    e.preventDefault();
+  }, [zoom, pan]);
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      if (!isPanning.current) return;
+      setPan({ x: panStart.current.px + e.clientX - panStart.current.mx, y: panStart.current.py + e.clientY - panStart.current.my });
+    };
+    const onUp = () => { isPanning.current = false; };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseup", onUp); };
+  }, []);
+
+  // Touch pan
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    if (zoom <= 1 || e.touches.length !== 1) return;
+    isPanning.current = true;
+    panStart.current = { mx: e.touches[0].clientX, my: e.touches[0].clientY, px: pan.x, py: pan.y };
+  }, [zoom, pan]);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isPanning.current || e.touches.length !== 1) return;
+    e.stopPropagation();
+    setPan({ x: panStart.current.px + e.touches[0].clientX - panStart.current.mx, y: panStart.current.py + e.touches[0].clientY - panStart.current.my });
+  }, []);
 
   const src = images[current];
 
@@ -55,7 +91,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[200] bg-black/90 backdrop-blur-sm flex items-center justify-center"
-      onClick={onClose}
+      onClick={zoom > 1 ? undefined : onClose}
     >
       {/* Controls */}
       <div className="absolute top-4 right-4 flex gap-2 z-10" onClick={e => e.stopPropagation()}>
@@ -70,7 +106,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
       </div>
 
       {/* Prev */}
-      {images.length > 1 && (
+      {images.length > 1 && zoom === 1 && (
         <button
           onClick={e => { e.stopPropagation(); prev(); }}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
@@ -80,7 +116,14 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
       )}
 
       {/* Image */}
-      <div className="relative max-w-[90vw] max-h-[90vh] overflow-hidden" onClick={e => e.stopPropagation()}>
+      <div
+        className="relative w-[90vw] h-[90vh] overflow-hidden flex items-center justify-center"
+        onClick={e => e.stopPropagation()}
+        onMouseDown={onMouseDown}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        style={{ cursor: zoom > 1 ? (isPanning.current ? "grabbing" : "grab") : "default" }}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -88,19 +131,24 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center w-full h-full"
           >
             {isVideoSrc(src) ? (
-              <video src={src} autoPlay muted loop playsInline className="max-w-[90vw] max-h-[90vh] object-contain">
+              <video src={src} autoPlay muted loop playsInline className="max-w-full max-h-full object-contain">
                 <track kind="captions" />
               </video>
             ) : (
               <img
                 src={src}
                 alt={`Aperçu ${current + 1}`}
-                className="max-w-[90vw] max-h-[90vh] object-contain transition-transform duration-300 cursor-zoom-in"
-                style={{ transform: `scale(${zoom})`, cursor: zoom > 1 ? "zoom-out" : "zoom-in" }}
-                onClick={toggleZoom}
+                className="max-w-full max-h-full object-contain select-none"
+                style={{
+                  transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
+                  transition: isPanning.current ? "none" : "transform 0.3s ease",
+                  cursor: zoom > 1 ? "grab" : "zoom-in",
+                }}
+                onClick={zoom === 1 ? toggleZoom : undefined}
+                draggable={false}
               />
             )}
           </motion.div>
@@ -108,7 +156,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
       </div>
 
       {/* Next */}
-      {images.length > 1 && (
+      {images.length > 1 && zoom === 1 && (
         <button
           onClick={e => { e.stopPropagation(); next(); }}
           className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
