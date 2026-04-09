@@ -25,7 +25,6 @@ export function About() {
 
   return (
     <section id="apropos" className="relative py-16 lg:py-32 overflow-hidden">
-      <DotPattern className="opacity-30" cr={0.8} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0E0F11] via-transparent to-[#0E0F11] pointer-events-none" />
 
       {/* Background glow */}

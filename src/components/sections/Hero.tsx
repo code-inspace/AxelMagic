@@ -141,22 +141,6 @@ export function Hero() {
         ctx.stroke();
       }
 
-      // Grid lines (subtle)
-      ctx.strokeStyle = "rgba(255,255,255,0.015)";
-      ctx.lineWidth = 1;
-      const gridSpacing = 60;
-      for (let x = 0; x < canvas.width; x += gridSpacing) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < canvas.height; y += gridSpacing) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
 
       animFrameRef.current = requestAnimationFrame(draw);
     };

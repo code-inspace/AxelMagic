@@ -5,12 +5,6 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-white/[0.06] pt-16 pb-24 sm:pb-10 overflow-hidden">
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] opacity-[0.05] pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse, #653ad2, transparent 70%)",
-        }}
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-12">

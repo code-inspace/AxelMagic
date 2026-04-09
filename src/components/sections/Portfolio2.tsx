@@ -6,12 +6,6 @@ import { AppleCardsCarousel } from "@/components/ui/apple-cards-carousel";
 export function Portfolio2() {
   return (
     <section id="realisations" className="relative py-16 lg:py-32 overflow-hidden">
-      <div
-        className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full opacity-[0.06] pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse, #653ad2, transparent 70%)",
-        }}
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <BlurFade inView delay={0}>
