@@ -10,6 +10,7 @@ import { Portfolio2 } from "@/components/sections/Portfolio2";
 import { SeoSection } from "@/components/sections/SeoSection";
 import { Process } from "@/components/sections/Process";
 import { Affiliation } from "@/components/sections/Affiliation";
+import { Testimonial } from "@/components/sections/Testimonial";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingBar } from "@/components/FloatingBar";
@@ -44,6 +45,7 @@ function Landing() {
         <Hero />
         <About />
         <Portfolio2 />
+        <Testimonial />
         <Services />
         <Process />
         <SeoSection />
