@@ -1,6 +1,15 @@
-import { ExternalLink } from "lucide-react";
+import {
+  ExternalLink,
+  Target,
+  MousePointerClick,
+  Globe,
+  Edit3,
+  Zap,
+  Calendar,
+} from "lucide-react";
 import posthog from "posthog-js";
 import { RollButton } from "@/components/ui/RollButton";
+import { CompareGallery } from "@/components/ui/CompareGallery";
 import { ReactNode } from "react";
 
 export interface CardData {
@@ -91,45 +100,229 @@ export const projects: CardData[] = [
     title: "WithStellie.co, Chrystel Bruce",
     image: "/images/withstellie/ws.mov",
     gallery: [
-      "/images/withstellie/ws.mov",
-      "/images/withstellie/cover.png",
+      "/images/withstellie/withstellie1.png",
+      "/images/withstellie/withstellie3.png",
+      "/images/withstellie/withstellie7.png",
+      "/images/withstellie/withstellie10.png",
+      "/images/withstellie/withstellie11.png",
+      "/images/withstellie/withstellie12.png",
     ],
     content: (
-      <ProjectContent
-        description={`Chrystel accompagne des femmes et des personnes queer à se réinventer en profondeur. Son ancienne présence en ligne ne rendait pas justice à la puissance de sa méthode. Le site existait, mais il ne convertissait pas, ne rassurait pas, et n'inspirait pas confiance au premier regard.
-L'objectif était clair : construire une expérience digitale à la hauteur de la transformation qu'elle propose. Plus premium, plus crédible, plus mémorable, et visible sur Google dans les deux langues.
-Nouveau design immersif et cinématique, refonte complète du copywriting FR/EN, intégration d'un CMS pour une autonomie totale, SEO structuré dès le code, booking en ligne sans friction, et une direction artistique cohérente du loader à la dernière section. Chaque décision a été prise avec un seul critère : est-ce que ça donne envie de travailler avec elle ?
-Le résultat est un site qui capte, qui rassure et qui convertit.
+      <div className="space-y-12">
+        {/* Hook */}
+        <div className="relative">
+          <p className="text-white/90 text-lg sm:text-xl font-light leading-relaxed">
+            Chrystel accompagne des femmes et des personnes queer à se
+            réinventer en profondeur. Son ancienne présence en ligne ne rendait
+            pas justice à la puissance de sa méthode. Le site existait, mais il
+            ne convertissait pas, ne rassurait pas, et n'inspirait pas confiance
+            au premier regard.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              "React",
+              "TypeScript",
+              "GSAP",
+              "Sanity CMS",
+              "Vite",
+              "i18n",
+              "Tailwind CSS",
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white/60"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
 
-SEO & Visibilité
-Chaque page est construite pour être comprise par Google dès le premier crawl. Balises title et meta descriptions personnalisées par page, données structurées JSON-LD pour renforcer la crédibilité du site auprès des moteurs de recherche, URLs propres et cohérentes en français et en anglais, structure sémantique HTML irréprochable. Le site est indexable dans les deux langues sans duplication de contenu, ce qui multiplie la surface de visibilité organique.
+        {/* Highlight quote */}
+        <div className="border-l-2 border-[#653ad2] pl-6 py-2 bg-gradient-to-r from-white/[0.03] to-transparent rounded-r-xl">
+          <p className="text-xl sm:text-2xl font-light text-white italic">
+            "Chaque décision a été prise avec un seul critère : est-ce que ça
+            donne envie de travailler avec elle ?"
+          </p>
+        </div>
 
-Design & Expérience Visuelle
-Le site s'ouvre sur un loader animé qui installe l'ambiance avant même que le contenu apparaisse. Palette organique terracotta, crème et rouille, typographie à fort contraste, sections plein écran immersives. Chaque transition au scroll est orchestrée avec GSAP, la librairie d'animation de référence utilisée par les plus grands studios créatifs. Le résultat : une navigation qui ressemble à un voyage, pas à une consultation de catalogue.
+        {/* Grid Bento */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Target className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                SEO & Visibilité
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Chaque page est construite pour être comprise par Google dès le
+              premier crawl. Balises title et meta descriptions personnalisées
+              par page, données structurées JSON-LD pour renforcer la
+              crédibilité du site auprès des moteurs de recherche, URLs propres
+              et cohérentes en français et en anglais, structure sémantique HTML
+              irréprochable. Le site est indexable dans les deux langues sans
+              duplication de contenu, ce qui multiplie la surface de visibilité
+              organique.
+            </p>
+          </div>
 
-Headless CMS, Sanity
-Stellie gère 100% de son contenu seule, sans toucher à une ligne de code. Textes, images, offres, témoignages : tout se modifie depuis une interface simple et intuitive, comme un Google Docs pensé pour un site web. Le site est bilingue FR/EN, et chaque modification se répercute instantanément dans les deux langues. Plus besoin de passer par un développeur pour mettre à jour une phrase ou changer une photo.
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <MousePointerClick className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                Design & Expérience Visuelle
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Le site s'ouvre sur un loader animé qui installe l'ambiance avant
+              même que le contenu apparaisse. Palette organique terracotta,
+              crème et rouille, typographie à fort contraste, sections plein
+              écran immersives. Chaque transition au scroll est orchestrée avec
+              GSAP, la librairie d'animation de référence utilisée par les plus
+              grands studios créatifs. Le résultat : une navigation qui
+              ressemble à un voyage, pas à une consultation de catalogue.
+            </p>
+          </div>
 
-Performances Techniques
-Les images sont optimisées et chargées à la demande, les animations sont nettoyées proprement en mémoire, et le code est découpé par page pour ne charger que ce dont l'utilisateur a besoin. Le tout est déployé sur une infrastructure mondiale qui garantit un temps de chargement rapide depuis n'importe où. Un site lent perd ses visiteurs en moins de 3 secondes, celui-ci ne se permet pas cette erreur.
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Edit3 className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                Headless CMS, Sanity
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Stellie gère 100% de son contenu seule, sans toucher à une ligne
+              de code. Textes, images, offres, témoignages : tout se modifie
+              depuis une interface simple et intuitive, comme un Google Docs
+              pensé pour un site web. Le site est bilingue FR/EN, et chaque
+              modification se répercute instantanément dans les deux langues.
+              Plus besoin de passer par un développeur pour mettre à jour une
+              phrase ou changer une photo.
+            </p>
+          </div>
 
-Internationalisation
-Le site est entièrement bilingue FR/EN, avec une bascule fluide entre les deux langues sans rechargement de page. Chaque URL, chaque balise SEO, chaque bloc de contenu existe dans sa version française et anglaise. Une nécessité pour un coaching qui s'adresse aussi bien à une clientèle francophone qu'anglophone, sans jamais donner l'impression d'une traduction approximative.
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Zap className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                Performances Techniques
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Les images sont optimisées et chargées à la demande, les
+              animations sont nettoyées proprement en mémoire, et le code est
+              découpé par page pour ne charger que ce dont l'utilisateur a
+              besoin. Le tout est déployé sur une infrastructure mondiale qui
+              garantit un temps de chargement rapide depuis n'importe où. Un
+              site lent perd ses visiteurs en moins de 3 secondes, celui-ci ne
+              se permet pas cette erreur.
+            </p>
+          </div>
 
-Booking & Conversion
-La prise de rendez-vous est intégrée directement dans le site via Cal.com, sans redirection vers une page externe. Le calendrier s'affiche dans l'univers visuel du site, sans rupture d'expérience. Résultat : le passage de "je suis intéressée" à "j'ai un créneau réservé" se fait en quelques secondes, sans friction.`}
-        tags={[
-          "React",
-          "TypeScript",
-          "GSAP",
-          "Sanity CMS",
-          "Vite",
-          "i18n",
-          "Tailwind CSS"
-        ]}
-        link="https://withstellie-co.vercel.app/"
-        title="WithStellie.co, Chrystel Bruce"
-      />
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Globe className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                Internationalisation
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Le site est entièrement bilingue FR/EN, avec une bascule fluide
+              entre les deux langues sans rechargement de page. Chaque URL,
+              chaque balise SEO, chaque bloc de contenu existe dans sa version
+              française et anglaise. Une nécessité pour un coaching qui
+              s'adresse aussi bien à une clientèle francophone qu'anglophone,
+              sans jamais donner l'impression d'une traduction approximative.
+            </p>
+          </div>
+
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Calendar className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                Booking & Conversion
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed">
+              La prise de rendez-vous est intégrée directement dans le site via
+              Cal.com, sans redirection vers une page externe. Le calendrier
+              s'affiche dans l'univers visuel du site, sans rupture
+              d'expérience. Résultat : le passage de "je suis intéressée" à
+              "j'ai un créneau réservé" se fait en quelques secondes, sans
+              friction.
+            </p>
+          </div>
+        </div>
+
+        {/* Before / After comparisons */}
+        <CompareGallery
+          tabs={[
+            {
+              id: "design",
+              label: "Design",
+              left: "/images/withstellie/compare/design/left.png",
+              right: "/images/withstellie/compare/design/right.png",
+              leftLabel: "Avant",
+              rightLabel: "Après",
+              description:
+                "Refonte complète de l'identité visuelle : palette organique terracotta et crème, typographie à fort contraste, sections plein écran immersives. Le passage d'un site générique à une expérience de marque cohérente et mémorable.",
+            },
+            {
+              id: "sanity",
+              label: "Sanity CMS",
+              left: "/images/withstellie/compare/sanity/right.png",
+              right: "/images/withstellie/compare/sanity/left.png",
+              leftLabel: "Gestion de contenu",
+              rightLabel: "Site",
+              description:
+                "Stellie gère 100% de son contenu seule depuis le système de gestion de contenu Sanity : textes, images, offres et témoignages dans les deux langues, sans toucher à une ligne de code.",
+            },
+            {
+              id: "closing",
+              label: "Conversion",
+              left: "/images/withstellie/compare/closing/left.png",
+              right: "/images/withstellie/compare/closing/right.png",
+              leftLabel: "Avant",
+              rightLabel: "Après",
+              description:
+                "Intégration Cal.com directement dans l'univers visuel du site. Le passage de « je suis intéressée » à « j'ai un créneau réservé » se fait en quelques secondes, sans friction.",
+            },
+          ]}
+        />
+
+        {/* Action Button */}
+        <div>
+          <RollButton
+            href="https://withstellie-co.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() =>
+              posthog.capture("project_link_click", {
+                project: "WithStellie.co",
+                url: "https://withstellie-co.vercel.app/",
+              })
+            }
+            className="inline-flex items-center px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-300 shadow-lg shadow-purple-900/20"
+            style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
+          >
+            Consulter le site live <ExternalLink className="w-4 h-4 ml-2" />
+          </RollButton>
+        </div>
+      </div>
     ),
   },
   {
