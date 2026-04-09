@@ -151,20 +151,24 @@ export function ReferenceGallery({ images }: { images: string[] }) {
         if (!wrapper || !container || !scroller) return;
 
         const distance = wrapper.scrollWidth - container.clientWidth;
-        container.style.height = `calc(${distance}px + 100vh)`;
+        const dwell = 400; // px de scroll vertical avant de commencer l'horizontal
+        container.style.height = `calc(${distance + dwell}px + 100vh)`;
 
-        gsap.to(wrapper, {
-          x: () => -distance,
-          ease: "none",
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container,
             scroller,
             start: "top 15%",
-            end: () => `+=${distance}`,
+            end: () => `+=${distance + dwell}`,
             scrub: 1,
             invalidateOnRefresh: true,
           },
         });
+
+        // Pause initiale : reste sur la 1ère photo
+        tl.to(wrapper, { x: 0, duration: dwell, ease: "none" });
+        // Puis scroll horizontal
+        tl.to(wrapper, { x: -distance, duration: distance, ease: "none" });
       }, containerRef);
 
       return () => ctx.revert();
