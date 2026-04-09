@@ -307,7 +307,7 @@ export const projects: CardData[] = [
   },
   {
     id: "lucafit",
-    category: "Figma · Webflow · SEO",
+    category: "Design · Webflow · SEO",
     title: "LucasFit",
     image: "/images/Lucassanchez/Preview/lucas fit preview.jpeg",
     gallery: [
@@ -321,7 +321,7 @@ export const projects: CardData[] = [
         description={
           "LucasFit est une étude de cas autour d'un brief simple : construire un site qui transmet de l'énergie et pousse à l'action sans passer par une longue lecture.\n\nLe site a été développé sur Webflow avec un parti pris graphique assumé : sections en biais, mise en page qui sort de la grille, contraste noir, blanc et rouge vif. La tension visuelle est voulue : elle invite au mouvement plutôt qu'à la lecture passive.\n\nSEO intégré dès la conception : structure sémantique, balises title et meta optimisées, hiérarchie de contenus orientée coaching sportif."
         }
-        tags={["Figma", "Webflow", "SEO"]}
+        tags={["Design", "Webflow", "SEO"]}
         link="https://lucasfit.webflow.io/"
         title="LucasFit"
       />
@@ -329,7 +329,7 @@ export const projects: CardData[] = [
   },
   {
     id: "adn-paris",
-    category: "WordPress · Figma · UI Design · SEO",
+    category: "WordPress · UI Design · SEO",
     title: "ADN Paris",
     image: "/images/ADN/Preview/adn-preview.jpg",
     gallery: [
@@ -341,9 +341,9 @@ export const projects: CardData[] = [
     content: (
       <ProjectContent
         description={
-          "ADN Paris accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires à Paris.\n\nProjet pris en charge de A à Z : maquette sur Figma, développement WordPress sur-mesure, SEO on-page. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard, en cohérence avec les valeurs de l'association.\n\nConçu pour rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris, dès la mise en ligne."
+          "ADN Paris accompagne les personnes LGBT dans leur insertion sociale à travers des cours de danse, des ateliers et des événements communautaires à Paris.\n\nProjet pris en charge de A à Z : direction artistique, développement WordPress sur-mesure, SEO on-page. Le design a été construit autour d'une palette chaleureuse et d'une mise en page claire, pour que le site soit accessible et accueillant dès le premier regard, en cohérence avec les valeurs de l'association.\n\nConçu pour rendre l'association visible auprès des personnes qui cherchent ce type d'accompagnement à Paris, dès la mise en ligne."
         }
-        tags={["WordPress", "Figma", "UI Design", "SEO"]}
+        tags={["WordPress", "UI Design", "SEO"]}
       />
     ),
   },

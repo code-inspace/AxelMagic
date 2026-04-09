@@ -30,9 +30,9 @@ const steps = [
   {
     number: "02",
     icon: Paintbrush,
-    title: "Maquette",
+    title: "Design",
     description:
-      "Je vous soumets un design complet sur Figma. On affine ensemble jusqu'à ce que ce soit parfait. Vous validez avant le démarrage du développement.",
+      "Je conçois le design de votre site. On affine ensemble jusqu'à ce que ce soit parfait. Vous validez avant le démarrage du développement.",
     duration: "Semaine 1-2",
     color: "#a78bfa",
   },
