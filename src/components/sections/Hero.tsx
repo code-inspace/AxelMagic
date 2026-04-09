@@ -13,12 +13,10 @@ interface Orb {
   size: number;
   opacity: number;
   color: string;
-  hue: number;
 }
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
   const orbsRef = useRef<Orb[]>([]);
   const animFrameRef = useRef<number>(0);
 
@@ -53,14 +51,8 @@ export function Hero() {
         size: 200 + Math.random() * 300,
         opacity: 0.12 + Math.random() * 0.1,
         color: `hsla(${c.h}, ${c.s}%, ${c.l}%, `,
-        hue: c.h,
       };
     });
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-    window.addEventListener("mousemove", handleMouseMove);
 
     let t = 0;
 
@@ -68,50 +60,19 @@ export function Hero() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       t += 0.005;
 
-      const mx = mouseRef.current.x;
-      const my = mouseRef.current.y;
-
-      // Draw mouse-reactive glow
-      const mouseGrad = ctx.createRadialGradient(mx, my, 0, mx, my, 280);
-      mouseGrad.addColorStop(0, "hsla(260, 80%, 60%, 0.18)");
-      mouseGrad.addColorStop(0.5, "hsla(240, 80%, 50%, 0.08)");
-      mouseGrad.addColorStop(1, "transparent");
-      ctx.fillStyle = mouseGrad;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw orbs
       orbsRef.current.forEach((orb, i) => {
-        // Attract toward mouse gently
-        const dx = mx - orb.x;
-        const dy = my - orb.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const attraction = 0.00015;
-        orb.vx += (dx / dist) * attraction;
-        orb.vy += (dy / dist) * attraction;
-
-        // Damping
         orb.vx *= 0.995;
         orb.vy *= 0.995;
 
-        // Update pos
         orb.x += orb.vx + Math.sin(t + i) * 0.3;
         orb.y += orb.vy + Math.cos(t + i * 0.7) * 0.3;
 
-        // Bounce off edges
         if (orb.x < -orb.size) orb.x = canvas.width + orb.size;
         if (orb.x > canvas.width + orb.size) orb.x = -orb.size;
         if (orb.y < -orb.size) orb.y = canvas.height + orb.size;
         if (orb.y > canvas.height + orb.size) orb.y = -orb.size;
 
-        // Draw
-        const grad = ctx.createRadialGradient(
-          orb.x,
-          orb.y,
-          0,
-          orb.x,
-          orb.y,
-          orb.size,
-        );
+        const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.size);
         const pulsingOpacity = orb.opacity + Math.sin(t * 1.5 + i) * 0.04;
         grad.addColorStop(0, `${orb.color}${pulsingOpacity})`);
         grad.addColorStop(0.5, `${orb.color}${pulsingOpacity * 0.4})`);
@@ -123,25 +84,6 @@ export function Hero() {
         ctx.fill();
       });
 
-      // Light rays from mouse
-      const rayCount = 6;
-      for (let i = 0; i < rayCount; i++) {
-        const angle = (i / rayCount) * Math.PI * 2 + t * 0.3;
-        const length = 180 + Math.sin(t * 2 + i) * 60;
-        const x2 = mx + Math.cos(angle) * length;
-        const y2 = my + Math.sin(angle) * length;
-        const rayGrad = ctx.createLinearGradient(mx, my, x2, y2);
-        rayGrad.addColorStop(0, "rgba(139, 92, 246, 0.08)");
-        rayGrad.addColorStop(1, "rgba(139, 92, 246, 0)");
-        ctx.strokeStyle = rayGrad;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(mx, my);
-        ctx.lineTo(x2, y2);
-        ctx.stroke();
-      }
-
-
       animFrameRef.current = requestAnimationFrame(draw);
     };
 
@@ -150,7 +92,6 @@ export function Hero() {
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
