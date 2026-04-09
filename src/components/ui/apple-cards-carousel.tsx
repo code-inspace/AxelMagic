@@ -104,7 +104,7 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
           <div className="bg-[#0E0F11] rounded-b-3xl border border-white/[0.07] border-t-0 p-7">
             {card.content}
             {card.gallery && card.gallery.length > 0 && (
-              <div className="mt-16 w-full -mx-7 px-7">
+              <div className="mt-16 w-full -mx-7" style={{ width: "calc(100% + 3.5rem)" }}>
                 <ReferenceGallery images={card.gallery} />
               </div>
             )}
