@@ -32,7 +32,7 @@ export function Testimonial() {
               </p>
               <div>
                 <p className="text-white font-semibold text-sm">Chrystel Bruce</p>
-                <p className="text-purple-400/70 text-xs mt-0.5 tracking-wide">WithStellie.co — Coach de vie & transformation</p>
+                <p className="text-purple-400/70 text-xs mt-0.5 tracking-wide">WithStellie.co · Coach de vie & transformation</p>
               </div>
             </div>
           </div>

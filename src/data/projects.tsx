@@ -156,7 +156,7 @@ export const projects: CardData[] = [
             },
             {
               id: "sanity",
-              label: "Sanity CMS",
+              label: "Contenu autonome",
               title: "Gestion de contenu autonome",
               icon: <Edit3 className="w-5 h-5" />,
               left: "/images/withstellie/compare/sanity/right.png",
