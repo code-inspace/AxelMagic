@@ -113,11 +113,19 @@ export const projects: CardData[] = [
         {/* Hook */}
         <div className="relative">
           <p className="text-white/90 text-lg sm:text-xl font-light leading-relaxed">
-            Chrystel accompagne des femmes et des personnes queer à se
-            réinventer en profondeur. Son ancienne présence en ligne ne rendait
-            pas justice à la puissance de sa méthode. Le site existait, mais il
-            ne convertissait pas, ne rassurait pas, et n'inspirait pas confiance
-            au premier regard.
+            Chrystel accompagne ses clients à se réinventer en profondeur. Elle
+            avait besoin d'une présence en ligne à la hauteur de la
+            transformation qu'elle propose.
+          </p>
+          <p className="text-white/90 text-lg sm:text-xl font-light leading-relaxed">
+            Les objectifs du chantier : traduire
+            son univers organique et chaleureux, terracotta, crème et rouille,
+            en une expérience visuelle immersive et premium, structurer un
+            funnel de conversion fluide de la découverte à la réservation,
+            intégrer un système de gestion de contenu pour une autonomie totale,
+            déployer un SEO bilingue FR/EN dès le code, et poser une direction
+            artistique cohérente du loader à la dernière section, sans jamais
+            trahir l'identité qu'elle avait déjà construite.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {[
@@ -152,7 +160,7 @@ export const projects: CardData[] = [
               leftLabel: "Avant",
               rightLabel: "Après",
               description:
-                "Refonte complète de l'identité visuelle : palette organique terracotta et crème, typographie à fort contraste, sections plein écran immersives. Le passage d'un site générique à une expérience de marque cohérente et mémorable.",
+                "Côté ergonomie, les offres sont désormais présentées à l'horizontale sur desktop. Une véritable emphase est mise sur l'offre de milieu de gamme afin d'instaurer une meilleure hiérarchie visuelle et de faciliter la comparaison pour l'utilisateur."
             },
             {
               id: "sanity",
@@ -197,21 +205,17 @@ export const projects: CardData[] = [
           <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-white/5 rounded-lg text-white/80">
-                <Target className="w-5 h-5" />
+                <Edit3 className="w-5 h-5" />
               </div>
               <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
-                SEO & Visibilité
+                Gestion de contenu autonome
               </h4>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Chaque page est construite pour être comprise par Google dès le
-              premier crawl. Balises title et meta descriptions personnalisées
-              par page, données structurées JSON-LD pour renforcer la
-              crédibilité du site auprès des moteurs de recherche, URLs propres
-              et cohérentes en français et en anglais, structure sémantique HTML
-              irréprochable. Le site est indexable dans les deux langues sans
-              duplication de contenu, ce qui multiplie la surface de visibilité
-              organique.
+            <p className="text-white/60 text-sm leading-relaxed">
+              Stellie gère 100% de son contenu seule depuis Sanity CMS : textes,
+              images, offres et témoignages dans les deux langues, sans toucher
+              à une ligne de code. Une autonomie totale, pensée dès l'architecture,
+              pour que le site reste vivant longtemps après la livraison.
             </p>
           </div>
 
@@ -225,13 +229,26 @@ export const projects: CardData[] = [
               </h4>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Le site s'ouvre sur un loader animé qui installe l'ambiance avant
-              même que le contenu apparaisse. Palette organique terracotta,
-              crème et rouille, typographie à fort contraste, sections plein
-              écran immersives. Chaque transition au scroll est orchestrée avec
-              GSAP, la librairie d'animation de référence utilisée par les plus
-              grands studios créatifs. Le résultat : une navigation qui
-              ressemble à un voyage, pas à une consultation de catalogue.
+              Refonte complète de l'identité visuelle : en partant de la palette organique terracotta et crème existante, nous avons intégré une typographie à fort contraste, des sections plein écran immersives et une image de marque premium. L'objectif : passer d'un site générique à une expérience de marque cohérente et mémorable. Chaque transition au scroll est orchestrée avec GSAP, la librairie d'animation privilégiée par les plus grands studios créatifs. Le résultat : une navigation qui immerge les visiteurs dans la méthode de Chrystel et dans son histoire.</p>
+          </div>
+
+          <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+                <Target className="w-5 h-5" />
+              </div>
+              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+                SEO & Visibilité
+              </h4>
+            </div>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Chaque page est construite pour être comprise par Google dès le
+              premier crawl. Balises title et meta descriptions personnalisées
+              par page, données structurées JSON-LD pour renforcer la
+              crédibilité du site auprès des moteurs de recherche, URLs propres
+              et cohérentes en français et en anglais, structure sémantique HTML
+              irréprochable. Le site est indexable dans les deux langues sans
+              duplication de contenu.
             </p>
           </div>
 
