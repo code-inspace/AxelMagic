@@ -12,10 +12,10 @@ const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 function LazyImage({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: Record<string, string | number> }) {
   const [loaded, setLoaded] = useState(false);
   const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLImageElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
+    const el = wrapRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect(); } },
@@ -26,15 +26,29 @@ function LazyImage({ src, alt, className, style }: { src: string; alt: string; c
   }, []);
 
   return (
-    <img
-      ref={ref}
-      src={visible ? src : undefined}
-      alt={alt}
-      decoding="async"
-      className={className}
-      style={{ ...style, opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
-      onLoad={() => setLoaded(true)}
-    />
+    <div ref={wrapRef} className={className} style={{ position: "relative", overflow: "hidden", ...style }}>
+      {/* Skeleton */}
+      {!loaded && (
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(90deg, #1a1a1f 25%, #26262e 50%, #1a1a1f 75%)",
+            backgroundSize: "200% 100%",
+            animation: "skeleton-shimmer 1.4s ease infinite",
+          }}
+        />
+      )}
+      {visible && (
+        <img
+          src={src}
+          alt={alt}
+          decoding="async"
+          className="absolute inset-0 w-full h-full"
+          style={{ objectFit: (style?.objectFit as string) ?? "cover", opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+          onLoad={() => setLoaded(true)}
+        />
+      )}
+    </div>
   );
 }
 
