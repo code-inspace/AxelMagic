@@ -30,6 +30,8 @@ function MediaPreview({ src, alt, className }: { src: string; alt: string; class
       }
     };
 
+    video.preload = "auto";
+    video.load();
     video.addEventListener("loadeddata", capture, { once: true });
     video.play().catch(() => setVideoFailed(true));
 
