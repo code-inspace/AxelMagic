@@ -130,7 +130,7 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
               <MediaPreview
                 src={card.image}
                 alt={card.title}
-                fallback={card.fallbackImage}
+
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
@@ -189,7 +189,6 @@ function CardItem({
           <MediaPreview
             src={card.image}
             alt={card.title}
-            fallback={card.fallbackImage}
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
