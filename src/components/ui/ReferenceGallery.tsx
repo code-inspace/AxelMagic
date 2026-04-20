@@ -9,6 +9,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
+function LazyImage({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: Record<string, string | number> }) {
+  const [loaded, setLoaded] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect(); } },
+      { rootMargin: "200px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <img
+      ref={ref}
+      src={visible ? src : undefined}
+      alt={alt}
+      decoding="async"
+      className={className}
+      style={{ ...style, opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+      onLoad={() => setLoaded(true)}
+    />
+  );
+}
+
 function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: () => void }) {
   const [posterUrl, setPosterUrl] = useState<string | null>(null);
   const [videoFailed, setVideoFailed] = useState(false);
@@ -43,8 +72,8 @@ function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: 
   if (!isVideoSrc(src)) {
     return (
       <div className="relative w-full h-full cursor-zoom-in" onClick={onClick}>
-        <img src={src} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} loading="lazy" />
-        <img src={src} alt={alt} className="relative w-full h-full object-contain" loading="lazy" />
+        <LazyImage src={src} alt="" className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} />
+        <LazyImage src={src} alt={alt} className="relative w-full h-full object-contain" />
       </div>
     );
   }
