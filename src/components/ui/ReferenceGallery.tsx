@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState, useEffect, useCallback } from "react";
+import type { CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
-function LazyImage({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: Record<string, string | number> }) {
+function LazyImage({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: CSSProperties }) {
   const [loaded, setLoaded] = useState(false);
   const [visible, setVisible] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ function LazyImage({ src, alt, className, style }: { src: string; alt: string; c
           alt={alt}
           decoding="async"
           className="absolute inset-0 w-full h-full"
-          style={{ objectFit: (style?.objectFit as string) ?? "cover", opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+          style={{ ...style, opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
           onLoad={() => setLoaded(true)}
         />
       )}
