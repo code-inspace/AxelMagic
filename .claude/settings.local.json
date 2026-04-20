@@ -8,7 +8,12 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(node -e \"const r = require\\(''react-router-dom''\\); console.log\\(Object.keys\\(r\\).filter\\(k => k.includes\\(''Static''\\)\\)\\)\")",
       "Bash(node --input-type=module -e \"import * as r from ''/Users/axel/Projets/axelmagic/node_modules/react-router-dom/dist/index.js''; console.log\\(Object.keys\\(r\\).filter\\(k => k.includes\\(''Static''\\)\\)\\)\")",
-      "Bash(ls /Users/axel/Projets/axelmagic/.env*)"
+      "Bash(ls /Users/axel/Projets/axelmagic/.env*)",
+      "Bash(brew list *)",
+      "Bash(sips --help)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(npx --yes sharp-cli --version)",
+      "Bash(node scripts/compress-images.mjs)"
     ]
   }
 }
