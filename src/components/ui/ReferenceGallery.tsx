@@ -45,7 +45,7 @@ function LazyImage({ src, alt, className, style }: { src: string; alt: string; c
           alt={alt}
           decoding="async"
           className="absolute inset-0 w-full h-full"
-          style={{ ...style, opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+          style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
           onLoad={() => setLoaded(true)}
         />
       )}
@@ -87,7 +87,7 @@ function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: 
   if (!isVideoSrc(src)) {
     return (
       <div className="relative w-full h-full cursor-zoom-in" onClick={onClick}>
-        <LazyImage src={src} alt="" className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} />
+        <LazyImage src={src} alt="" className="inset-0 w-full h-full scale-110" style={{ position: "absolute", filter: "blur(24px)" }} />
         <LazyImage src={src} alt={alt} className="relative w-full h-full object-contain" />
       </div>
     );
