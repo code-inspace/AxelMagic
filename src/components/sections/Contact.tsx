@@ -130,12 +130,6 @@ export function Contact() {
                     <action.icon className="w-6 h-6 text-purple-400" />
                   </div>
 
-                  <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border mb-3 w-fit ${action.badgeColor}`}
-                  >
-                    {action.badge}
-                  </span>
-
                   <h3 className="text-lg font-bold text-white mb-3">
                     {action.title}
                   </h3>

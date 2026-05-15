@@ -39,7 +39,6 @@ function Landing() {
 
   return (
     <div className="min-h-screen bg-[#0E0F11] text-white overflow-x-hidden">
-      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />

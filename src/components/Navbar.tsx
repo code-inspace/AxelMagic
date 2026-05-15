@@ -28,7 +28,7 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass border-b border-white/[0.06] py-3" : "py-5"
+        scrolled ? "glass py-3" : "py-5"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
