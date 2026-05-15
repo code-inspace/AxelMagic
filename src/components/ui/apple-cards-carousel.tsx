@@ -8,23 +8,26 @@ import { ReferenceGallery } from "./ReferenceGallery";
 
 const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
-function MediaPreview({ src, alt, className }: { src: string; alt: string; className?: string }) {
+function MediaPreview({ src, alt, className, poster }: { src: string; alt: string; className?: string; poster?: string }) {
   if (!isVideoSrc(src)) {
     return <img src={src} alt={alt} className={className} loading="lazy" />;
   }
 
   return (
-    <video
-      src={src}
-      autoPlay
-      muted
-      loop
-      playsInline
-      className={className}
-      style={{ pointerEvents: "none" }}
-    >
-      <track kind="captions" />
-    </video>
+    <>
+      {poster && <img src={poster} alt={alt} className={`${className} sm:hidden`} loading="lazy" />}
+      <video
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={`${className} ${poster ? "hidden sm:block" : ""}`}
+        style={{ pointerEvents: "none" }}
+      >
+        <track kind="captions" />
+      </video>
+    </>
   );
 }
 
@@ -34,6 +37,7 @@ export interface CardData {
   title: string;
   background?: string;
   image?: string;
+  poster?: string;
   gallery?: string[];
   content: ReactNode;
 }
@@ -96,7 +100,7 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
               <MediaPreview
                 src={card.image}
                 alt={card.title}
-
+                poster={card.poster}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
@@ -155,6 +159,7 @@ function CardItem({
           <MediaPreview
             src={card.image}
             alt={card.title}
+            poster={card.poster}
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}

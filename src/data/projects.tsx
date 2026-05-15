@@ -19,6 +19,7 @@ export interface CardData {
   title: string;
   background?: string;
   image?: string;
+  poster?: string;
   gallery?: string[];
   content: ReactNode;
 }
@@ -100,6 +101,7 @@ export const projects: CardData[] = [
     category: "React · TypeScript · GSAP · Sanity · i18n · SEO",
     title: "WithStellie.co, Chrystel Bruce",
     image: "/images/withstellie/ws.mov",
+    poster: "/images/withstellie/withstellie1.png",
     gallery: [
       "/images/withstellie/withstellie1.png",
       "/images/withstellie/withstellie3.png",
@@ -299,6 +301,7 @@ export const projects: CardData[] = [
     category: "React · Tailwind · GSAP · SEO",
     title: "Caléa, Resort Provençal",
     image: "/images/calea/video-calea.mov",
+    poster: "/images/calea/screen/screen2.png",
     gallery: [
       "/images/calea/video-calea.mov",
       "/images/calea/screen/screen2.png",
