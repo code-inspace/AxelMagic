@@ -54,36 +54,6 @@ function LazyImage({ src, alt, className, style }: { src: string; alt: string; c
 }
 
 function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: () => void }) {
-  const [posterUrl, setPosterUrl] = useState<string | null>(null);
-  const [videoFailed, setVideoFailed] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const bgVideoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (!isVideoSrc(src)) return;
-    const video = videoRef.current;
-    if (!video) return;
-
-    const capture = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 640;
-        canvas.height = video.videoHeight || 360;
-        canvas.getContext("2d")?.drawImage(video, 0, 0, canvas.width, canvas.height);
-        setPosterUrl(canvas.toDataURL("image/jpeg", 0.85));
-      } catch {
-        // cross-origin or decode error
-      }
-    };
-
-    video.preload = "auto";
-    video.load();
-    video.addEventListener("loadeddata", capture, { once: true });
-    video.play().catch(() => setVideoFailed(true));
-
-    return () => video.removeEventListener("loadeddata", capture);
-  }, [src]);
-
   if (!isVideoSrc(src)) {
     return (
       <div className="relative w-full h-full cursor-zoom-in" onClick={onClick}>
@@ -93,32 +63,20 @@ function MediaCard({ src, alt, onClick }: { src: string; alt: string; onClick?: 
     );
   }
 
-  const fallbackSrc = videoFailed ? posterUrl : null;
-
   return (
-    <div className="relative w-full h-full" onClick={onClick}>
-      {/* Blurry bg — use poster if failed */}
-      {fallbackSrc ? (
-        <img src={fallbackSrc} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} />
-      ) : (
-        <video ref={bgVideoRef} src={src} muted loop playsInline aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)", display: videoFailed ? "none" : undefined }} />
-      )}
-
-      {/* Main — video or captured frame */}
+    <div className="relative w-full h-full">
+      <video src={src} muted loop playsInline aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} />
       <video
-        ref={videoRef}
         src={src}
+        autoPlay
         muted
         loop
         playsInline
         className="relative w-full h-full object-contain"
-        style={{ pointerEvents: "none", display: videoFailed ? "none" : undefined }}
+        style={{ pointerEvents: "none" }}
       >
         <track kind="captions" />
       </video>
-      {videoFailed && posterUrl && (
-        <img src={posterUrl} alt={alt} className="relative w-full h-full object-contain" />
-      )}
     </div>
   );
 }

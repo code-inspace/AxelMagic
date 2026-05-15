@@ -14,7 +14,11 @@
       "Bash(node -e \"require\\('sharp'\\)\")",
       "Bash(npx --yes sharp-cli --version)",
       "Bash(node scripts/compress-images.mjs)",
-      "Bash(xargs perl -pi -e 's/\\\\btext-white\\\\/[0-9]+\\\\b/text-white/g')"
+      "Bash(xargs perl -pi -e 's/\\\\btext-white\\\\/[0-9]+\\\\b/text-white/g')",
+      "Bash(ffprobe -v quiet -print_format json -show_streams /Users/axel/Projets/codepers/axelmagic/public/images/withstellie/ws.mov)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(s.get\\('codec_name'\\), s.get\\('codec_type'\\)\\) for s in d.get\\('streams',[]\\)]\")",
+      "Bash(mdls -name kMDItemCodecs /Users/axel/Projets/codepers/axelmagic/public/images/withstellie/ws.mov)",
+      "Bash(mdls -name kMDItemCodecs /Users/axel/Projets/codepers/axelmagic/public/images/calea/video-calea.mov)"
     ]
   }
 }

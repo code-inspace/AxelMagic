@@ -9,56 +9,22 @@ import { ReferenceGallery } from "./ReferenceGallery";
 const isVideoSrc = (src: string) => /\.(mov|mp4|webm)$/i.test(src);
 
 function MediaPreview({ src, alt, className }: { src: string; alt: string; className?: string }) {
-  const [posterUrl, setPosterUrl] = useState<string | null>(null);
-  const [videoFailed, setVideoFailed] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (!isVideoSrc(src)) return;
-    const video = videoRef.current;
-    if (!video) return;
-
-    const capture = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 640;
-        canvas.height = video.videoHeight || 360;
-        canvas.getContext("2d")?.drawImage(video, 0, 0, canvas.width, canvas.height);
-        setPosterUrl(canvas.toDataURL("image/jpeg", 0.85));
-      } catch {
-        // cross-origin or decode error — no poster available
-      }
-    };
-
-    video.preload = "auto";
-    video.load();
-    video.addEventListener("loadeddata", capture, { once: true });
-    video.play().catch(() => setVideoFailed(true));
-
-    return () => video.removeEventListener("loadeddata", capture);
-  }, [src]);
-
   if (!isVideoSrc(src)) {
     return <img src={src} alt={alt} className={className} loading="lazy" />;
   }
 
   return (
-    <>
-      <video
-        ref={videoRef}
-        src={src}
-        muted
-        loop
-        playsInline
-        className={className}
-        style={{ pointerEvents: "none", display: videoFailed ? "none" : undefined }}
-      >
-        <track kind="captions" />
-      </video>
-      {videoFailed && posterUrl && (
-        <img src={posterUrl} alt={alt} className={className} />
-      )}
-    </>
+    <video
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      className={className}
+      style={{ pointerEvents: "none" }}
+    >
+      <track kind="captions" />
+    </video>
   );
 }
 
