@@ -136,7 +136,7 @@ export function CardModal({ card, onClose }: { card: CardData; onClose: () => vo
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
             <div className="absolute bottom-6 left-7">
-              <p className="text-[10px] text-white/60 uppercase tracking-widest mb-2">
+              <p className="text-[10px] text-white uppercase tracking-widest mb-2">
                 {card.category}
               </p>
               <h3 className="text-2xl font-poppins font-light text-white leading-tight">
@@ -194,7 +194,7 @@ function CardItem({
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
         <div className="absolute bottom-5 left-5 right-5">
-          <p className="text-[10px] text-white/60 uppercase tracking-widest mb-1.5">
+          <p className="text-[10px] text-white uppercase tracking-widest mb-1.5">
             {card.category}
           </p>
           <h3 className="text-base font-poppins font-light text-white leading-snug">

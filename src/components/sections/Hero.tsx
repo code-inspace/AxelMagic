@@ -168,7 +168,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Expert web indépendant, je conçois des sites{" "}
           <span className="text-purple-300 font-medium">stratégiques</span>,
@@ -213,9 +213,9 @@ export function Hero() {
           transition={{ delay: 1, duration: 0.5 }}
           className="md:flex justify-center hidden"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white/60">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white">
             <span className="text-amber-400">⚡</span>
-            <span className="text-sm text-white/60">
+            <span className="text-sm text-white">
               Plus que{" "}
               <span className="text-amber-300 font-bold">
                 2 places disponibles

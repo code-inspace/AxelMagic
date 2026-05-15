@@ -13,7 +13,8 @@
       "Bash(sips --help)",
       "Bash(node -e \"require\\('sharp'\\)\")",
       "Bash(npx --yes sharp-cli --version)",
-      "Bash(node scripts/compress-images.mjs)"
+      "Bash(node scripts/compress-images.mjs)",
+      "Bash(xargs perl -pi -e 's/\\\\btext-white\\\\/[0-9]+\\\\b/text-white/g')"
     ]
   }
 }

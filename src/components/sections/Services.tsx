@@ -63,7 +63,7 @@ export function Services() {
                 réalise pour vous
               </AuroraText>
             </h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white text-lg max-w-xl mx-auto">
               Du site vitrine à l'application web complexe, une expertise complète au service de votre croissance.
             </p>
           </div>
@@ -90,7 +90,7 @@ export function Services() {
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-white/55 leading-relaxed text-sm mb-5">
+                  <p className="text-white leading-relaxed text-sm mb-5">
                     {service.description}
                   </p>
 
@@ -98,7 +98,7 @@ export function Services() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white/60"
+                        className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white"
                       >
                         {tag}
                       </span>

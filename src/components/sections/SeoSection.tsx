@@ -81,7 +81,7 @@ export function SeoSection() {
                 </AuroraText>
               </h2>
 
-              <div className="space-y-4 text-white/65 text-lg leading-relaxed">
+              <div className="space-y-4 text-white text-lg leading-relaxed">
                 <p>
                   <span className="text-white font-semibold">
                     Un site invisible, c'est un site inutile.
@@ -98,7 +98,7 @@ export function SeoSection() {
 
               {/* Morphing text */}
               <div className="mt-8 p-5 glass-card border border-purple-500/20 rounded-2xl">
-                <p className="text-xs text-white/40 mb-2 uppercase tracking-wider">
+                <p className="text-xs text-white mb-2 uppercase tracking-wider">
                   Ce que je fais concrètement
                 </p>
                 <div className="text-xl font-bold text-white">
@@ -127,7 +127,7 @@ export function SeoSection() {
                   <div className="w-3 h-3 rounded-full bg-green-400/60" />
                 </div>
                 <div className="flex-1 mx-3 h-7 rounded-lg glass border border-white/10 flex items-center px-3">
-                  <span className="text-xs text-white/30">votre-site.fr</span>
+                  <span className="text-xs text-white">votre-site.fr</span>
                 </div>
               </div>
 
@@ -148,7 +148,7 @@ export function SeoSection() {
                     className="glass p-3 rounded-xl border border-white/[0.06]"
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs text-white/50">{label}</span>
+                      <span className="text-xs text-white">{label}</span>
                       <span className="text-sm font-bold" style={{ color }}>
                         {score}
                       </span>
@@ -180,7 +180,7 @@ export function SeoSection() {
               >
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-green-400" />
-                  <span className="text-sm text-white/70">
+                  <span className="text-sm text-white">
                     Temps de chargement
                   </span>
                 </div>
@@ -206,7 +206,7 @@ export function SeoSection() {
                     <h3 className="font-bold text-white mb-2">
                       {pillar.title}
                     </h3>
-                    <p className="text-white/55 text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>

@@ -27,7 +27,7 @@ export function Testimonial() {
             {/* Content */}
             <div className="flex-1 text-center sm:text-left">
               <Quote className="w-8 h-8 text-purple-500/40 mb-4 mx-auto sm:mx-0" />
-              <p className="text-white/80 text-lg sm:text-xl font-light leading-relaxed italic mb-6">
+              <p className="text-white text-lg sm:text-xl font-light leading-relaxed italic mb-6">
                 "Axel a saisi mon univers et m'a aidé à l'améliorer visuellement. Il a traduit ce que je fais en quelque chose de visuellement fort et aligné avec les valeurs de mon entreprise. Le résultat dépasse ce que j'avais imaginé et l'engagement suite à sa mise en ligne à réellement augmenté. Je n'ai eu que des feedbacks positifs !"
               </p>
               <div>

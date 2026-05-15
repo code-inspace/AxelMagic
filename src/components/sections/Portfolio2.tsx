@@ -28,7 +28,7 @@ export function Portfolio2() {
                 parlent d'eux-mêmes
               </AuroraText>
             </h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white text-lg max-w-xl mx-auto">
               Cliquez sur un projet pour découvrir les détails.
             </p>
           </div>

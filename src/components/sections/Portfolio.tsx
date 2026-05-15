@@ -76,7 +76,7 @@ export function Portfolio() {
                 parlent d'eux-mêmes
               </AuroraText>
             </h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white text-lg max-w-xl mx-auto">
               Chaque projet est unique. Voici deux exemples concrets de ce que je peux réaliser.
             </p>
           </div>
@@ -110,10 +110,10 @@ export function Portfolio() {
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
                         <div>
                           <h3 className="text-2xl font-bold text-white">{project.name}</h3>
-                          <p className="text-white/50 text-sm mt-1">{project.client}</p>
+                          <p className="text-white text-sm mt-1">{project.client}</p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="flex items-center gap-1.5 text-xs text-white/40">
+                          <span className="flex items-center gap-1.5 text-xs text-white">
                             <Calendar className="w-3.5 h-3.5" />
                             {project.date}
                           </span>
@@ -122,14 +122,14 @@ export function Portfolio() {
                             transition={{ duration: 0.3 }}
                             className="w-8 h-8 rounded-full glass border border-white/10 flex items-center justify-center"
                           >
-                            <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                           </motion.div>
                         </div>
                       </div>
 
-                      <p className="text-white/60 text-sm leading-relaxed mb-4">
+                      <p className="text-white text-sm leading-relaxed mb-4">
                         {project.description}
                       </p>
 
@@ -137,7 +137,7 @@ export function Portfolio() {
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className={`px-3 py-1 rounded-full text-xs font-medium border ${tagColors[tag] || "bg-white/5 text-white/60 border-white/10"}`}
+                            className={`px-3 py-1 rounded-full text-xs font-medium border ${tagColors[tag] || "bg-white/5 text-white border-white/10"}`}
                           >
                             {tag}
                           </span>
@@ -158,11 +158,11 @@ export function Portfolio() {
                       >
                         <div className="pt-6 border-t border-white/[0.07] mt-6 grid sm:grid-cols-2 gap-6">
                           <div>
-                            <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wider mb-2">Contexte</h4>
-                            <p className="text-white/65 text-sm leading-relaxed">{project.context}</p>
+                            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-2">Contexte</h4>
+                            <p className="text-white text-sm leading-relaxed">{project.context}</p>
                           </div>
                           <div>
-                            <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wider mb-2">Résultat</h4>
+                            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-2">Résultat</h4>
                             <div
                               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold"
                               style={{ background: `${project.accent}20`, color: project.accent }}

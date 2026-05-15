@@ -61,7 +61,7 @@ export function BentoCard({
         )}
         <div className="mt-auto">
           <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
-          <p className="text-white/60 text-sm leading-relaxed">{description}</p>
+          <p className="text-white text-sm leading-relaxed">{description}</p>
         </div>
         {children}
       </div>

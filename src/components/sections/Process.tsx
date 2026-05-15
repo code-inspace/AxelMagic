@@ -271,7 +271,7 @@ export function Process() {
                 30 jours.
               </AuroraText>
             </h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white text-lg max-w-xl mx-auto">
               Un processus éprouvé, une méthode claire. Vous savez où en est
               votre projet à chaque étape.
             </p>
@@ -293,12 +293,12 @@ export function Process() {
                     "0"
                   )}
                 </div>
-                <div className="text-xs text-white/40">jours</div>
+                <div className="text-xs text-white">jours</div>
               </div>
               <div className="w-px h-10 bg-white/10" />
               <div>
                 <p className="text-sm font-semibold text-white">Site clé en main</p>
-                <p className="text-xs text-white/40">Design · Dev · SEO · Livraison</p>
+                <p className="text-xs text-white">Design · Dev · SEO · Livraison</p>
               </div>
             </div>
           </div>
@@ -408,7 +408,7 @@ export function Process() {
         {/* CTA */}
         <BlurFade inView delay={0.3}>
           <div className="mt-16 text-center">
-            <p className="text-white/50 mb-6">Prêt à lancer votre projet ?</p>
+            <p className="text-white mb-6">Prêt à lancer votre projet ?</p>
             <RollButton
               data-cal-namespace="30min"
               data-cal-link="axel-coudair-hhelf2/30min"
@@ -451,9 +451,9 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
             </span>
             <h3 className="text-lg font-bold text-white leading-tight">{step.title}</h3>
           </div>
-          <span className="text-xs text-white/30 font-medium shrink-0 mt-0.5">{step.duration}</span>
+          <span className="text-xs text-white font-medium shrink-0 mt-0.5">{step.duration}</span>
         </div>
-        <p className="text-white/50 text-sm leading-relaxed whitespace-pre-line">
+        <p className="text-white text-sm leading-relaxed whitespace-pre-line">
           {step.description}
         </p>
       </div>
@@ -476,7 +476,7 @@ function DescriptionText({
 }) {
   return (
     <p
-      className={`step-card text-white/50 text-sm leading-relaxed whitespace-pre-line max-w-xs ${align === "right" ? "text-right" : "text-left"}`}
+      className={`step-card text-white text-sm leading-relaxed whitespace-pre-line max-w-xs ${align === "right" ? "text-right" : "text-left"}`}
     >
       {step.description}
     </p>
@@ -500,7 +500,7 @@ function DurationBadge({
       >
         Étape {step.number}
       </span>
-      <span className="text-2xl font-black text-white/90 leading-tight">
+      <span className="text-2xl font-black text-white leading-tight">
         {step.title}
       </span>
       <span

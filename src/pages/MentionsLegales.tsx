@@ -26,7 +26,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Éditeur du site
             </h2>
-            <div className="space-y-2 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-2 text-white text-sm leading-relaxed">
               <p>Nom : Axel Coudair</p>
               <p>Statut : Auto-entrepreneur</p>
               <p>Adresse : Paris, France</p>
@@ -48,7 +48,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Directeur de la publication
             </h2>
-            <div className="text-white/60 text-sm leading-relaxed">
+            <div className="text-white text-sm leading-relaxed">
               <p>Axel Coudair</p>
             </div>
           </section>
@@ -57,7 +57,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Hébergement
             </h2>
-            <div className="space-y-2 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-2 text-white text-sm leading-relaxed">
               <p>Hébergeur : Vercel, Inc.</p>
               <p>Adresse : 340 Pine Street, Suite 401, San Francisco, CA 94104, USA</p>
               <p>
@@ -78,7 +78,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Propriété intellectuelle
             </h2>
-            <div className="text-white/60 text-sm leading-relaxed">
+            <div className="text-white text-sm leading-relaxed">
               <p>
                 L'ensemble du contenu présent sur le site axelcoudair.com (textes,
                 images, graphismes, logo, icônes, animations, etc.) est protégé par
@@ -93,7 +93,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Données personnelles
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>
                 Les données personnelles collectées via le site (formulaire de
                 contact, email) sont strictement utilisées pour répondre aux demandes
@@ -117,7 +117,7 @@ export function MentionsLegales() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               Cookies
             </h2>
-            <div className="text-white/60 text-sm leading-relaxed">
+            <div className="text-white text-sm leading-relaxed">
               <p>
                 Le site peut utiliser des cookies à des fins de mesure d'audience ou
                 de fonctionnement. Vous pouvez configurer votre navigateur pour

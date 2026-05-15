@@ -66,16 +66,16 @@ export function About() {
               </h2>
             </BlurFade>
 
-            <div className="space-y-6 text-white/65 leading-relaxed">
+            <div className="space-y-6 text-white leading-relaxed">
               <BlurFade inView delay={0.2}>
-                <p className="text-base sm:text-lg text-white/75">
+                <p className="text-base sm:text-lg text-white">
                   <span className="text-white font-semibold">
                     SNCF. DGAC. TotalEnergies. Osmos Group.
                   </span>{" "}
                   Des projets exigeants, des budgets serrés, des livraisons
                   non-négociables.
                 </p>
-                <p className="text-base sm:text-lg text-white/75 mt-4">
+                <p className="text-base sm:text-lg text-white mt-4">
                   J'y ai occupé trois rôles au fil du temps : développeur,
                   chef de projet, UX designer. Ce parcours n'est pas un hasard,
                   c'est ce qui me permet aujourd'hui de comprendre l'ensemble de
@@ -85,7 +85,7 @@ export function About() {
               </BlurFade>
 
               <BlurFade inView delay={0.3}>
-                <p className="text-base sm:text-lg text-white/75">
+                <p className="text-base sm:text-lg text-white">
                   Aujourd'hui, cette lecture complète est ce que j'apporte à
                   chaque projet. Vous ne gérez pas une équipe de prestataires.
                   Vous avez un{" "}
@@ -99,7 +99,7 @@ export function About() {
 
               <BlurFade inView delay={0.4}>
                 <div className="glass-card border border-purple-500/20 p-5 rounded-2xl">
-                  <p className="text-white/80 italic">
+                  <p className="text-white italic">
                     "Un site mal pensé en amont coûte trois fois plus cher à
                     corriger.{" "}
                     <span className="text-purple-300 font-semibold not-italic">
@@ -143,7 +143,7 @@ export function About() {
                         {suffix}
                       </span>
                     </div>
-                    <p className="text-white/50 text-sm">{label}</p>
+                    <p className="text-white text-sm">{label}</p>
                   </div>
                 </BlurFade>
               ))}
@@ -161,8 +161,8 @@ export function About() {
                 </div>
                 <div className="px-4 py-4 flex flex-col justify-center min-w-0">
                   <p className="font-semibold text-white text-sm lg:text-base">Axel Coudair</p>
-                  <p className="text-xs text-white/50 mt-0.5">Développeur & Stratège Web</p>
-                  <p className="text-xs text-white/35 leading-relaxed">Basé à Paris, disponible partout en France</p>
+                  <p className="text-xs text-white mt-0.5">Développeur & Stratège Web</p>
+                  <p className="text-xs text-white leading-relaxed">Basé à Paris, disponible partout en France</p>
                 </div>
               </div>
             </BlurFade>

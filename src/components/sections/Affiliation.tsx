@@ -86,7 +86,7 @@ export function Affiliation() {
                 </BlurFade>
 
                 <BlurFade inView delay={0.3}>
-                  <p className="text-white/60 text-lg leading-relaxed mb-8">
+                  <p className="text-white text-lg leading-relaxed mb-8">
                     Vous connaissez un entrepreneur, une PME ou un indépendant
                     qui a besoin d'un site ? Mettez-nous en contact. Si le
                     projet aboutit, je vous reverse{" "}
@@ -128,7 +128,7 @@ export function Affiliation() {
                         <h3 className="text-white font-bold mt-0.5 mb-1">
                           {step.title}
                         </h3>
-                        <p className="text-white/55 text-sm leading-relaxed">
+                        <p className="text-white text-sm leading-relaxed">
                           {step.description}
                         </p>
                       </div>

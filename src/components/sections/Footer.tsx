@@ -17,7 +17,7 @@ export function Footer() {
                 className="h-9 w-auto"
               />
             </div>
-            <p className="text-white/45 text-sm leading-relaxed max-w-xs">
+            <p className="text-white text-sm leading-relaxed max-w-xs">
               Expert web indépendant. Je conçois des sites stratégiques pour les
               PME qui veulent convertir leurs visiteurs en clients.
             </p>
@@ -25,7 +25,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
               Navigation
             </h3>
             <ul className="space-y-3">
@@ -40,7 +40,7 @@ export function Footer() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="group relative text-white/45 hover:text-white text-sm transition-colors duration-200 w-fit"
+                    className="group relative text-white hover:text-white text-sm transition-colors duration-200 w-fit"
                   >
                     {label}
                     <span className="absolute -bottom-0.5 left-0 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
@@ -52,20 +52,20 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white/60 uppercase tracking-widest mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-widest mb-4">
               Contact
             </h3>
             <div className="space-y-3">
               <a
                 href="tel:+33760966496"
-                className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
+                className="flex items-center gap-3 text-white hover:text-white text-sm transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
                 +33 7 60 96 64 96
               </a>
               <a
                 href="mailto:hello@axelcoudair.com"
-                className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
+                className="flex items-center gap-3 text-white hover:text-white text-sm transition-colors duration-200"
               >
                 <Mail className="w-4 h-4" />
                 hello@axelcoudair.com
@@ -74,7 +74,7 @@ export function Footer() {
                 href="https://wa.me/message/NUKO2RPNV3BUF1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-200"
+                className="flex items-center gap-3 text-white hover:text-white text-sm transition-colors duration-200"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
@@ -83,7 +83,7 @@ export function Footer() {
 
             <div className="mt-6">
               <div className="h-px bg-white/[0.06] mb-4" />
-              <p className="text-xs text-white/40 uppercase tracking-widest font-medium mb-3">
+              <p className="text-xs text-white uppercase tracking-widest font-medium mb-3">
                 Suivez moi
               </p>
               <a
@@ -91,7 +91,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-purple-500/30 transition-all duration-200"
+                className="w-9 h-9 rounded-xl glass border border-white/10 flex items-center justify-center text-white hover:text-white hover:border-purple-500/30 transition-all duration-200"
               >
                 <Linkedin className="w-4 h-4" aria-hidden="true" />
               </a>
@@ -100,19 +100,19 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-white/50 text-xs">
+          <p className="text-white text-xs">
             © {year} Axel Coudair · Tous droits réservés
           </p>
           <div className="flex items-center gap-6">
             <a
               href="/mentions-legales"
-              className="text-white/50 hover:text-white/60 text-xs transition-colors duration-200"
+              className="text-white hover:text-white text-xs transition-colors duration-200"
             >
               Mentions légales
             </a>
             <a
               href="/politique-de-confidentialite"
-              className="text-white/50 hover:text-white/60 text-xs transition-colors duration-200"
+              className="text-white hover:text-white text-xs transition-colors duration-200"
             >
               Politique de confidentialité
             </a>

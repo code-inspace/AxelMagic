@@ -40,22 +40,22 @@ export function ProjectContent({
 }) {
   return (
     <div className="space-y-6">
-      <p className="text-white/70 text-sm leading-relaxed whitespace-pre-line">
+      <p className="text-white text-sm leading-relaxed whitespace-pre-line">
         {description}
       </p>
       {(context || result) && (
         <div className="grid sm:grid-cols-2 gap-5">
           {context && (
             <div>
-              <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-2">
                 Contexte
               </h4>
-              <p className="text-white/65 text-sm leading-relaxed">{context}</p>
+              <p className="text-white text-sm leading-relaxed">{context}</p>
             </div>
           )}
           {result && (
             <div>
-              <h4 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-2">
                 Résultat
               </h4>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold bg-white/10 text-white">
@@ -70,7 +70,7 @@ export function ProjectContent({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white/60"
+            className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white"
           >
             {tag}
           </span>
@@ -112,12 +112,12 @@ export const projects: CardData[] = [
       <div className="space-y-12">
         {/* Hook */}
         <div className="relative">
-          <p className="text-white/90 text-lg sm:text-xl font-light leading-relaxed">
+          <p className="text-white text-lg sm:text-xl font-light leading-relaxed">
             Chrystel accompagne ses clients à se réinventer en profondeur. Elle
             avait besoin d'une présence en ligne à la hauteur de la
             transformation qu'elle propose.
           </p>
-          <p className="text-white/90 text-lg sm:text-xl font-light leading-relaxed">
+          <p className="text-white text-lg sm:text-xl font-light leading-relaxed">
             Les objectifs du chantier : traduire
             son univers organique et chaleureux, terracotta, crème et rouille,
             en une expérience visuelle immersive et premium, structurer un
@@ -139,7 +139,7 @@ export const projects: CardData[] = [
             ].map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white/60"
+                className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-white"
               >
                 {tag}
               </span>
@@ -204,14 +204,14 @@ export const projects: CardData[] = [
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+              <div className="p-2 bg-white/5 rounded-lg text-white">
                 <Edit3 className="w-5 h-5" />
               </div>
-              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
                 Gestion de contenu autonome
               </h4>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Stellie gère 100% de son contenu seule depuis Sanity CMS : textes,
               images, offres et témoignages dans les deux langues, sans toucher
               à une ligne de code. Une autonomie totale, pensée dès l'architecture,
@@ -221,27 +221,27 @@ export const projects: CardData[] = [
 
           <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+              <div className="p-2 bg-white/5 rounded-lg text-white">
                 <MousePointerClick className="w-5 h-5" />
               </div>
-              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
                 Design & Expérience Visuelle
               </h4>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Refonte complète de l'identité visuelle : en partant de la palette organique terracotta et crème existante, nous avons intégré une typographie à fort contraste, des sections plein écran immersives et une image de marque premium. L'objectif : passer d'un site générique à une expérience de marque cohérente et mémorable. Chaque transition au scroll est orchestrée avec GSAP, la librairie d'animation privilégiée par les plus grands studios créatifs. Le résultat : une navigation qui immerge les visiteurs dans la méthode de Chrystel et dans son histoire.</p>
           </div>
 
           <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+              <div className="p-2 bg-white/5 rounded-lg text-white">
                 <Target className="w-5 h-5" />
               </div>
-              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
                 SEO & Visibilité
               </h4>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               Chaque page est construite pour être comprise par Google dès le
               premier crawl. Balises title et meta descriptions personnalisées
               par page, données structurées JSON-LD pour renforcer la
@@ -254,14 +254,14 @@ export const projects: CardData[] = [
 
           <div className="bg-[#0E0F11] border border-white/[0.05] p-6 rounded-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+              <div className="p-2 bg-white/5 rounded-lg text-white">
                 <Zap className="w-5 h-5" />
               </div>
-              <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider">
+              <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
                 Performances Techniques
               </h4>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Les images sont optimisées et chargées à la demande, les
               animations sont nettoyées proprement en mémoire, et le code est
               découpé par page pour ne charger que ce dont l'utilisateur a

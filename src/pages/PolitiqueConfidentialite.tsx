@@ -18,7 +18,7 @@ export function PolitiqueConfidentialite() {
           <h1 className="text-5xl sm:text-6xl font-poppins font-light leading-tight">
             Politique de confidentialité
           </h1>
-          <p className="text-white/40 text-sm mt-4">Dernière mise à jour : mars 2026</p>
+          <p className="text-white text-sm mt-4">Dernière mise à jour : mars 2026</p>
         </div>
 
         {/* Sections */}
@@ -27,7 +27,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               1. Qui est responsable du traitement ?
             </h2>
-            <div className="space-y-2 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-2 text-white text-sm leading-relaxed">
               <p>Axel Coudair, freelance, développeur web & designer UX/UI</p>
               <p>
                 Contact :{" "}
@@ -45,7 +45,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               2. Quelles données sont collectées ?
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>
                 Ce site ne collecte aucune donnée personnelle identifiante : pas de
                 formulaire, pas de compte, pas de nom, pas d'email sans action
@@ -68,7 +68,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               3. Pourquoi ces données sont-elles collectées ?
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>
                 Uniquement pour améliorer l'expérience du site : comprendre quelles
                 pages sont consultées, détecter d'éventuels problèmes de navigation,
@@ -85,7 +85,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               4. Quel outil est utilisé ?
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>
                 L'outil PostHog est utilisé pour l'analyse d'audience, configuré en
                 mode cookieless : aucun cookie ni donnée de session n'est stocké dans
@@ -116,7 +116,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               5. Base légale du traitement
             </h2>
-            <div className="text-white/60 text-sm leading-relaxed">
+            <div className="text-white text-sm leading-relaxed">
               <p>
                 Le traitement repose sur l'intérêt légitime (article 6.1.f du RGPD).
                 Aucun consentement préalable n'est requis car aucun cookie ni
@@ -129,7 +129,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               6. Prise de rendez-vous (Cal.com)
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>
                 Le formulaire de réservation est fourni par Cal.com. Lors de la prise
                 de rendez-vous, Cal.com peut déposer des cookies fonctionnels
@@ -155,23 +155,23 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               7. Vos droits
             </h2>
-            <div className="space-y-3 text-white/60 text-sm leading-relaxed">
+            <div className="space-y-3 text-white text-sm leading-relaxed">
               <p>Conformément au RGPD, vous disposez des droits suivants :</p>
               <div className="space-y-1 pl-2">
                 <p>
-                  <span className="text-white/80">Accès</span> : obtenir une copie
+                  <span className="text-white">Accès</span> : obtenir une copie
                   des données vous concernant
                 </p>
                 <p>
-                  <span className="text-white/80">Suppression</span> : demander
+                  <span className="text-white">Suppression</span> : demander
                   l'effacement de vos données
                 </p>
                 <p>
-                  <span className="text-white/80">Opposition</span> : vous opposer au
+                  <span className="text-white">Opposition</span> : vous opposer au
                   traitement basé sur l'intérêt légitime
                 </p>
                 <p>
-                  <span className="text-white/80">Réclamation</span> : auprès de la
+                  <span className="text-white">Réclamation</span> : auprès de la
                   CNIL (
                   <a
                     href="https://www.cnil.fr"
@@ -200,7 +200,7 @@ export function PolitiqueConfidentialite() {
             <h2 className="text-2xl font-poppins font-light mb-6 text-white">
               8. Sécurité
             </h2>
-            <div className="text-white/60 text-sm leading-relaxed">
+            <div className="text-white text-sm leading-relaxed">
               <p>
                 Le site est servi en HTTPS. Les accès aux données analytics sont
                 restreints au seul responsable du traitement.

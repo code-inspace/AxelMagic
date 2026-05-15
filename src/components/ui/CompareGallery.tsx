@@ -119,7 +119,7 @@ export function CompareGallery({ tabs }: { tabs: CompareTab[] }) {
             onClick={() => setActive(tab.id)}
             className={`relative shrink-0 px-5 py-2 text-sm font-medium rounded-full border transition-all duration-200 ${active === tab.id
                 ? "text-white border-purple-500/60 bg-purple-500/15"
-                : "text-white/40 border-white/10 bg-white/[0.03] hover:text-white/70 hover:border-white/20"
+                : "text-white border-white/10 bg-white/[0.03] hover:text-white hover:border-white/20"
               }`}
           >
             {tab.label}
@@ -157,13 +157,13 @@ export function CompareGallery({ tabs }: { tabs: CompareTab[] }) {
           {/* Description — 50% */}
           <div className="flex-1 flex flex-col justify-center gap-3">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-white/5 rounded-lg text-white/80">
+              <div className="p-2 bg-white/5 rounded-lg text-white">
                 {current.icon}
               </div>
               <h4 className="text-base font-semibold text-white">{current.title}</h4>
             </div>
             {current.description && (
-              <p className="text-white/50 text-sm leading-relaxed">
+              <p className="text-white text-sm leading-relaxed">
                 {current.description}
               </p>
             )}

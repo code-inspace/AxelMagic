@@ -86,7 +86,7 @@ export function Contact() {
                 projet web ?
               </AuroraText>
             </h2>
-            <p className="text-white/50 text-lg max-w-xl mx-auto">
+            <p className="text-white text-lg max-w-xl mx-auto">
               Décrivez-moi votre projet en quelques mots. Je vous réponds
               personnellement avec une analyse honnête et des pistes concrètes,
               sans engagement.
@@ -133,7 +133,7 @@ export function Contact() {
                   <h3 className="text-lg font-bold text-white mb-3">
                     {action.title}
                   </h3>
-                  <p className="text-white/55 text-sm leading-relaxed flex-1">
+                  <p className="text-white text-sm leading-relaxed flex-1">
                     {action.description}
                   </p>
 
