@@ -18,7 +18,8 @@
       "Bash(ffprobe -v quiet -print_format json -show_streams /Users/axel/Projets/codepers/axelmagic/public/images/withstellie/ws.mov)",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(s.get\\('codec_name'\\), s.get\\('codec_type'\\)\\) for s in d.get\\('streams',[]\\)]\")",
       "Bash(mdls -name kMDItemCodecs /Users/axel/Projets/codepers/axelmagic/public/images/withstellie/ws.mov)",
-      "Bash(mdls -name kMDItemCodecs /Users/axel/Projets/codepers/axelmagic/public/images/calea/video-calea.mov)"
+      "Bash(mdls -name kMDItemCodecs /Users/axel/Projets/codepers/axelmagic/public/images/calea/video-calea.mov)",
+      "Bash(git revert *)"
     ]
   }
 }
