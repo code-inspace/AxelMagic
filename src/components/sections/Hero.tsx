@@ -7,10 +7,22 @@ import { RollButton } from "@/components/ui/RollButton";
 import { Marquee } from "@/components/magicui/marquee";
 
 const logos = [
-  { src: "/images/logo_previous_companies/logo-previous-company1.svg.png", alt: "SNCF Connect" },
-  { src: "/images/logo_previous_companies/logo-previous-company4.png", alt: "DGAC" },
-  { src: "/images/logo_previous_companies/logo-previous-company5.png", alt: "TotalEnergies" },
-  { src: "/images/logo_previous_companies/logo-previous-company2.png", alt: "Osmos" },
+  {
+    src: "/images/logo_previous_companies/logo-previous-company1.svg.png",
+    alt: "SNCF Connect",
+  },
+  {
+    src: "/images/logo_previous_companies/logo-previous-company4.png",
+    alt: "DGAC",
+  },
+  {
+    src: "/images/logo_previous_companies/logo-previous-company5.png",
+    alt: "TotalEnergies",
+  },
+  {
+    src: "/images/logo_previous_companies/logo-previous-company2.png",
+    alt: "Osmos",
+  },
 ];
 
 interface Orb {
@@ -80,7 +92,14 @@ export function Hero() {
         if (orb.y < -orb.size) orb.y = canvas.height + orb.size;
         if (orb.y > canvas.height + orb.size) orb.y = -orb.size;
 
-        const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.size);
+        const grad = ctx.createRadialGradient(
+          orb.x,
+          orb.y,
+          0,
+          orb.x,
+          orb.y,
+          orb.size,
+        );
         const pulsingOpacity = orb.opacity + Math.sin(t * 1.5 + i) * 0.04;
         grad.addColorStop(0, `${orb.color}${pulsingOpacity})`);
         grad.addColorStop(0.5, `${orb.color}${pulsingOpacity * 0.4})`);
@@ -155,7 +174,10 @@ export function Hero() {
           >
             premium,
           </AuroraText>
-          <span className="text-white"> pensés pour convertir vos visiteurs en </span>
+          <span className="text-white">
+            {" "}
+            pensés pour convertir vos visiteurs en{" "}
+          </span>
           <AuroraText
             colors={[
               "#ffffff",
@@ -198,7 +220,12 @@ export function Hero() {
             data-cal-namespace="30min"
             data-cal-link="axel-coudair-hhelf2/30min"
             data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
-            onClick={() => posthog.capture("cta_click", { label: "planifier_rdv", location: "hero" })}
+            onClick={() =>
+              posthog.capture("cta_click", {
+                label: "planifier_rdv",
+                location: "hero",
+              })
+            }
             className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 cursor-pointer"
             style={{ background: "linear-gradient(135deg, #2708a0, #653ad2)" }}
           >
@@ -207,13 +234,17 @@ export function Hero() {
 
           <RollButton
             href="#contact"
-            onClick={() => posthog.capture("cta_click", { label: "me_contacter", location: "hero" })}
+            onClick={() =>
+              posthog.capture("cta_click", {
+                label: "me_contacter",
+                location: "hero",
+              })
+            }
             className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-white border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all duration-300"
           >
             Me contacter
           </RollButton>
         </motion.div>
-
       </div>
 
       {/* Marquee logos */}
@@ -221,16 +252,22 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.6 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 overflow-hidden w-1/2"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 overflow-hidden w-full sm:w-1/2"
         style={{
-          maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+          maskImage:
+            "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
         }}
       >
-        <Marquee duration="20s" gap="0px">
+        <Marquee duration="12s" gap="0px">
           {logos.map(({ src, alt }) => (
-            <div key={alt} className="px-10">
-              <img src={src} alt={alt} className="h-10 w-auto object-contain grayscale invert" />
+            <div key={alt} className="md:px-10 px-6">
+              <img
+                src={src}
+                alt={alt}
+                className="md:h-10 h-6 w-auto object-contain grayscale invert"
+              />
             </div>
           ))}
         </Marquee>
