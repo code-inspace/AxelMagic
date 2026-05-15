@@ -4,15 +4,7 @@ import { AuroraText } from "@/components/magicui/aurora-text";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { DotPattern } from "@/components/magicui/dot-pattern";
-import { Marquee } from "@/components/magicui/marquee";
 import { Briefcase, Zap } from "lucide-react";
-
-const logos = [
-  { src: "/images/logo_previous_companies/logo-previous-company1.svg.png", alt: "SNCF Connect" },
-  { src: "/images/logo_previous_companies/logo-previous-company4.png", alt: "DGAC" },
-  { src: "/images/logo_previous_companies/logo-previous-company5.png", alt: "TotalEnergies" },
-  { src: "/images/logo_previous_companies/logo-previous-company2.png", alt: "Osmos" },
-];
 
 const stats = [
   { value: 8, suffix: "+", label: "années d'expérience", icon: Briefcase },
@@ -76,10 +68,10 @@ export function About() {
                   non-négociables.
                 </p>
                 <p className="text-base sm:text-lg text-white mt-4">
-                  J'y ai occupé trois rôles au fil du temps : développeur,
-                  chef de projet, UX designer. Ce parcours n'est pas un hasard,
-                  c'est ce qui me permet aujourd'hui de comprendre l'ensemble de
-                  la chaîne, du brief au déploiement, là où la plupart des
+                  J'y ai occupé trois rôles au fil du temps : développeur, chef
+                  de projet, UX designer. Ce parcours n'est pas un hasard, c'est
+                  ce qui me permet aujourd'hui de comprendre l'ensemble de la
+                  chaîne, du brief au déploiement, là où la plupart des
                   freelances n'en voient qu'une partie
                 </p>
               </BlurFade>
@@ -160,31 +152,16 @@ export function About() {
                   />
                 </div>
                 <div className="px-4 py-4 flex flex-col justify-center min-w-0">
-                  <p className="font-semibold text-white text-sm lg:text-base">Axel Coudair</p>
-                  <p className="text-xs text-white mt-0.5">Développeur & Stratège Web</p>
-                  <p className="text-xs text-white leading-relaxed">Basé à Paris, disponible partout en France</p>
+                  <p className="font-semibold text-white text-sm lg:text-base">
+                    Axel Coudair
+                  </p>
+                  <p className="text-xs text-white mt-0.5">
+                    Développeur & Stratège Web
+                  </p>
+                  <p className="text-xs text-white leading-relaxed">
+                    Basé à Paris, disponible partout en France
+                  </p>
                 </div>
-              </div>
-            </BlurFade>
-            <BlurFade inView delay={0.7}>
-              <div
-                className="mt-4 overflow-hidden"
-                style={{
-                  maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-                }}
-              >
-                <Marquee duration="20s" gap="0px">
-                  {logos.map(({ src, alt }) => (
-                    <div key={alt} className="px-8">
-                      <img
-                        src={src}
-                        alt={alt}
-                        className="h-10 w-auto object-contain opacity-30 grayscale invert"
-                      />
-                    </div>
-                  ))}
-                </Marquee>
               </div>
             </BlurFade>
           </div>

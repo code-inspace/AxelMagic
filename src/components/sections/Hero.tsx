@@ -1,9 +1,17 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import posthog from "posthog-js";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { RollButton } from "@/components/ui/RollButton";
+import { Marquee } from "@/components/magicui/marquee";
+
+const logos = [
+  { src: "/images/logo_previous_companies/logo-previous-company1.svg.png", alt: "SNCF Connect" },
+  { src: "/images/logo_previous_companies/logo-previous-company4.png", alt: "DGAC" },
+  { src: "/images/logo_previous_companies/logo-previous-company5.png", alt: "TotalEnergies" },
+  { src: "/images/logo_previous_companies/logo-previous-company2.png", alt: "Osmos" },
+];
 
 interface Orb {
   x: number;
@@ -206,25 +214,27 @@ export function Hero() {
           </RollButton>
         </motion.div>
 
-        {/* Urgency bubble */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="md:flex justify-center hidden"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/20 text-sm text-white">
-            <span className="text-amber-400">⚡</span>
-            <span className="text-sm text-white">
-              Plus que{" "}
-              <span className="text-amber-300 font-bold">
-                2 places disponibles
-              </span>{" "}
-              ce mois-ci
-            </span>
-          </div>
-        </motion.div> */}
       </div>
+
+      {/* Marquee logos */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 0.6 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 overflow-hidden w-1/2"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+        }}
+      >
+        <Marquee duration="20s" gap="0px">
+          {logos.map(({ src, alt }) => (
+            <div key={alt} className="px-10">
+              <img src={src} alt={alt} className="h-10 w-auto object-contain grayscale invert" />
+            </div>
+          ))}
+        </Marquee>
+      </motion.div>
     </section>
   );
 }
