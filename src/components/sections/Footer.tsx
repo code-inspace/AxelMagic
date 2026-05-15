@@ -36,7 +36,6 @@ export function Footer() {
                 { label: "Méthode", href: "/#process" },
                 { label: "Performance", href: "/#seo" },
                 { label: "Contact", href: "/#contact" },
-                { label: "Affiliation", href: "/#affiliation" },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <a

@@ -50,7 +50,7 @@ function Landing() {
         <Process />
         <SeoSection />
         <Contact />
-        <Affiliation />
+        {/* <Affiliation /> */}
       </main>
       <Footer />
       <FloatingBar />
