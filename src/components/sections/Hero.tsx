@@ -260,14 +260,19 @@ export function Hero() {
             "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
         }}
       >
-        <Marquee duration="12s" gap="0px">
+        {/* Mobile */}
+        <Marquee duration="12s" gap="0px" className="sm:hidden">
           {logos.map(({ src, alt }) => (
-            <div key={alt} className="md:px-10 px-6">
-              <img
-                src={src}
-                alt={alt}
-                className="md:h-10 h-6 w-auto object-contain grayscale invert"
-              />
+            <div key={alt} className="px-6">
+              <img src={src} alt={alt} className="h-6 w-auto object-contain grayscale invert" />
+            </div>
+          ))}
+        </Marquee>
+        {/* Desktop */}
+        <Marquee duration="25s" gap="0px" className="hidden sm:flex">
+          {logos.map(({ src, alt }) => (
+            <div key={alt} className="px-10">
+              <img src={src} alt={alt} className="h-10 w-auto object-contain grayscale invert" />
             </div>
           ))}
         </Marquee>
