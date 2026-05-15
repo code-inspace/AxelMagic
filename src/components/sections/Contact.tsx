@@ -184,21 +184,6 @@ export function Contact() {
           ))}
         </div>
 
-        {/* Urgency note */}
-        <BlurFade inView delay={0.5}>
-          {/* <div className="mt-10 text-center">
-            <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass border border-amber-500/20">
-              <span className="text-amber-400 text-sm">⚡</span>
-              <span className="text-sm text-white/60">
-                Plus que{" "}
-                <span className="text-amber-300 font-bold">
-                  2 places disponibles
-                </span>{" "}
-                ce mois-ci, les projets sérieux passent vite.
-              </span>
-            </div>
-          </div> */}
-        </BlurFade>
       </div>
     </section>
   );
