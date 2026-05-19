@@ -7,7 +7,7 @@ import {
   Calendar,
   Paintbrush,
   Sparkles,
-} from "lucide-react";
+} from "lucide-react"; 
 import posthog from "posthog-js";
 import { RollButton } from "@/components/ui/RollButton";
 import { CompareGallery } from "@/components/ui/CompareGallery";
