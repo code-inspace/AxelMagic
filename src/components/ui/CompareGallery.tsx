@@ -76,11 +76,11 @@ function BeforeAfter({
         setPos((x / rect.width) * 100);
       }}
     >
-      {/* Right — blurry bg + image */}
+      {/* Right , blurry bg + image */}
       <img src={right} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110 pointer-events-none" style={{ filter: "blur(24px)" }} draggable={false} />
       <img src={right} alt={rightLabel} className="absolute inset-0 w-full h-full object-contain pointer-events-none" draggable={false} />
 
-      {/* Left — outer clips, inner is fixed-size so image never rescales */}
+      {/* Left , outer clips, inner is fixed-size so image never rescales */}
       <div className="absolute inset-y-0 left-0 overflow-hidden pointer-events-none" style={{ width: clipW }}>
         <div className="absolute inset-y-0 left-0" style={{ width: containerW }}>
           <img src={left} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110" style={{ filter: "blur(24px)" }} draggable={false} />
@@ -144,7 +144,7 @@ export function CompareGallery({ tabs }: { tabs: CompareTab[] }) {
           transition={{ duration: 0.25 }}
           className="flex flex-col-reverse sm:flex-row gap-4 sm:gap-6"
         >
-          {/* Photos — 50% */}
+          {/* Photos , 50% */}
           <div className="w-full md:w-2/3 aspect-[4/3] bg-[#0a0a0c] border border-white/[0.06] overflow-hidden flex-shrink-0 rounded-xl">
             <BeforeAfter
               left={current.left}
@@ -154,7 +154,7 @@ export function CompareGallery({ tabs }: { tabs: CompareTab[] }) {
             />
           </div>
 
-          {/* Description — 50% */}
+          {/* Description , 50% */}
           <div className="flex-1 flex flex-col justify-center gap-3">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-white/5 rounded-lg text-white">

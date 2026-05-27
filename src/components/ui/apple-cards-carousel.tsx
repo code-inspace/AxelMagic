@@ -237,7 +237,7 @@ export function AppleCardsCarousel({ cards }: { cards: CardData[] }) {
       )}
 
       <div className="relative">
-        {/* Gradient masks — desktop only */}
+        {/* Gradient masks , desktop only */}
         <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-14 bg-gradient-to-r from-[#0E0F11] to-transparent z-10 pointer-events-none" />
         <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-[#0E0F11] to-transparent z-10 pointer-events-none" />
 

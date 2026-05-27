@@ -149,7 +149,7 @@ export function Hero() {
         >
           <span className="flex items-center gap-1.5 px-4 py-1.5 rounded-full glass border border-purple-500/20 text-sm text-purple-300">
             <Clock className="w-3.5 h-3.5" />
-            Réponse sous 24h
+            Expert React · Node.js · TypeScript
           </span>
         </motion.div>
 
@@ -160,7 +160,7 @@ export function Hero() {
           transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-poppins font-light leading-[1.05] tracking-tight mb-4"
         >
-          <span className="text-white">Des sites </span>
+          <span className="text-white">Développeur Full Stack </span>
           <AuroraText
             colors={[
               "#ffffff",
@@ -172,24 +172,7 @@ export function Hero() {
             ]}
             className="font-poppins font-light"
           >
-            premium,
-          </AuroraText>
-          <span className="text-white">
-            {" "}
-            pensés pour convertir vos visiteurs en{" "}
-          </span>
-          <AuroraText
-            colors={[
-              "#ffffff",
-              "#a78bfa",
-              "#8b5cf6",
-              "#653ad2",
-              "#c4b5fd",
-              "#ffffff",
-            ]}
-            className="font-poppins font-light"
-          >
-            clients.
+            Senior
           </AuroraText>
         </motion.h1>
 
@@ -200,13 +183,9 @@ export function Hero() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-lg sm:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Expert web indépendant, je conçois des sites{" "}
-          <span className="text-purple-300 font-medium">stratégiques</span>,
-          modernes et optimisés SEO pour les PME qui veulent{" "}
-          <span className="text-purple-300 font-medium">
-            transformer leurs visiteurs en clients
-          </span>
-          .
+          8 ans d'expérience sur des projets complexes,{" "}
+          <span className="text-purple-300 font-medium">React, Next.js, TypeScript, Node.js</span>{" "}
+          avec un regard produit qui fait la différence.
         </motion.p>
 
         {/* CTAs */}

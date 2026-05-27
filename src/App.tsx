@@ -1,15 +1,13 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { getCalApi } from "@calcom/embed-react";
-import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
+// import { Services } from "@/components/sections/Services";
 import { Portfolio2 } from "@/components/sections/Portfolio2";
-import { SeoSection } from "@/components/sections/SeoSection";
-import { Process } from "@/components/sections/Process";
-import { Affiliation } from "@/components/sections/Affiliation";
+// import { SeoSection } from "@/components/sections/SeoSection";
+// import { Process } from "@/components/sections/Process";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -45,11 +43,10 @@ function Landing() {
         <About />
         <Portfolio2 />
         <Testimonial />
-        <Services />
-        <Process />
-        <SeoSection />
+        {/* <Services /> */}
+        {/* <Process /> */}
+        {/* <SeoSection /> */}
         <Contact />
-        {/* <Affiliation /> */}
       </main>
       <Footer />
       <FloatingBar />

@@ -288,7 +288,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
         )}
       </AnimatePresence>
 
-      {/* Desktop — GSAP scroll-linked */}
+      {/* Desktop , GSAP scroll-linked */}
       <section ref={containerRef} className="hidden lg:block w-full relative my-12" style={{ minHeight: "100vh" }}>
         <div className="sticky top-[15vh] w-full h-[50vh] sm:h-[60vh] overflow-hidden flex flex-col justify-center">
           <div ref={wrapperRef} className="flex items-center h-[90%] gap-6 sm:gap-10 w-max">
@@ -301,7 +301,7 @@ export function ReferenceGallery({ images }: { images: string[] }) {
         </div>
       </section>
 
-      {/* Mobile — native horizontal scroll */}
+      {/* Mobile , native horizontal scroll */}
       <div className="lg:hidden w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden my-8" style={{ scrollSnapType: "x mandatory" }}>
         <div className="flex gap-4 w-max py-2 px-1">
           {images.map((src, i) => (

@@ -1,7 +1,6 @@
 import {
   Phone,
   MessageCircle,
-  Calendar,
   Clock,
   ArrowRight,
 } from "lucide-react";
@@ -12,24 +11,10 @@ import posthog from "posthog-js";
 
 const actions = [
   {
-    icon: Calendar,
-    title: "Audit gratuit de votre site",
-    description:
-      "Je passe votre site au crible : UX, SEO, performance, conversion. Vous recevez un rapport complet et des recommandations actionnables, gratuitement.",
-    cta: "Demander mon audit",
-    trackEvent: "demander_audit",
-    calNamespace: "audit-gratuit",
-    calLink: "axel-coudair-hhelf2/audit-gratuit",
-    badge: "Gratuit",
-    badgeColor: "bg-green-500/20 text-green-300 border-green-500/30",
-    gradient: "from-purple-500/15 to-blue-500/5",
-    primary: true,
-  },
-  {
     icon: Phone,
     title: "Call découverte",
     description:
-      "30 minutes pour parler de votre projet. On cadre ensemble vos besoins, vos objectifs, votre budget. Sans engagement.",
+      "30 minutes pour échanger sur votre mission. On cadre ensemble le contexte, la stack, le rythme et les attentes. Sans engagement.",
     cta: "Réserver un call",
     trackEvent: "reserver_call",
     calNamespace: "30min",
@@ -37,13 +22,13 @@ const actions = [
     badge: "30 min",
     badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
     gradient: "from-blue-500/10 to-purple-500/5",
-    primary: false,
+    primary: true,
   },
   {
     icon: MessageCircle,
     title: "Message WhatsApp",
     description:
-      "Une question rapide ? Un projet à me décrire ? Écrivez-moi directement sur WhatsApp. Je réponds dans la journée.",
+      "Une question rapide ? Une mission à me décrire ? Écrivez-moi directement sur WhatsApp. Je réponds dans la journée.",
     cta: "Écrire sur WhatsApp",
     trackEvent: "whatsapp",
     href: "https://wa.me/message/NUKO2RPNV3BUF1",
@@ -79,27 +64,27 @@ export function Contact() {
         <BlurFade inView delay={0.1}>
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-poppins font-light leading-tight mb-4">
-              Prêt à lancer votre{" "}
+              Parlons de votre{" "}
               <AuroraText
                 colors={["#ffffff", "#a78bfa", "#653ad2", "#8b5cf6", "#ffffff"]}
               >
-                projet web ?
+                mission.
               </AuroraText>
             </h2>
             <p className="text-white text-lg max-w-xl mx-auto">
-              Décrivez-moi votre projet en quelques mots. Je vous réponds
-              personnellement avec une analyse honnête et des pistes concrètes,
-              sans engagement.
+              Décrivez-moi votre besoin en quelques mots : stack, contexte,
+              durée. Je vous réponds rapidement avec ma disponibilité et
+              mes questions.
             </p>
             <div className="flex items-center justify-center gap-2 mt-4">
               <Clock className="w-4 h-4 text-purple-400" />
               <span className="text-purple-300 text-sm font-medium">
-                Réponse garantie sous 24h
+                Réponse sous 24h
               </span>
             </div>
           </div>
         </BlurFade>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-5">
           {actions.map((action, i) => (
             <BlurFade key={action.title} inView delay={0.15 + i * 0.1}>
               <motion.div

@@ -116,7 +116,7 @@ export function SeoSection() {
             </div>
           </BlurFade>
 
-          {/* Visual — site performance mockup */}
+          {/* Visual , site performance mockup */}
           <BlurFade inView delay={0.3}>
             <div className="glass-card border border-white/[0.07] rounded-2xl overflow-hidden p-6">
               {/* Fake browser bar */}

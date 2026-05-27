@@ -1,5 +1,14 @@
 import { MessageCircle, Phone, Mail, Linkedin } from "lucide-react";
 
+const navLinks = [
+  { label: "À propos", href: "/#apropos" },
+  { label: "Réalisations", href: "/#realisations" },
+  // { label: "Services", href: "/#services" },
+  // { label: "Méthode", href: "/#process" },
+  // { label: "Performance", href: "/#seo" },
+  { label: "Contact", href: "/#contact" },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -18,8 +27,7 @@ export function Footer() {
               />
             </div>
             <p className="text-white text-sm leading-relaxed max-w-xs">
-              Expert web indépendant. Je conçois des sites stratégiques pour les
-              PME qui veulent convertir leurs visiteurs en clients.
+              Développeur Full Stack freelance : React, Next.js, Node.js.
             </p>
           </div>
 
@@ -29,14 +37,7 @@ export function Footer() {
               Navigation
             </h3>
             <ul className="space-y-3">
-              {[
-                { label: "À propos", href: "/#apropos" },
-                { label: "Réalisations", href: "/#realisations" },
-                { label: "Services", href: "/#services" },
-                { label: "Méthode", href: "/#process" },
-                { label: "Performance", href: "/#seo" },
-                { label: "Contact", href: "/#contact" },
-              ].map(({ label, href }) => (
+              {navLinks.map(({ label, href }) => (
                 <li key={href}>
                   <a
                     href={href}

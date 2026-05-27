@@ -195,7 +195,7 @@ export function Process() {
         });
       });
 
-      // Orb fixe à 50vh — apparaît quand la timeline entre dans le viewport
+      // Orb fixe à 50vh , apparaît quand la timeline entre dans le viewport
       gsap.set(orbRef.current, { opacity: 0 });
       ScrollTrigger.create({
         trigger: timelineRef.current,
@@ -306,7 +306,7 @@ export function Process() {
 
         {/* Timeline */}
         <div ref={timelineRef} className="relative">
-          {/* Vertical line — desktop only */}
+          {/* Vertical line , desktop only */}
           <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-white/[0.06]" />
           <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px overflow-hidden">
             <div
@@ -320,7 +320,7 @@ export function Process() {
             />
           </div>
 
-          {/* Orb — absolute, z-0 pour passer derrière les dots z-10 */}
+          {/* Orb , absolute, z-0 pour passer derrière les dots z-10 */}
           <div
             ref={orbRef}
             className="hidden lg:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full z-0 pointer-events-none opacity-0"
@@ -330,7 +330,7 @@ export function Process() {
             }}
           />
 
-          {/* Vertical line — mobile only */}
+          {/* Vertical line , mobile only */}
           <div className="lg:hidden absolute left-5 top-0 bottom-0 w-px bg-white/[0.06]" />
 
           <div className="space-y-2">
@@ -355,7 +355,7 @@ export function Process() {
                       )}
                     </div>
 
-                    {/* Center dot — hors du filter, toujours devant */}
+                    {/* Center dot , hors du filter, toujours devant */}
                     <div className="relative flex-shrink-0 z-10">
                       <div
                         className="step-dot w-14 h-14 rounded-full flex items-center justify-center border-2"

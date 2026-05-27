@@ -110,7 +110,7 @@ export function Affiliation() {
                 </BlurFade>
               </div>
 
-              {/* Right — 3 steps */}
+              {/* Right , 3 steps */}
               <div className="space-y-4">
                 {steps.map((step, i) => (
                   <BlurFade key={step.step} inView delay={0.2 + i * 0.12}>

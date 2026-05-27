@@ -7,9 +7,9 @@ import { RollButton } from "./ui/RollButton";
 const links = [
   { href: "/#apropos", label: "À propos" },
   { href: "/#realisations", label: "Réalisations" },
-  { href: "/#services", label: "Services" },
-  { href: "/#process", label: "Méthode" },
-  { href: "/#seo", label: "Performance" },
+  // { href: "/#services", label: "Services" },
+  // { href: "/#process", label: "Méthode" },
+  // { href: "/#seo", label: "Performance" },
 ];
 
 export function Navbar() {
